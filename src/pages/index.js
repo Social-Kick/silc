@@ -20,6 +20,59 @@ const Index = () => (
           </p>
         </div>
       </section>
+      <section className={indexStyles.sectionReverse}>
+        <div className={indexStyles.content}>
+          <h1>Bezichtigingstrips Spanje</h1>
+          <h2>Bezoek de projecten van uw dromen</h2>
+          <p>
+            Interesse in een huis in Spanje? Boek een verkenningstrip naar
+            Spanje met Hip Estates. Gedurende drie dagen bezoeken we met u de
+            projecten van uw dromen, we gidsen u door de regio, leggen de
+            contacten, geven uitleg over de financiële en fiscale aspecten van
+            een aankoop tweede verblijf in Spanje. Als u een villa of
+            appartement koopt via Hip Estates, zorgen wij voor de volledige
+            afhandeling van uw dossier, van aankoopcontract tot
+            sleuteloverdracht. U overnacht in een luxe hotel. Een
+            bezichtigingstrip is de ideale manier om het aanbod ter plaatse met
+            eigen ogen te bekijken en de lokale sfeer op te snuiven.
+          </p>
+          <a href="#">Lees meer</a>
+        </div>
+        <div className={indexStyles.img}></div>
+      </section>
+      <section className={indexStyles.row}>
+        <h1 className="text-center">Spaanse Projecten in de Kijker</h1>
+        <div className={indexStyles.gallery}>
+          <div className={indexStyles.imageContainer}>
+            <img
+              src="https://www.hipestates.com/watermark//las-colinas-residences-027-ret-watermark5025525525530BOTTOM_RIGHT.jpg"
+              alt=""
+            />
+            <div className={indexStyles.overlay}></div>
+          </div>
+          <div className={indexStyles.imageContainer}>
+            <img
+              src="https://www.hipestates.com/watermark//las-colinas-residences-027-ret-watermark5025525525530BOTTOM_RIGHT.jpg"
+              alt=""
+            />
+            <div className={indexStyles.overlay}></div>
+          </div>
+          <div className={indexStyles.imageContainer}>
+            <img
+              src="https://www.hipestates.com/watermark//las-colinas-residences-027-ret-watermark5025525525530BOTTOM_RIGHT.jpg"
+              alt=""
+            />
+            <div className={indexStyles.overlay}></div>
+          </div>
+          <div className={indexStyles.imageContainer}>
+            <img
+              src="https://www.hipestates.com/watermark//las-colinas-residences-027-ret-watermark5025525525530BOTTOM_RIGHT.jpg"
+              alt=""
+            />
+            <div className={indexStyles.overlay}></div>
+          </div>
+        </div>
+      </section>
     </article>
   </Layout>
 )
