@@ -1,0 +1,36 @@
+header {
+   height: 80px;
+   width: 100%;
+   padding: 1rem 2rem 0 2rem;
+   display: flex;
+   justify-content: space-between;
+   align-content: center;
+   background-color: transparent;
+   position: absolute;
+}
+
+.nav {
+   display: flex;
+   height: 80px;
+   flex-direction: row;
+   align-items: center;
+}
+
+.nav-list {
+   display: flex;
+   list-style-type: none;
+   margin: 0;
+}
+
+.nav-item {
+   text-transform: uppercase;
+   font-weight: bold;
+   margin-left: .5rem;
+   margin-right: .5rem;
+   color: #FFF;
+}
+
+.nav-item:hover {
+   cursor: pointer;
+   border-bottom: 1px solid #FFF;
+}
