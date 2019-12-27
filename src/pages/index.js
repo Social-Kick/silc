@@ -40,7 +40,7 @@ const Index = () => (
         </div>
         <div className={indexStyles.img}></div>
       </section>
-      <section className={indexStyles.row}>
+      <section className={indexStyles.featured}>
         <h1 className="text-center">Spaanse Projecten in de Kijker</h1>
         <div className={indexStyles.gallery}>
           <div className={indexStyles.imageContainer}>
@@ -48,28 +48,28 @@ const Index = () => (
               src="https://www.hipestates.com/watermark//las-colinas-residences-027-ret-watermark5025525525530BOTTOM_RIGHT.jpg"
               alt=""
             />
-            <div className={indexStyles.overlay}></div>
+            <div className={indexStyles.overlay}>Costa Blanca Zuid - €169.000</div>
           </div>
           <div className={indexStyles.imageContainer}>
             <img
               src="https://www.hipestates.com/watermark//las-colinas-residences-027-ret-watermark5025525525530BOTTOM_RIGHT.jpg"
               alt=""
             />
-            <div className={indexStyles.overlay}></div>
+            <div className={indexStyles.overlay}>Costa Blanca Zuid - €169.000</div>
           </div>
           <div className={indexStyles.imageContainer}>
             <img
               src="https://www.hipestates.com/watermark//las-colinas-residences-027-ret-watermark5025525525530BOTTOM_RIGHT.jpg"
               alt=""
             />
-            <div className={indexStyles.overlay}></div>
+            <div className={indexStyles.overlay}>Costa Blanca Zuid - €169.000</div>
           </div>
           <div className={indexStyles.imageContainer}>
             <img
               src="https://www.hipestates.com/watermark//las-colinas-residences-027-ret-watermark5025525525530BOTTOM_RIGHT.jpg"
               alt=""
             />
-            <div className={indexStyles.overlay}></div>
+            <div className={indexStyles.overlay}>Costa Blanca Zuid - €169.000</div>
           </div>
         </div>
       </section>

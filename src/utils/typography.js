@@ -1,8 +1,8 @@
-import Typography from "typography"
-import grandViewTheme from 'typography-theme-grand-view'
+import Typography from "typography";
+import fairyGatesTheme from 'typography-theme-fairy-gates';
 
-const typography = new Typography({
-  grandViewTheme
-})
+const typography = new Typography(
+  // fairyGatesTheme
+)
 
 export default typography
