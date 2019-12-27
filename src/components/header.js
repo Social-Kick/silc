@@ -1,13 +1,13 @@
 import React from "react"
-
-import headerStyles from "./header.module.scss"
 import { Link } from "gatsby"
 import { globalHistory as history } from '@reach/router'
 
+import headerStyles from "../styles/header.module.scss"
+
 const Header = () => {
-  const { location, navigate } = history
+  const { location } = history
   return (
-    <header className={location.pathname == '/' ? headerStyles.indexHeader : ''}>
+    <header className={location.pathname === '/' ? headerStyles.indexHeader : ''}>
       <img className={headerStyles.logo} src="https://silcestates.com/wp-content/uploads/2019/07/logo-SILC-states.png" alt="logo"></img>
       <nav className={headerStyles.nav}>
         <ul className={headerStyles.navList}>

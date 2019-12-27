@@ -1,0 +1,23 @@
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.2rem;
+}
+
+.image {
+  min-height: 300px;
+}
+
+.container {
+  margin: 0 2.5rem;
+  li {
+    margin: 0;
+  }
+  ul {
+    margin-bottom: 0;
+  }
+  p {
+    white-space: pre-wrap;
+    // margin: .5rem
+  }
+}

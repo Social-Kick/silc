@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 
-import indexStyles from "./index.module.scss"
+import indexStyles from "../styles/index.module.scss"
 
 const Index = () => (
   <Layout>

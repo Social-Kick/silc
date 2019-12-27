@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import Layout from '../components/layout'
-import estatesStyles from "./estates.module.scss"
+import estatesStyles from "../styles/estates.module.scss"
 
 const Estates = () => {
   const data = useStaticQuery(graphql`
@@ -11,6 +11,7 @@ const Estates = () => {
       allContentfulEstate{
         edges{
           node{
+            reference
             name
             price
             bedrooms
@@ -44,13 +45,16 @@ const Estates = () => {
 
           return (
             <div>
-              <Link to={`/estate/`} className={estatesStyles.estateItem}>
-                <div style={estateImgStyle}></div>
+              <Link to={`/estate/${edge.node.reference}`} className={estatesStyles.estateItem}>
+                <div style={estateImgStyle} className={estatesStyles.heroImg}></div>
                 <div className={estatesStyles.content}>
                   <h2>{edge.node.name}</h2>
-                  <p>€ {edge.node.price}</p>
-                  <p>{edge.node.bedrooms} Slaapkamers</p>
+                  <p className={estatesStyles.price}>€ {edge.node.price}</p>
+                  <p className={estatesStyles.bedrooms}>{edge.node.bedrooms} Slaapkamers</p>
+                  <br/>
                   {documentToReactComponents(edge.node.shortDescription.json)}
+                  <br/>
+                  <Link className={estatesStyles.detailsLink} to={`/estate/${edge.node.reference}`}>bekijk details</Link>
                 </div>
               </Link>
             </div>

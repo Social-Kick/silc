@@ -1,0 +1,36 @@
+.search {
+  height: 20vh;
+  background-color: #000;
+}
+
+.estates {
+  .estate-item {
+    display: grid;
+    height: 50vh;
+    grid-template: "img cont" / 1fr 1fr;
+    .hero-img {
+      grid-area: img;
+    }
+    .content {
+      grid-area: cont;
+      max-height: 50vh;
+      padding: 4rem 4rem;
+      justify-self: start;
+      align-self: center;
+      .price,
+      .bedrooms {
+        font-weight: bold;
+        color: lighten($color: #000, $amount: 75);
+      }
+      .detailsLink {
+        text-transform: uppercase;
+        border-bottom: 1px solid #000;
+      }
+    }
+  }
+}
+.estates div:nth-child(odd) {
+  .estate-item {
+    grid-template: "cont img" / 1fr 1fr;
+  }
+}
