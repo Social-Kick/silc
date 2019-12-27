@@ -1,4 +1,4 @@
-import Typography from "typography";
+import Typography from "typography"
 
 const typography = new Typography({
   baseFontSize: "18px",
@@ -7,10 +7,12 @@ const typography = new Typography({
   bodyFontFamily: [""],
   googleFonts: [
     {
-      name: 'Cabin',
-      styles: [
-        '400',
-      ],
+      name: "Cabin",
+      styles: ["400"],
+    },
+    {
+      name: "Roboto",
+      styles: ["200"],
     },
   ],
 })
