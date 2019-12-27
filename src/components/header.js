@@ -1,24 +1,34 @@
 import React from "react"
 
 import headerStyles from "./header.module.scss"
+import { Link } from "gatsby"
+import { globalHistory as history } from '@reach/router'
 
-const Header = () => (
-  <header>
-    <img src="https://silcestates.com/wp-content/uploads/2019/07/logo-SILC-states.png" alt="logo" height="80"></img>
-    <nav className={headerStyles.nav}>
-      <ul className={headerStyles.navList}>
-        <li className={headerStyles.navItem}>Home</li>
-        <li className={headerStyles.navItem}>Onze Project</li>
-        <li className={headerStyles.navItem}>Over ons</li>
-        <li className={headerStyles.navItem}>Wij zoeken voor u</li>
+const Header = () => {
+  const { location, navigate } = history
+  return (
+    <header className={location.pathname == '/' ? headerStyles.indexHeader : ''}>
+      <img className={headerStyles.logo} src="https://silcestates.com/wp-content/uploads/2019/07/logo-SILC-states.png" alt="logo"></img>
+      <nav className={headerStyles.nav}>
+        <ul className={headerStyles.navList}>
+          <li>
+            <Link to="/" className={headerStyles.navItem}>Home</Link>
+          </li>
+          <li>
+            <Link to="estates" className={headerStyles.navItem}>Aanbod</Link>
+          </li>
+          {/* <li className={headerStyles.navItem}>Onze Project</li> */}
+          <li className={headerStyles.navItem}>Over ons</li>
+          {/* <li className={headerStyles.navItem}>Wij zoeken voor u</li>
         <li className={headerStyles.navItem}>Wonen in Spanje</li>
-        <li className={headerStyles.navItem}>Bezichtigingsprijs</li>
-        <li className={headerStyles.navItem}>Nieuws</li>
-        <li className={headerStyles.navItem}>Aankoopgids</li>
-        <li className={headerStyles.navItem}>Contact</li>
-      </ul>
-    </nav>
-  </header>
-)
+        <li className={headerStyles.navItem}>Bezichtigingsprijs</li> */}
+          {/* <li className={headerStyles.navItem}>Nieuws</li> */}
+          {/* <li className={headerStyles.navItem}>Aankoopgids</li> */}
+          <li className={headerStyles.navItem}>Contact</li>
+        </ul>
+      </nav>
+    </header>
+  )
+}
 
 export default Header

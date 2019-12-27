@@ -1,0 +1,21 @@
+.search {
+  height: 20vh;
+  background-color: #000;
+}
+
+.estates {
+  .estate-item {
+    display: grid;
+    height: 50vh;
+    grid-template-columns: 1fr 1fr;
+    .hero-img {
+      max-height: 50vh;
+    }
+    .content {
+      max-height: 50vh;
+      padding: 4rem 4rem;
+      justify-self: start;
+      align-self: center;
+    }
+  }
+}

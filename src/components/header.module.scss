@@ -1,36 +1,49 @@
 header {
-   height: 80px;
-   width: 100%;
-   padding: 1rem 2rem 0 2rem;
-   display: flex;
-   justify-content: space-between;
-   align-content: center;
-   background-color: transparent;
-   position: absolute;
+  height: auto;
+  width: 100%;
+  padding: 1rem 2rem 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  background-color: white;
+  color: #000;
+}
+
+.indexHeader {
+  background-color: transparent;
+  position: absolute;
+  color: #fff;
+}
+
+.logo {
+  height: 80px;
+  margin: 0;
 }
 
 .nav {
-   display: flex;
-   height: 80px;
-   flex-direction: row;
-   align-items: center;
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  align-items: center;
 }
 
 .nav-list {
-   display: flex;
-   list-style-type: none;
-   margin: 0;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
 }
 
 .nav-item {
-   text-transform: uppercase;
-   font-weight: bold;
-   margin-left: .5rem;
-   margin-right: .5rem;
-   color: #FFF;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(5s8, 58, 58);
+  }
 }
-
 .nav-item:hover {
-   cursor: pointer;
-   border-bottom: 1px solid #FFF;
+  cursor: pointer;
 }
