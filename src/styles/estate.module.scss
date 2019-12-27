@@ -1,7 +1,24 @@
 .gallery {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 0.2rem;
+  position: relative;
+  max-width: 100vw;
+  margin: auto;
+  .buttonBack,
+  .buttonNext {
+    top: 50%;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    // color: #FFF;
+    &:focus {
+      outline: none;
+    }
+  }
+  .buttonBack {
+    left: 0;
+  }
+  .buttonNext {
+    right: 0;
+  }
 }
 
 .image {
@@ -9,7 +26,6 @@
 }
 
 .price {
-  font-family: 'Roboto';
   font-size: 1.5rem;
   font-weight: 200;
 }
@@ -24,6 +40,5 @@
   }
   p {
     white-space: pre-wrap;
-    // margin: .5rem
   }
 }

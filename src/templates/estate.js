@@ -4,13 +4,15 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types"
 
 import Layout from "../components/layout"
-import estateStyles from "../styles/estate.module.scss"
+import eS from "../styles/estate.module.scss"
 import {
   FaBed,
   FaShower,
   FaRuler,
   FaTree,
   FaSwimmingPool,
+  FaChevronRight,
+  FaChevronLeft,
 } from "react-icons/fa"
 import {
   CarouselProvider,
@@ -19,6 +21,7 @@ import {
   ButtonBack,
   ButtonNext,
 } from "pure-react-carousel"
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 export const query = graphql`
   query($reference: Date!) {
@@ -61,29 +64,33 @@ const EstateDetail = props => {
   const estate = props.data.contentfulEstate
   return (
     <Layout>
-      <div className={estateStyles.gallery}></div>
-      <div className={estateStyles.container}>
-        <div className={estateStyles.gallery}>
+      <div className={eS.gallery}></div>
+      <div className={eS.container}>
+        <div className={eS.gallery}>
           <CarouselProvider
-            naturalSlideHeight={100}
-            naturalSlideWidth={125}
+            naturalSlideHeight={300}
+            naturalSlideWidth={600}
+            visibleSlides={2}
             totalSlides={estate.photos.length}
           >
-            <Slider>
-              {estate.photos
-                ? estate.photos.map(edge => {
-                    return (
-                      <Slide index={0}>
-                        <img src={edge.file.url} alt={edge.title} />
-                      </Slide>
-                    )
-                  })
-                : ""}
-            </Slider>
+            <div className={eS.gallery}>
+              <Slider className={eS.slider}>
+                {estate.photos.map((edge, i) => {
+                  return (
+                    <Slide className={eS.slide} index={i}>
+                      <img src={edge.file.url} alt={edge.title} />
+                    </Slide>
+                  )
+                })}
+              </Slider>
+              <ButtonBack className={eS.buttonBack}><FaChevronLeft size={40} /></ButtonBack>
+              <ButtonNext className={eS.buttonNext}><FaChevronRight size={40} /></ButtonNext>
+            </div>
           </CarouselProvider>
         </div>
+        <br />
         <h3>{estate.name}</h3>
-        <p className={estateStyles.price}>€ {converter.format(estate.price)}</p>
+        <p className={eS.price}>€ {converter.format(estate.price)}</p>
         <br />
         <p>
           <FaBed />
