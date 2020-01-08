@@ -1,134 +1,83 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import { BLOCKS } from "@contentful/rich-text-types"
-
 import Layout from "../components/layout"
 import eS from "../styles/estate.module.scss"
-import {
-  FaBed,
-  FaShower,
-  FaRuler,
-  FaTree,
-  FaSwimmingPool,
-  FaChevronRight,
-  FaChevronLeft,
-} from "react-icons/fa"
-import {
-  CarouselProvider,
-  Slider,
-  Slide,
-  ButtonBack,
-  ButtonNext,
-} from "pure-react-carousel"
-import 'pure-react-carousel/dist/react-carousel.es.css';
+import Carousel from "../components/estate/carousel"
+import RichText from "../components/estate/richText"
 
 export const query = graphql`
-  query($reference: Date!) {
-    contentfulEstate(reference: { eq: $reference }) {
+  query($reference: String!) {
+    contentfulSilcEstate(reference: { eq: $reference }) {
       reference
-      name
+      title
       price
-      bedrooms
-      bathrooms
-      livingSpace
-      outdoorSpace
-      garden
-      gardenType
-      swimmingPool
-      swimmingPoolType
-      description {
+      region
+      description{
         json
       }
-      photos {
-        file {
+      location{
+        lat
+        lon
+      }
+      amentities
+      estateType
+      bedrooms
+      bathrooms
+      yearOfConstruction
+      sizeLivingSpace
+      sizeTerrace
+      sizeOfPlot
+      sizeSolarium
+      estateImages{
+        file{
+          url
+        }
+      }
+      infographicPdf{
+        file{
           url
         }
       }
     }
   }
 `
-const Text = ({ children }) => <p>{children}</p>
 
-const options = {
-  renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
-  },
-  renderText: text =>
-    text.split("\n").flatMap((text, i) => [i > 0 && <br />, text]),
-}
-
-let converter = Intl.NumberFormat("en")
+let converter = Intl.NumberFormat("nl")
 
 const EstateDetail = props => {
-  const estate = props.data.contentfulEstate
+  const estate = props.data.contentfulSilcEstate
   return (
     <Layout>
-      <div className={eS.gallery}></div>
-      <div className={eS.container}>
-        <div className={eS.gallery}>
-          <CarouselProvider
-            naturalSlideHeight={300}
-            naturalSlideWidth={600}
-            visibleSlides={2}
-            totalSlides={estate.photos.length}
-          >
-            <div className={eS.gallery}>
-              <Slider className={eS.slider}>
-                {estate.photos.map((edge, i) => {
-                  return (
-                    <Slide className={eS.slide} index={i}>
-                      <img src={edge.file.url} alt={edge.title} />
-                    </Slide>
-                  )
-                })}
-              </Slider>
-              <ButtonBack className={eS.buttonBack}><FaChevronLeft size={40} /></ButtonBack>
-              <ButtonNext className={eS.buttonNext}><FaChevronRight size={40} /></ButtonNext>
-            </div>
-          </CarouselProvider>
-        </div>
-        <br />
-        <h3>{estate.name}</h3>
-        <p className={eS.price}>€ {converter.format(estate.price)}</p>
-        <br />
-        <p>
-          <FaBed />
-          Slaapkamers:<b>{estate.bedrooms}</b>
-        </p>
-        <p>
-          <FaShower />
-          Badkamers:<b>{estate.bathrooms}</b>
-        </p>
-        <p>
-          <FaRuler />
-          Opp. woning:
-          <b>
-            {estate.livingSpace}m<sup>2</sup>
-          </b>
-        </p>
-        <p>
-          <FaRuler />
-          Opp. terras:
-          <b>
-            {estate.outdoorSpace}m<sup>2</sup>
-          </b>
-        </p>
-        {estate.garden && (
-          <p>
-            <FaTree />
-            Tuin:<b>{estate.gardenType}</b>
-          </p>
-        )}
-        {estate.swimmingPool && (
-          <p>
-            <FaSwimmingPool />
-            Zwembad:<b>{estate.swimmingPoolType}</b>
-          </p>
-        )}
-        <br />
-        {documentToReactComponents(estate.description.json, options)}
-      </div>
+      <Carousel images={estate.estateImages} />
+      <article className={eS.container}>
+        <section className={eS.title}>
+          <h3>{estate.title}</h3>
+          <p>{estate.reference}</p>
+        </section>
+
+        <section className={eS.price}>
+          <p>€ {converter.format(estate.price)}</p>
+        </section>
+
+        <section className={eS.amentities}>
+          {estate.amentities.map((edge, i) => {
+            return (
+              <div className={eS.amentity} key={i}>
+                {edge}
+              </div>
+            )
+          })}
+        </section>
+
+        <section className={eS.description}>
+          <RichText text={estate.description.json} />
+          <a target="__blank" className={eS.leaflet} href={estate.infographicPdf.file.url}>Bekijk de brochure</a>
+        </section>
+
+        <section className={eS.estateData}>
+          
+        </section>
+      </article>
     </Layout>
   )
 }

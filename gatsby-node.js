@@ -5,7 +5,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const estateTemplate = path.resolve('./src/templates/estate.js')
   const res = await graphql(`
     query {
-      allContentfulEstate{
+      allContentfulSilcEstate{
         edges{
           node{
             reference
@@ -15,10 +15,11 @@ module.exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  res.data.allContentfulEstate.edges.forEach((edge) => {
+  res.data.allContentfulSilcEstate.edges.forEach((edge) => {
+    let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()
     createPage({
       component: estateTemplate,
-      path: `/estate/${edge.node.reference}`,
+      path: `/estate/${formattedReference}`,
       context: {
         reference: edge.node.reference
       }

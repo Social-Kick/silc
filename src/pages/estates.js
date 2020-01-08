@@ -8,22 +8,21 @@ import estatesStyles from "../styles/estates.module.scss"
 const Estates = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulEstate{
+      allContentfulSilcEstate{
         edges{
           node{
             reference
-            name
-            price
-            bedrooms
+            title
             shortDescription{
               json
             }
-            heroPhoto {
-            title
-            file {
-              url
+            price
+            estateType
+            heroImage{
+              file{
+                url
+              }
             }
-           }
           }
         }
       }
@@ -34,27 +33,24 @@ const Estates = () => {
     <Layout>
       <div className={estatesStyles.search}></div>
       <div className={estatesStyles.estates}>
-        {data.allContentfulEstate.edges.map((edge) => {
+        {data.allContentfulSilcEstate.edges.map((edge, i) => {
+          let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()
 
           const estateImgStyle = {
-            backgroundImage: `url(${edge.node.heroPhoto.file.url})`,
+            backgroundImage: `url(${edge.node.heroImage.file.url})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
           }
 
           return (
-            <div>
-              <Link to={`/estate/${edge.node.reference}`} className={estatesStyles.estateItem}>
+            <div key={i}>
+              <Link to={`/estate/${formattedReference}`} className={estatesStyles.estateItem}>
                 <div style={estateImgStyle} className={estatesStyles.heroImg}></div>
                 <div className={estatesStyles.content}>
-                  <h2>{edge.node.name}</h2>
-                  <p className={estatesStyles.price}>€ {edge.node.price}</p>
-                  <p className={estatesStyles.bedrooms}>{edge.node.bedrooms} Slaapkamers</p>
-                  <br/>
-                  {documentToReactComponents(edge.node.shortDescription.json)}
-                  <br/>
-                  <Link className={estatesStyles.detailsLink} to={`/estate/${edge.node.reference}`}>bekijk details</Link>
+                  <h2>{edge.node.title}</h2>
+                  <p className={estatesStyles.price}>Vanaf € {edge.node.price}</p>
+                  <Link className={estatesStyles.detailsLink} to={`/estate/${formattedReference}`}>bekijk details</Link>
                 </div>
               </Link>
             </div>

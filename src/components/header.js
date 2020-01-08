@@ -11,13 +11,9 @@ const Header = () => {
       <img className={headerStyles.logo} src="https://silcestates.com/wp-content/uploads/2019/07/logo-SILC-states.png" alt="logo"></img>
       <nav className={headerStyles.nav}>
         <ul className={headerStyles.navList}>
-          <li>
-            <Link to="/" className={headerStyles.navItem}>Home</Link>
-          </li>
-          <li>
-            <Link to="estates" className={headerStyles.navItem}>Aanbod</Link>
-          </li>
-          {/* <li className={headerStyles.navItem}>Onze Project</li> */}
+          <li><Link to="/" className={headerStyles.navItem}>Home</Link></li>
+          <li><Link to="estates" className={headerStyles.navItem}>Aanbod</Link></li>
+          {/* <li className={headerStyles.navItem}>Onze Projecten</li> */}
           <li className={headerStyles.navItem}>Over ons</li>
           {/* <li className={headerStyles.navItem}>Wij zoeken voor u</li>
         <li className={headerStyles.navItem}>Wonen in Spanje</li>
