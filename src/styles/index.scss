@@ -14,6 +14,11 @@ a {
   text-align: center;
 }
 
+.row-space-between{
+  display: flex;
+  justify-content: space-between;
+}
+
 // .container {
 //    width: 100%;
 //    padding-right: 15px;

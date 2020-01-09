@@ -18,20 +18,51 @@
   }
 
   .amentities {
+    width: 50%;
     margin-bottom: 2.5rem;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
+    .amentity {
+      display: grid;
+      justify-items: center;
+      align-content: center;
+      gap: 0.3rem;
+      span {
+        font-size: 0.95rem;
+      }
+    }
   }
 
   .description {
+    width: 50%;
     margin-bottom: 1.5rem;
     p {
       white-space: pre-wrap;
       margin-bottom: 1.5rem;
     }
     a {
+      color: #6a6ae6;
+      // font-weight: bold;
       text-decoration: underline !important;
+    }
+  }
+
+  .estate-data {
+    display: grid;
+    grid-template-columns: min-content min-content 1fr;
+    gap: 1rem;
+    .room-card {
+      display: grid;
+      width: min-content;
+      padding: 2rem;
+      border: 1px solid #000;
+      justify-items: center;
+      align-items: center;
+      span {
+        font-size: 1.3rem;
+      }
     }
   }
 }
