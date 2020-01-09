@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import eS from "../styles/estate.module.scss"
 import Carousel from "../components/estate/carousel"
 import RichText from "../components/estate/richText"
-import { FaCloudSun, FaTree, FaSwimmingPool, FaHotjar, FaParking, FaBoxes, FaWind } from "react-icons/fa"
+import { FaCloudSun, FaTree, FaSwimmingPool, FaHotjar, FaParking, FaBoxes, FaWind, FaBath, FaBed } from "react-icons/fa"
 import '../styles/index.scss'
 
 export const query = graphql`
@@ -89,6 +89,33 @@ const EstateDetail = props => {
           <p>€ {converter.format(estate.price)}</p>
         </section>
 
+        <section className={eS.estateData}>
+          <div>
+            <div className={eS.roomCard}>
+              <FaBed size={35} />
+              <span>{estate.bedrooms}</span>
+            </div>
+          </div>
+          <div>
+            <div className={eS.roomCard}>
+              <FaBath size={35} />
+              <span>{estate.bathrooms}</span>
+            </div>
+          </div>
+          <div className={eS.details}>
+            <p><b>Bouwjaar:</b> {estate.yearOfConstruction}</p>
+            <p><b>Woning:</b> {estate.sizeLivingSpace} M<sup>2</sup></p>
+            <p><b>Terras:</b> {estate.sizeTerrace} M<sup>2</sup></p>
+            <p><b>Perceel:</b> {estate.sizeOfPlot} M<sup>2</sup></p>
+            <p><b>Solarium:</b> {estate.sizeSolarium} M<sup>2</sup></p>
+          </div>
+        </section>
+
+        <section className={eS.description}>
+          <RichText text={estate.description.json} />
+          <a target="__blank" className={eS.leaflet} href={estate.infographicPdf.file.url}>Bekijk de brochure</a>
+        </section>
+
         <section className={eS.amentities}>
           {estate.amentities.map((edge, i) => {
             return (
@@ -100,33 +127,6 @@ const EstateDetail = props => {
               </div>
             )
           })}
-        </section>
-
-        <section className={eS.description}>
-          <RichText text={estate.description.json} />
-          <a target="__blank" className={eS.leaflet} href={estate.infographicPdf.file.url}>Bekijk de brochure</a>
-        </section>
-
-        <section className={eS.estateData}>
-          <div>
-            <div className={eS.roomCard}>
-              <p>Slaapkamers</p>
-              <span>{estate.bedrooms}</span>
-            </div>
-          </div>
-          <div>
-            <div className={eS.roomCard}>
-              <p>Badkamers</p>
-              <span>{estate.bathrooms}</span>
-            </div>
-          </div>
-          <div>
-            <p><b>Bouwjaar:</b> {estate.yearOfConstruction}</p>
-            <p><b>Woning:</b> {estate.sizeLivingSpace} M<sup>2</sup></p>
-            <p><b>Terras:</b> {estate.sizeTerrace} M<sup>2</sup></p>
-            <p><b>Perceel:</b> {estate.sizeOfPlot} M<sup>2</sup></p>
-            <p><b>Solarium:</b> {estate.sizeSolarium} M<sup>2</sup></p>
-          </div>
         </section>
       </article>
     </Layout>

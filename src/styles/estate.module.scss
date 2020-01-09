@@ -37,32 +37,41 @@
 
   .description {
     width: 50%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
     p {
       white-space: pre-wrap;
       margin-bottom: 1.5rem;
     }
     a {
       color: #6a6ae6;
-      // font-weight: bold;
+      font-weight: bold;
       text-decoration: underline !important;
     }
   }
 
   .estate-data {
+    width: 50%;
+    margin-bottom: 1.5rem;
     display: grid;
-    grid-template-columns: min-content min-content 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
+    justify-content: center;
+    align-items: center;
     .room-card {
       display: grid;
       width: min-content;
-      padding: 2rem;
-      border: 1px solid #000;
+      margin: 0 auto;
+      gap: .5rem;
       justify-items: center;
-      align-items: center;
       span {
         font-size: 1.3rem;
       }
+    }
+    .details {
+      display: grid;
+      justify-items: start;
+      align-content: center;
+      margin: 0 auto;
     }
   }
 }
