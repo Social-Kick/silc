@@ -9,13 +9,13 @@
 .section {
   display: grid;
   grid-template: "img cont" / 1fr 1fr;
-  height: 70vh;
+  height: 60vh;
 }
 
 .section-reverse {
   display: grid;
   grid-template: "cont img" / 1fr 1fr;
-  height: 70vh;
+  height: 60vh;
 }
 
 .section,
@@ -58,7 +58,7 @@
     display: grid;
     grid-template-rows: min-content 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 0 0.5rem;
+    gap: 0 0.2rem;
     .image-container {
       position: relative;
       width: 100%;

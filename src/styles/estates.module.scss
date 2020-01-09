@@ -19,7 +19,7 @@
       align-self: center;
       .price,
       .bedrooms {
-        font-weight: bold;
+        font-size: .95rem;
         color: lighten($color: #000, $amount: 75);
       }
       .detailsLink {

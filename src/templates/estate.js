@@ -79,10 +79,8 @@ const EstateDetail = props => {
       <article className={eS.container}>
         <section className={eS.title}>
           <h3>{estate.title}</h3>
-          <div classname={eS.rowSpaceBetween}>
-            <p>{estate.reference}</p>
-            <p>{capitalizeFirstLetter(estate.estateType)}</p>
-          </div>
+          <p>{estate.reference}</p>
+          <p>{capitalizeFirstLetter(estate.estateType)}</p>
         </section>
 
         <section className={eS.price}>
@@ -92,16 +90,20 @@ const EstateDetail = props => {
         <section className={eS.estateData}>
           <div>
             <div className={eS.roomCard}>
-              <FaBed size={35} />
+              <FaBed size={35} className={eS.icon} />
+              <p>SLAAPKAMERS</p>
               <span>{estate.bedrooms}</span>
             </div>
           </div>
+          <div className={eS.verticalBorder}></div>
           <div>
             <div className={eS.roomCard}>
-              <FaBath size={35} />
+              <FaBath size={35} className={eS.icon} />
+              <p>BADKAMERS</p>
               <span>{estate.bathrooms}</span>
             </div>
           </div>
+          <div className={eS.verticalBorder}></div>
           <div className={eS.details}>
             <p><b>Bouwjaar:</b> {estate.yearOfConstruction}</p>
             <p><b>Woning:</b> {estate.sizeLivingSpace} M<sup>2</sup></p>
