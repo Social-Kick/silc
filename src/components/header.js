@@ -20,7 +20,7 @@ const Header = () => {
           <li className={headerStyles.navItem}>Bezichtigingsprijs</li>
           <li className={headerStyles.navItem}>Nieuws</li>
           <li className={headerStyles.navItem}>Aankoopgids</li> */}
-          <li className={headerStyles.navItem}><Link to="contact">Contact</Link></li>
+          <li><Link to="contact" className={headerStyles.navItem}>Contact</Link></li>
         </ul>
       </nav>
     </header>

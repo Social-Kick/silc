@@ -3,19 +3,31 @@
   background-repeat: none;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 90vh;
+}
+
+.search{
+  height: 15vh;
+  width: 75vw;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: -7.5vh auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .section {
   display: grid;
   grid-template: "img cont" / 1fr 1fr;
-  height: 60vh;
+  height: 50vh;
+  margin-top: 5rem;
 }
 
 .section-reverse {
   display: grid;
   grid-template: "cont img" / 1fr 1fr;
-  height: 60vh;
+  height: 50vh;
 }
 
 .section,
