@@ -4,7 +4,8 @@ import Layout from "../components/layout"
 import eS from "../styles/estate.module.scss"
 import Carousel from "../components/estate/carousel"
 import RichText from "../components/estate/richText"
-import { FaCloudSun, FaTree, FaSwimmingPool, FaHotjar, FaParking, FaBoxes, FaWind, FaBath, FaBed } from "react-icons/fa"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import '../styles/index.scss'
 
 export const query = graphql`
@@ -49,19 +50,19 @@ let converter = Intl.NumberFormat("nl")
 function setIcon(edge) {
   switch (edge) {
     case "uitzicht":
-      return <FaCloudSun size={25} />
+      return <FontAwesomeIcon icon={['fal', 'cloud-sun']} size="lg" />
     case "tuin":
-      return <FaTree size={25} />
+      return <FontAwesomeIcon icon={['fal', 'tree']} size="lg" />
     case "zwembad":
-      return <FaSwimmingPool size={25} />
+      return <FontAwesomeIcon icon={['fal', 'swimming-pool']} size="lg" />
     case "verwarming":
-      return <FaHotjar size={25} />
+      return <FontAwesomeIcon icon={['fal', 'fire']} size="lg" />
     case "airconditioning":
-      return <FaWind size={25} />
+      return <FontAwesomeIcon icon={['fal', 'wind']} size="lg" />
     case "parkeerplaats":
-      return <FaParking size={25} />
+      return <FontAwesomeIcon icon={['fal', 'parking']} size="lg" />
     case "berging":
-      return <FaBoxes size={25} />
+      return <FontAwesomeIcon icon={['fal', 'boxes']} size="lg" />
     default:
       break;
   }
@@ -90,7 +91,7 @@ const EstateDetail = props => {
         <section className={eS.estateData}>
           <div>
             <div className={eS.roomCard}>
-              <FaBed size={35} className={eS.icon} />
+            <FontAwesomeIcon icon={['fal', 'bed']} size="2x" className={eS.icon} />
               <p>SLAAPKAMERS</p>
               <span>{estate.bedrooms}</span>
             </div>
@@ -98,7 +99,7 @@ const EstateDetail = props => {
           <div className={eS.verticalBorder}></div>
           <div>
             <div className={eS.roomCard}>
-              <FaBath size={35} className={eS.icon} />
+            <FontAwesomeIcon icon={['fal', 'bath']} size="2x" className={eS.icon} />
               <p>BADKAMERS</p>
               <span>{estate.bathrooms}</span>
             </div>

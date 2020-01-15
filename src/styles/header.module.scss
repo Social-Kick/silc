@@ -6,7 +6,6 @@ header {
   justify-content: space-between;
   align-content: center;
   background-color: white;
-  color: #000;
 }
 
 .indexHeader {
@@ -35,13 +34,14 @@ header {
 
 .nav-item {
   text-transform: uppercase;
-  font-weight: bold;
+  font-size: .85rem;
+  letter-spacing: 1px;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   a {
     text-decoration: none;
     text-transform: uppercase;
-    color: rgb(5s8, 58, 58);
+    color: rgb(58, 58, 58);
   }
 }
 .nav-item:hover {
