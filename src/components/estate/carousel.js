@@ -12,6 +12,7 @@ import {
 } from "pure-react-carousel"
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import cS from '../../styles/carousel.module.scss'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Carousel = props => {
   let images = props.images
@@ -34,8 +35,8 @@ const Carousel = props => {
               )
             })}
           </Slider>
-          <ButtonBack className={cS.buttonBack}><FaChevronLeft size={40} /></ButtonBack>
-          <ButtonNext className={cS.buttonNext}><FaChevronRight size={40} /></ButtonNext>
+          <ButtonBack className={cS.buttonBack}><FontAwesomeIcon icon={['fal', 'chevron-left']} size="3x" /></ButtonBack>
+          <ButtonNext className={cS.buttonNext}><FontAwesomeIcon icon={['fal', 'chevron-right']} size="3x" /></ButtonNext>
         </div>
       </CarouselProvider>
     </div>

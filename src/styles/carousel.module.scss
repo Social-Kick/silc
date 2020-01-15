@@ -1,8 +1,5 @@
 .gallery {
   position: relative;
-  max-width: 100vw;
-  height: min-content;
-  margin: auto;
   .buttonBack,
   .buttonNext {
     color: #FFF;
@@ -16,9 +13,11 @@
   }
   .buttonBack {
     left: 0;
+    margin-left: .5rem;
   }
   .buttonNext {
     right: 0;
+    margin-right: .5rem;
   }
 
   .slider {
