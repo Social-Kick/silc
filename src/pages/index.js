@@ -75,7 +75,7 @@ const Index = () => {
                       src={edge.node.heroImage.file.url}
                       alt={edge.node.heroImage.title}
                     />
-                    <div className={indexStyles.overlay}>{edge.node.title} <br/> € {converter.format(edge.node.price)}</div>
+                    <div className={indexStyles.overlay}>{edge.node.title} <br /> € {converter.format(edge.node.price)}</div>
                   </div>
                 </Link>
               )
