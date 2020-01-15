@@ -13,14 +13,14 @@ const Header = () => {
         <ul className={headerStyles.navList}>
           <li><Link to="/" className={headerStyles.navItem}>Home</Link></li>
           <li><Link to="estates" className={headerStyles.navItem}>Aanbod</Link></li>
-          {/* <li className={headerStyles.navItem}>Onze Projecten</li> */}
+          {/* <li className={headerStyles.navItem}>Onze Projecten</li>
           <li className={headerStyles.navItem}>Over ons</li>
-          {/* <li className={headerStyles.navItem}>Wij zoeken voor u</li>
-        <li className={headerStyles.navItem}>Wonen in Spanje</li>
-        <li className={headerStyles.navItem}>Bezichtigingsprijs</li> */}
-          {/* <li className={headerStyles.navItem}>Nieuws</li> */}
-          {/* <li className={headerStyles.navItem}>Aankoopgids</li> */}
-          <li className={headerStyles.navItem}>Contact</li>
+          <li className={headerStyles.navItem}>Wij zoeken voor u</li>
+          <li className={headerStyles.navItem}>Wonen in Spanje</li>
+          <li className={headerStyles.navItem}>Bezichtigingsprijs</li>
+          <li className={headerStyles.navItem}>Nieuws</li>
+          <li className={headerStyles.navItem}>Aankoopgids</li> */}
+          <li className={headerStyles.navItem}><Link to="contact">Contact</Link></li>
         </ul>
       </nav>
     </header>
