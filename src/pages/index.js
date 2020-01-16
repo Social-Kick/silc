@@ -31,7 +31,7 @@ const Index = () => {
       <article>
         <section className={indexStyles.hero}></section>
         <div className={indexStyles.search}>
-          
+
         </div>
         <section className={indexStyles.section}>
           <div className={indexStyles.img}></div>
