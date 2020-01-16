@@ -31,13 +31,11 @@ class EstateList extends Component {
     const converter = Intl.NumberFormat("nl")
     return (
       <div>
-        <div className={estatesStyles.search}>
-          <SearchEstates
-            estates={this.state.estates}
-            handleFilter={this.setEstates}
-            handleReset={this.resetFilter}
-          />
-        </div>
+        <SearchEstates
+          estates={this.state.estates}
+          handleFilter={this.setEstates}
+          handleReset={this.resetFilter}
+        />
         <div className={estatesStyles.estates}>
           {this.state.estates.map((edge, i) => {
             let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()

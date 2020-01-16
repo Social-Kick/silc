@@ -5,9 +5,9 @@ const RichText = props => {
   let text = props.text
   const options = {
     renderNode: {
-      "embedded-asset-block": (node) => {
-        const alt = node.data.target.fields.title['en-US']
-        const url = node.data.target.fields.file['en-US'].url
+      "embedded-asset-block": (text) => {
+        const alt = text.data.target.fields.title['en-US']
+        const url = text.data.target.fields.file['en-US'].url
         return (<img alt={alt} src={url} />)
       }
     }

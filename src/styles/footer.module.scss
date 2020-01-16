@@ -1,6 +1,8 @@
 footer {
+  background-image: linear-gradient(to right, #4b4b6e, #4c4c78, #4e4e82, #4f4f8c, #505096);
+  color: #fff;
   display: grid;
-  padding: 3rem 2.5rem;
+  padding: 2rem 2.5rem;
 }
 
 p {
@@ -17,4 +19,5 @@ address {
 
 .title {
   font-weight: bold;
+  letter-spacing: 2px;
 }

@@ -12,7 +12,6 @@ const Footer = () => {
           <p>2300 Turnhout</p>
           <p>GSM: 0032499756066</p>
           <p>info@socialkick.be</p>
-          <br />
         </address>
         <p>Proudly made by Digital Kick</p>
       </div>

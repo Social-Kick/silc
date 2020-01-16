@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import estatesStyles from "../styles/estates.module.scss"
-
+import searchStyles from "../styles/search.module.scss"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class EstateSearch extends Component {
   constructor(props, context) {
@@ -74,31 +74,23 @@ class EstateSearch extends Component {
   render() {
     let amountOfEstates = this.props.estates.length;
     return (
-      <form onSubmit={this.filterEstates}>
-        <span style={{color: '#fff', fontSize:'.7rem'}}>{amountOfEstates} woning{amountOfEstates > 1 ? 'en' : ''} gevonden</span>
-        <div className={estatesStyles.inputs}>
-          <div>
-            <label>Slaapkamers</label>
-            <input type="text" value={this.state.bedrooms} onChange={this.setBedrooms} />
+      <div className={searchStyles.search}>
+        <form onSubmit={this.filterEstates}>
+          <div className={searchStyles.inputs}>
+            {/* <span style={{ color: '#fff', fontSize: '.7rem' }}>{amountOfEstates} woning{amountOfEstates > 1 ? 'en' : ''} gevonden</span> */}
+            <input type="text" value={this.state.bedrooms} onChange={this.setBedrooms} placeholder="Slaapkamers" />
+            <input type="text" value={this.state.bathrooms} onChange={this.setBathRooms} placeholder="Badkamers" />
+            <input type="text" value={this.state.region} onChange={this.setRegion} placeholder="Regio" />
+            <input type="text" value={this.state.type} onChange={this.setType} placeholder="Type woning" />
           </div>
-          <div>
-            <label>Badkamers</label>
-            <input type="text" value={this.state.bathrooms} onChange={this.setBathRooms} />
+          <div className={searchStyles.buttonGroup}>
+            <button type="submit" className={searchStyles.btn}>Zoeken</button>
+            <button type="button" className={searchStyles.btnIcon} onClick={this.resetFilter}>
+              <FontAwesomeIcon icon={['fal', 'redo']} size='md'/>
+            </button>
           </div>
-          <div>
-            <label>Regio</label>
-            <input type="text" value={this.state.region} onChange={this.setRegion} />
-          </div>
-          <div>
-            <label>Type woning</label>
-            <input type="text" value={this.state.type} onChange={this.setType} />
-          </div>
-        </div>
-        <div className={estatesStyles.buttons}>
-          <button type="submit">Zoeken</button>
-          <button type="button" onClick={this.resetFilter}>Reset</button>
-        </div>
-      </form>
+        </form>
+      </div>
     );
   }
 }
