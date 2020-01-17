@@ -1,19 +1,27 @@
 .hero {
-  background-image: url("https://images.unsplash.com/photo-1512753360435-329c4535a9a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+  background-image: url("../../static/hero.jpg");
+  background-color: #fff;
+  color: #fff;
   background-repeat: none;
   background-size: cover;
   background-position: center;
   height: 90vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  h1{
+    font-size: 15rem;
+    // font-family: 'Poiret One';
+  }
 }
 
 .search {
-  height: 15vh;
   width: 75vw;
   background-color: #fff;
   position: absolute;
   left: 0;
   right: 0;
-  margin: -7.5vh auto;
+  margin: -5vh auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
