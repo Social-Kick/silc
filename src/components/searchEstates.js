@@ -34,10 +34,10 @@ class EstateSearch extends Component {
 
     let query = {}
     if (bedrooms !== "") {
-      bedrooms === "4+" ? query.bedrooms = bedrooms : parseInt(bedrooms)
+      bedrooms === "4+" ? query.bedrooms = bedrooms : query.bedrooms = parseInt(bedrooms)
     }
     if (bathrooms !== "") {
-      bathrooms === "4+" ? query.bathrooms = bathrooms : parseInt(bathrooms)
+      bathrooms === "4+" ? query.bathrooms = bathrooms : query.bathrooms = parseInt(bathrooms)
     }
     if (region !== "") {
       query.region = region
@@ -58,7 +58,7 @@ class EstateSearch extends Component {
         if (item.node[key] === undefined || item.node[key] !== query[key]) {
           return false;
         }
-        else return true;
+        return true
       }
       return true;
     })
@@ -78,6 +78,7 @@ class EstateSearch extends Component {
       region: "",
       type: ""
     })
+
   }
 
   render() {
@@ -86,21 +87,21 @@ class EstateSearch extends Component {
       <div className={searchStyles.search}>
         <form onSubmit={this.filterEstates}>
           <div className={searchStyles.inputs}>
-            <select defaultValue={this.state.bedrooms} onChange={this.setBedrooms}>
+            <select value={this.state.bedrooms} onChange={this.setBedrooms}>
               <option value="" defaultChecked>Aantal slaapkamers</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4+">4+</option>
             </select>
-            <select defaultValue={this.state.bathrooms} onChange={this.setBathRooms}>
+            <select value={this.state.bathrooms} onChange={this.setBathRooms}>
               <option value="" defaultChecked>Aantal badkamers</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4+">4+</option>
             </select>
-            <select defaultValue={this.state.region} onChange={this.setRegion}>
+            <select value={this.state.region} onChange={this.setRegion}>
               <option value="" defaultChecked>Regio</option>
               <option value="Costa Almría">Costa Almería</option>
               <option value="Cost Blanca Norte">Costa Blanca Norte</option>
@@ -108,7 +109,7 @@ class EstateSearch extends Component {
               <option value="Costa Cálida">Costa Cálida</option>
               <option value="Costa Del Sol">Costa Del Sol</option>
             </select>
-            <select defaultValue={this.state.type} onChange={this.setType}>
+            <select value={this.state.type} onChange={this.setType}>
               <option value="" defaultChecked>Type woning</option>
               <option value="villa">Villa</option>
               <option value="dakappertement">Dakappertement</option>
