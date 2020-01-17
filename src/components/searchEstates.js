@@ -49,7 +49,6 @@ class EstateSearch extends Component {
     filteredEstates = await this.props.estates.filter(function (item) {
       let propertyName = Object.getOwnPropertyNames(query);
       for (var key in query) {
-        console.log(propertyName[0], query.bathrooms, item.node.bathrooms)
         if (propertyName[0] === "bedrooms" && query.bedrooms === '4+') {
           if (item.node.bedrooms > 4) return true
         }

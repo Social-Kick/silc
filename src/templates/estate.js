@@ -122,7 +122,7 @@ const EstateDetail = props => {
         <section className={eS.amentities}>
           {estate.amentities.map((edge, i) => {
             return (
-              <div className={eS.amentity}>
+              <div className={eS.amentity} key={i}>
                 {setIcon(edge)}
                 <div key={i}>
                   <span>{capitalizeFirstLetter(edge)}</span>
