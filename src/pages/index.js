@@ -67,11 +67,13 @@ const Index = () => {
           <div className={indexStyles.img}></div>
         </section>
         <section className={indexStyles.featured}>
-          <h1 className="text-center">Spaanse Projecten in de Kijker</h1>
+          <h2 className="text-center">Spaanse Projecten in de Kijker</h2>
           <div className={indexStyles.gallery}>
             {data.allContentfulSilcEstate.edges.map((edge, i) => {
               let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()
               const estateImgStyle = {
+                width: '100%',
+                height: '100%',
                 backgroundImage: `url(${edge.node.heroImage.file.url})`,
                 backgroundPosition: 'center',
                 backgroundSize: 'cover',
@@ -79,7 +81,8 @@ const Index = () => {
               }
               return (
                 <Link to={`/estate/${formattedReference}`} key={i}>
-                  <div key={i} className={indexStyles.imageContainer} style={estateImgStyle}>
+                  <div key={i} className={indexStyles.imageContainer}>
+                    <div className={indexStyles.child} style={estateImgStyle}></div>
                     <div className={indexStyles.overlay}>{edge.node.title} <br /> € {converter.format(edge.node.price)}</div>
                   </div>
                 </Link>

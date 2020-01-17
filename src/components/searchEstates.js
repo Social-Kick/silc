@@ -6,7 +6,6 @@ class EstateSearch extends Component {
   constructor(props, context) {
     super(props, context)
     this.state = {
-      estates: [],
       bathrooms: "",
       bedrooms: "",
       region: "",

@@ -60,5 +60,12 @@
         }
       }
     }
+    @media screen and (max-width: 600px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr min-content;
+      .button-group{
+        margin: .5rem auto auto 0;
+      }
+    }
   }
 }

@@ -11,10 +11,18 @@ const Header = () => {
       <img className={headerStyles.logo} src="https://silcestates.com/wp-content/uploads/2019/07/logo-SILC-states.png" alt="logo"></img>
       <nav className={headerStyles.nav}>
         <ul className={headerStyles.navList}>
-          <li><Link activeClassName={headerStyles.active} to="/" className={headerStyles.navItem}>Home</Link></li>
-          <li><Link activeClassName={headerStyles.active} to="estates" className={headerStyles.navItem}>Aanbod</Link></li>
-          <li><Link activeClassName={headerStyles.active} to="blog" className={headerStyles.navItem}>Nieuws</Link></li>
-          <li><Link activeClassName={headerStyles.active} to="contact" className={headerStyles.navItem}>Contact</Link></li>
+          <li>
+            <Link activeClassName={headerStyles.active} to="/" className={headerStyles.navItem}>Home</Link>
+          </li>
+          <li>
+            <Link activeClassName={headerStyles.active} to="estates" className={headerStyles.navItem}>Aanbod</Link>
+          </li>
+          <li>
+            <Link activeClassName={headerStyles.active} to="blog" className={headerStyles.navItem}>Nieuws</Link>
+          </li>
+          <li>
+            <Link activeClassName={headerStyles.active} to="contact" className={headerStyles.navItem}>Contact</Link>
+          </li>
         </ul>
       </nav>
     </header>

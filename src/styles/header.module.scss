@@ -30,6 +30,11 @@ header {
   display: flex;
   list-style-type: none;
   margin: auto 0;
+  height: min-content;
+}
+
+li{
+  margin: auto;
 }
 
 .nav-item {
@@ -44,10 +49,22 @@ header {
   }
   &:hover {
     cursor: pointer;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #000;
   }
 }
 
 .active {
   border-bottom: 1px solid #000;
+}
+
+li::before {
+  content: '.';
+  display: inline-block;
+
+  position: absolute;
+  bottom: -0.5em;
+  left: 0;
+
+  text-align: center;
+  width: 100%;
 }

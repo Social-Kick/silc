@@ -6,7 +6,7 @@
   height: 90vh;
 }
 
-.search{
+.search {
   height: 15vh;
   width: 75vw;
   background-color: #fff;
@@ -77,12 +77,8 @@
       max-width: 25vw;
       height: 40vh;
       overflow: hidden;
-      img {
-        display: block;
-        width: 100%;
-        max-width: 25vw;
-        height: 40vh;
-        transition: transform 0.5s ease;
+      .child {
+        transition: all 0.5s;
       }
       .overlay {
         position: absolute;
@@ -98,7 +94,10 @@
         padding: 1rem;
         text-align: center;
       }
-      &:hover img {
+      &:hover .child {
+        transform: scale(1.1);
+      }
+      &:focus .child {
         transform: scale(1.1);
       }
     }

@@ -7,9 +7,7 @@ import EstateList from '../components/estateList'
 const Estates = ({ data: { allContentfulSilcEstate } }) => {
   return (
     <Layout>
-      <EstateList
-        edges={allContentfulSilcEstate.edges}
-      />
+      <EstateList edges={allContentfulSilcEstate.edges} />
     </Layout >
   )
 }
