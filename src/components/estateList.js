@@ -52,7 +52,7 @@ class EstateList extends Component {
                   <div className={estatesStyles.content}>
                     <h2>{edge.node.title}</h2>
                     <p className={estatesStyles.price}>Vanaf&nbsp;&nbsp;€ {converter.format(edge.node.price)}</p>
-                    <Link className={estatesStyles.detailsLink} to={`/estate/${formattedReference}`}>bekijk details</Link>
+                    <span className={estatesStyles.detailsLink} to={`/estate/${formattedReference}`}>bekijk details</span>
                   </div>
                 </Link>
               </div>

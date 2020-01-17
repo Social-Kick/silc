@@ -5,7 +5,7 @@ import footerStyles from "../styles/footer.module.scss"
 const Footer = () => {
   return (
     <footer>
-      <div className={footerStyles.block, footerStyles.contact}>
+      <div className={`${footerStyles.block} ${footerStyles.contact}`}>
         <p className={footerStyles.title}>Silc Estates</p>
         <address>
           <p>Antoine Coppenslaan 27 bus 9</p>

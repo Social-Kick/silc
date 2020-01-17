@@ -25,7 +25,7 @@ export const query = graphql`
     }
   }
 `
-let converter = Intl.NumberFormat("nl")
+// let converter = Intl.NumberFormat("nl")
 
 const BlogPost = props => {
   const blog = props.data.contentfulBlog

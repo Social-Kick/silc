@@ -62,7 +62,7 @@ const Index = () => {
               bezichtigingstrip is de ideale manier om het aanbod ter plaatse met
               eigen ogen te bekijken en de lokale sfeer op te snuiven.
           </p>
-            <a href="#">Lees meer</a>
+            <a href="/">Lees meer</a>
           </div>
           <div className={indexStyles.img}></div>
         </section>
@@ -71,13 +71,15 @@ const Index = () => {
           <div className={indexStyles.gallery}>
             {data.allContentfulSilcEstate.edges.map((edge, i) => {
               let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()
+              const estateImgStyle = {
+                backgroundImage: `url(${edge.node.heroImage.file.url})`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat'
+              }
               return (
-                <Link to={`/estate/${formattedReference}`}>
-                  <div key={i} className={indexStyles.imageContainer}>
-                    <img
-                      src={edge.node.heroImage.file.url}
-                      alt={edge.node.heroImage.title}
-                    />
+                <Link to={`/estate/${formattedReference}`} key={i}>
+                  <div key={i} className={indexStyles.imageContainer} style={estateImgStyle}>
                     <div className={indexStyles.overlay}>{edge.node.title} <br /> € {converter.format(edge.node.price)}</div>
                   </div>
                 </Link>
