@@ -1,6 +1,6 @@
 import React from 'react';
 
-import cS from '../styles/contact.module.scss'
+import cS from '../styles/pages/contact.module.scss'
 import Layout from '../components/layout'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

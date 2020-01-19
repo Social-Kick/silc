@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   CarouselProvider,
   Slider,
@@ -7,8 +8,8 @@ import {
   ButtonNext,
 } from "pure-react-carousel"
 import 'pure-react-carousel/dist/react-carousel.es.css';
-import cS from '../../styles/carousel.module.scss'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import cS from '../styles/components/carousel.module.scss'
 
 const Carousel = props => {
   let images = props.images

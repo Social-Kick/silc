@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 
-import indexStyles from "../styles/index.module.scss"
+import indexStyles from "../styles/pages/index.module.scss"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import EstateSearch from "../components/searchEstates"
 

@@ -1,10 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import eS from "../styles/estate.module.scss"
-import Carousel from "../components/estate/carousel"
-import RichText from "../components/estate/richText"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import eS from "../styles/pages/estate.module.scss"
+
+import Layout from "../components/layout"
+import Carousel from "../components/carousel"
+import RichText from "../components/richText"
 
 import '../styles/index.scss'
 

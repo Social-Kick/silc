@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { globalHistory as history } from '@reach/router'
 
-import headerStyles from "../styles/header.module.scss"
+import headerStyles from "../styles/components/header.module.scss"
 
 const Header = () => {
   const { location } = history
