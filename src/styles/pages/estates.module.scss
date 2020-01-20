@@ -1,0 +1,45 @@
+.estates {
+  .estate-item {
+    display: grid;
+    height: 50vh;
+    grid-template: "img cont" / 1fr 1fr;
+    .hero-img {
+      grid-area: img;
+    }
+    .content {
+      grid-area: cont;
+      max-height: 50vh;
+      padding: 4rem 4rem;
+      justify-self: start;
+      align-self: center;
+      .price {
+        font-size: 0.95rem;
+        color: lighten($color: #000, $amount: 75);
+      }
+      .detailsLink {
+        text-transform: uppercase;
+        border-bottom: 1px solid #000;
+      }
+      @media screen and (max-width: 600px) {
+        padding: 2rem;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      grid-template:
+        "img" auto
+        "cont" min-content
+        / 1fr;
+    }
+  }
+}
+.estates div:nth-child(even) {
+  .estate-item {
+    grid-template: "cont img" / 1fr 1fr;
+    @media screen and (max-width: 600px) {
+      grid-template:
+        "img" auto
+        "cont" min-content
+        / 1fr;
+    }
+  }
+}

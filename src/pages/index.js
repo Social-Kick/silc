@@ -1,8 +1,9 @@
 import React from "react"
 import Layout from "../components/layout"
 
-import indexStyles from "../styles/index.module.scss"
+import indexStyles from "../styles/pages/index.module.scss"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import EstateSearch from "../components/searchEstates"
 
 const Index = () => {
   const data = useStaticQuery(graphql`
@@ -29,9 +30,11 @@ const Index = () => {
   return (
     <Layout>
       <article>
-        <section className={indexStyles.hero}></section>
+        <section className={indexStyles.hero}>
+          <h1>SILC ESTATES</h1>
+        </section>
         <div className={indexStyles.search}>
-
+          <EstateSearch estates={data.allContentfulSilcEstate.edges}/>
         </div>
         <section className={indexStyles.section}>
           <div className={indexStyles.img}></div>

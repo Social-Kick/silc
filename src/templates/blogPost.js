@@ -2,9 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import RichText from '../components/estate/richText';
+import RichText from '../components/richText';
 
-import blogStyles from "../styles/blog.module.scss"
+import blogStyles from "../styles/pages/blog.module.scss"
 
 
 export const query = graphql`

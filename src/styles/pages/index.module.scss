@@ -1,0 +1,134 @@
+.hero {
+  background-image: url("../../../static/hero.jpg");
+  background-color: #fff;
+  color: #fff;
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  h1{
+    font-size: 15rem;
+    // font-family: 'Poiret One';
+  }
+}
+
+.search {
+  width: 75vw;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: -5vh auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.section {
+  display: grid;
+  grid-template: "img cont" / 1fr 1fr;
+  height: 50vh;
+  margin-top: 5rem;
+}
+
+.section-reverse {
+  display: grid;
+  grid-template: "cont img" / 1fr 1fr;
+  height: 50vh;
+}
+
+.section,
+.section-reverse {
+  @media screen and (max-width: 600px) {
+    height: 95vh;
+    grid-template:
+      "img" min-content
+      "cont";
+  }
+}
+
+.img {
+  grid-area: img;
+  height: inherit;
+  background-image: url("https://www.hipestates.com/thumbs/home/aanbod-back-800x800.jpg");
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+  @media screen and (max-width: 600px) {
+    height: 35vh;
+  }
+}
+.content {
+  grid-area: cont;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 0 2rem;
+  @media screen and (max-width: 600px) {
+    justify-content: start;
+    padding: 1rem;
+  }
+}
+
+.featured {
+  margin: 5rem 0 0 0;
+  .gallery {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0 0.2rem;
+    .image-container {
+      position: relative;
+      width: 100%;
+      max-width: 25vw;
+      height: 40vh;
+      overflow: hidden;
+      .child {
+        transition: all 0.5s;
+      }
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        background: rgb(255, 255, 255);
+        background: rgba(255, 255, 255, 0.5);
+        width: 100%;
+        opacity: 1;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0.9rem;
+        padding: 1rem;
+        text-align: center;
+      }
+      &:hover .child {
+        transform: scale(1.1);
+      }
+      &:focus .child {
+        transform: scale(1.1);
+      }
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .gallery {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
+      overflow-y: scroll;
+      gap: 0.5rem 0.5rem;
+      .image-container {
+        max-width: 50vw;
+        height: auto;
+        img {
+          height: auto;
+          max-width: 50vw;
+          margin-bottom: 0;
+        }
+        .overlay {
+          font-size: 0.75rem;
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+}

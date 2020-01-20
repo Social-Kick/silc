@@ -4,7 +4,7 @@ import { fal } from "@fortawesome/pro-light-svg-icons";
 
 import Header from './header'
 import Footer from './footer'
-import layoutStyles from '../styles/layout.module.scss'
+import layoutStyles from '../styles/components/layout.module.scss'
 import '../styles/index.scss'
 
 library.add(fal)

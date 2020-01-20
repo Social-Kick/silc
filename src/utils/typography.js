@@ -3,17 +3,17 @@ import Typography from "typography"
 const typography = new Typography({
   baseFontSize: "18px",
   baseLineHeight: 1.666,
-  headerFontFamily: [],
-  bodyFontFamily: [""],
+  headerFontFamily: ["Fira Sans"],
+  bodyFontFamily: ["Montserrat"],
   googleFonts: [
     {
-      name: "Cabin",
+      name: "Montserrat",
       styles: ["400"],
     },
     {
-      name: "Roboto",
-      styles: ["200"],
-    },
+      name: "Fira Sans",
+      styles: ["200"]
+    }
   ],
 })
 

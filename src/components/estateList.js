@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
-import estatesStyles from "../styles/estates.module.scss"
+import estatesStyles from "../styles/pages/estates.module.scss"
 
 import SearchEstates from "./searchEstates"
 import Sticky from 'react-sticky-el';

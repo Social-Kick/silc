@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import searchStyles from "../styles/search.module.scss"
+import searchStyles from "../styles/components/search.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class EstateSearch extends Component {
