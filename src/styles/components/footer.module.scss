@@ -1,8 +1,74 @@
 footer {
+  display: grid;
+  grid-template-rows: 1fr min-content;
   background-image: linear-gradient(to right, #4b4b6e, #4c4c78, #4e4e82, #4f4f8c, #505096);
   color: #fff;
+}
+
+.top-row {
   display: grid;
-  padding: 2rem 2.5rem;
+  grid-template:
+    "logo"
+    "adress"
+    "contact"
+    "links";
+  gap: 1rem;
+  padding: 1.5rem 2.5rem;
+  align-content: center;
+  justify-content: center;
+
+  .logo {
+    grid-area: logo;
+    display: grid;
+    align-content: center;
+    img {
+      height: 150px;
+      display: block;
+      margin: 0;
+    }
+  }
+
+  .adress {
+    grid-area: adress;
+    display: grid;
+    align-content: center;
+  }
+
+  .contact {
+    grid-area: contact;
+    display: grid;
+    align-content: center;
+  }
+
+  .links {
+    grid-area: links;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    .social {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    grid-template: "logo adress contact links";
+    justify-content: space-between;
+    gap: 0;
+    max-width: 1200px;
+  }
+}
+
+.bottom-row {
+  display: flex;
+  padding: 0.25rem 2.5rem;
+  font-size: 0.7rem;
+  :nth-child(1) {
+    margin-right: 2rem;
+  }
+  @media screen and (min-width: 600px) {
+    padding: 0.25rem 3.5rem;
+  }
 }
 
 p {
@@ -11,13 +77,4 @@ p {
 
 address {
   font-style: normal;
-}
-
-.contact {
-  font-size: .95rem;
-}
-
-.title {
-  font-weight: bold;
-  letter-spacing: 2px;
 }
