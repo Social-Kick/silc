@@ -31,6 +31,21 @@
         / 1fr;
     }
   }
+  .wrapper {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    min-height: calc(100vh - 192px);
+    p{
+      margin-bottom: 1rem;
+    }
+    .not-found {
+      background-color: #ddd;
+      color: lighten($color: #000000, $amount: 20);
+      padding: 2rem;
+      border-radius: 5px;
+    }
+  }
 }
 .estates div:nth-child(even) {
   .estate-item {

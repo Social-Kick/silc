@@ -1,6 +1,24 @@
+const path = require(`path`)
+
 module.exports = {
   plugins: [
     "gatsby-plugin-sass",
+    // "gatsby-image",
+    `gatsby-transformer-sharp`, 
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    {
+      resolve: 'gatsby-background-image',
+      options: {
+        specialChars: '/:',
+      },
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -13,21 +31,6 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
       }
-    },
-    {
-      resolve: `@gatsby-contrib/gatsby-plugin-elasticlunr-search`,
-      options: {
-        fields: [
-          'reference',
-          'title',
-        ],
-        resolvers: {
-          ContentfulSilcEstate: {
-            reference: node => node.reference,
-            title: node => node.title,
-          },
-        },
-      },
     },
   ],
 }

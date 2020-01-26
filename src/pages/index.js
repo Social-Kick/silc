@@ -1,9 +1,9 @@
 import React from "react"
-import Layout from "../components/layout"
-
-import indexStyles from "../styles/pages/index.module.scss"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import EstateSearch from "../components/searchEstates"
+import BackgroundImage from 'gatsby-background-image'
+
+import Layout from "../components/layout"
+import indexStyles from "../styles/pages/index.module.scss"
 
 const Index = () => {
   const data = useStaticQuery(graphql`
@@ -22,20 +22,32 @@ const Index = () => {
             region
           }
         }
-      }  
+      }
+      file(relativePath: {eq: "hero.jpg"}) {
+        childImageSharp{
+          fluid(maxWidth:1920, quality:100){
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     } 
 `)
-  let converter = Intl.NumberFormat("nl")
 
+  let converter = Intl.NumberFormat("nl")
+  const imageData = data.file.childImageSharp.fluid
   return (
     <Layout>
       <article>
-        <section className={indexStyles.hero}>
+        <BackgroundImage
+          Tag="section"
+          fluid={imageData}
+          className={indexStyles.hero}
+        >
           <h1>SILC ESTATES</h1>
-        </section>
-        <div className={indexStyles.search}>
+        </BackgroundImage>
+        {/* <div className={indexStyles.search}>
           <EstateSearch estates={data.allContentfulSilcEstate.edges}/>
-        </div>
+        </div> */}
         <section className={indexStyles.section}>
           <div className={indexStyles.img}></div>
           <div className={indexStyles.content}>
@@ -47,6 +59,7 @@ const Index = () => {
               reprehenderit at obcaecati eius nesciunt natus magnam illo earum.
               Ullam provident vel sequi.
           </p>
+          <Link to="/estates">Bekijk ons aanbod</Link>
           </div>
         </section>
         <section className={indexStyles.sectionReverse}>

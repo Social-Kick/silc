@@ -1,12 +1,11 @@
 body {
-  // font-family: 'Cabin';
   color: #000;
   font-size: 16px;
 }
 
 a {
-  text-decoration: none;
-  color: #000;
+  text-decoration: inherit;
+  color:inherit;
 }
 
 .text-center {
@@ -18,42 +17,17 @@ a {
   justify-content: space-between;
 }
 
-// .container {
-//    width: 100%;
-//    padding-right: 15px;
-//    padding-left: 15px;
-//    margin-right: auto;
-//    margin-left: auto;
-//  }
-
-//  @media (min-width: 576px) {
-//    .container {
-//      max-width: 540px;
-//    }
-//  }
-
-//  @media (min-width: 768px) {
-//    .container {
-//      max-width: 720px;
-//    }
-//  }
-
-//  @media (min-width: 992px) {
-//    .container {
-//      max-width: 960px;
-//    }
-//  }
-
-//  @media (min-width: 1200px) {
-//    .container {
-//      max-width: 1440px;
-//    }
-//  }
-
-//  .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
-//    width: 100%;
-//    padding-right: 15px;
-//    padding-left: 15px;
-//    margin-right: auto;
-//    margin-left: auto;
-//  }
+button{ 
+  padding: 0.3rem 0.7rem;
+  color: #000;
+  transition: ease-in 0.15s;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  &:focus {
+    outline: none;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}

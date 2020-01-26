@@ -1,17 +1,13 @@
 .hero {
-  background-image: url("../../../static/hero.jpg");
   background-color: #fff;
   color: #fff;
-  background-repeat: none;
-  background-size: cover;
-  background-position: center;
   height: 90vh;
   display: grid;
   justify-content: center;
   align-content: center;
   h1{
     font-size: 15rem;
-    // font-family: 'Poiret One';
+    text-align: center;
   }
 }
 
@@ -23,13 +19,19 @@
   right: 0;
   margin: -5vh auto;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  @media screen and (min-width:900px){
+    width: 95vw;
+  }
+  @media screen and (min-width:700px){
+    width: 100vw;
+    padding: 0;
+  }
 }
 
 .section {
   display: grid;
   grid-template: "img cont" / 1fr 1fr;
   height: 50vh;
-  margin-top: 5rem;
 }
 
 .section-reverse {
@@ -69,6 +71,11 @@
   @media screen and (max-width: 600px) {
     justify-content: start;
     padding: 1rem;
+  }
+  a{
+    color: #505096;
+    margin-top: 1rem;
+    text-decoration: underline;
   }
 }
 

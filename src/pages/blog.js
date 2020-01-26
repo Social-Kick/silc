@@ -12,6 +12,7 @@ const Blog = () => {
         edges{
           node{
             title
+            createdAt(formatString: "DD MMMM YYYY • HH:MM")
             heroBody{
               heroBody
             }
@@ -44,6 +45,7 @@ const Blog = () => {
                 <div style={blogImgStyle} className={blogStyles.heroImg}></div>
                 <div className={blogStyles.content}>
                   <h1>{blog.title}</h1>
+                  <span>{blog.createdAt}</span>
                   <p>{blog.heroBody.heroBody}</p>
                 </div>
               </Link>

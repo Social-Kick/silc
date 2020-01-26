@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import estatesStyles from "../styles/pages/estates.module.scss"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import SearchEstates from "./searchEstates"
 import Sticky from 'react-sticky-el';
@@ -59,7 +60,7 @@ class EstateList extends Component {
           />
         }
         <div className={estatesStyles.estates}>
-          {this.state.estates.map((edge, i) => {
+          {this.state.estates.length > 0 ? this.state.estates.map((edge, i) => {
             let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()
             const estateImgStyle = {
               backgroundImage: `url(${edge.node.heroImage.file.url})`,
@@ -79,7 +80,17 @@ class EstateList extends Component {
                 </Link>
               </div>
             )
-          })}
+          }) :
+            <div className={estatesStyles.wrapper}>
+              <div className={estatesStyles.notFound}>
+                <p>Sorry! Momenteel geen woningen gevonden met deze zoekvereisten.</p>
+                <button onClick={this.resetFilter}>
+                  <FontAwesomeIcon icon={['fal', 'redo']} size={'sm'} />
+                  &nbsp;&nbsp;Reset de filter
+                  </button>
+              </div>
+            </div>
+          }
         </div>
       </div>
     );

@@ -11,6 +11,7 @@ export const query = graphql`
   query($title: String!) {
     contentfulBlog(title: {eq: $title}) {
       title
+      createdAt(formatString: "DD MMMM YYYY HH:MM")
       heroBody{
         heroBody
       }
@@ -33,6 +34,7 @@ const BlogPost = props => {
     <Layout>
       <div className={blogStyles.post}>
         <h1>{blog.title}</h1>
+        <span>{blog.createdAt}</span>
         <RichText text={blog.body.json} />
       </div>
     </Layout>

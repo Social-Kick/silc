@@ -38,6 +38,9 @@ footer {
     grid-area: contact;
     display: grid;
     align-content: center;
+    a{
+      text-decoration: underline;
+    }
   }
 
   .links {
