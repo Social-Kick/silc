@@ -71,12 +71,7 @@ const Index = () => {
               Spanje met Hip Estates. Gedurende drie dagen bezoeken we met u de
               projecten van uw dromen, we gidsen u door de regio, leggen de
               contacten, geven uitleg over de financiële en fiscale aspecten van
-              een aankoop tweede verblijf in Spanje. Als u een villa of
-              appartement koopt via Hip Estates, zorgen wij voor de volledige
-              afhandeling van uw dossier, van aankoopcontract tot
-              sleuteloverdracht. U overnacht in een luxe hotel. Een
-              bezichtigingstrip is de ideale manier om het aanbod ter plaatse met
-              eigen ogen te bekijken en de lokale sfeer op te snuiven.
+              een aankoop tweede verblijf in Spanje.
           </p>
             <a href="/">Lees meer</a>
           </div>

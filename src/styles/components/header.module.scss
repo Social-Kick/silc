@@ -1,71 +1,93 @@
+@import "../variables.scss";
+
 header {
+  display: grid;
+  grid-template: "logo links";
   height: auto;
   width: 100%;
   padding: 1rem 2rem 1rem 2rem;
-  display: flex;
   justify-content: space-between;
   align-content: center;
   background-color: white;
   z-index: 1000;
+  transition: height 2s;
+
+  .logo {
+    grid-area: logo;
+    height: 80px;
+    margin: 0;
+  }
+
+  .btn {
+    grid-area: btn;
+    justify-self: end;
+  }
+
+  .nav {
+    grid-area: links;
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+
+    .nav-list {
+      display: flex;
+      list-style-type: none;
+      margin: auto 0;
+      height: min-content;
+
+      li {
+        margin: auto;
+      }
+
+      .nav-item {
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        margin: auto 0.5rem;
+        a {
+          text-decoration: none;
+          text-transform: uppercase;
+          color: rgb(58, 58, 58);
+        }
+        &:hover {
+          cursor: pointer;
+          border-bottom: 2px solid $silc-purple-bright;
+        }
+      }
+      .active {
+        border-bottom: 2px solid $silc-purple-bright;
+      }
+    }
+  }
+  @include phone {
+    grid-template:
+    "logo btn"
+    "links links";
+
+    .nav{
+      justify-self: center;
+      padding: 2rem 0;
+      .nav-list {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+    }
+  }
+  @include tablet {
+
+  }
 }
 
 .indexHeader {
   background-color: transparent;
   position: absolute;
   color: #fff;
-}
-
-.logo {
-  height: 80px;
-  margin: 0;
-}
-
-.nav {
-  display: flex;
-  height: auto;
-  flex-direction: row;
-  align-items: center;
-}
-
-.nav-list {
-  display: flex;
-  list-style-type: none;
-  margin: auto 0;
-  height: min-content;
-}
-
-li{
-  margin: auto;
-}
-
-.nav-item {
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  margin: auto 0.5rem;
-  a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: rgb(58, 58, 58);
+  .nav-item{
+    color: #000;
   }
-  &:hover {
-    cursor: pointer;
-    border-bottom: 2px solid #505096;
+  .btn {
+    background-color: transparent;
   }
-}
-
-.active {
-  border-bottom: 2px solid #505096;
-}
-
-li::before {
-  content: '.';
-  display: inline-block;
-
-  position: absolute;
-  bottom: -0.5em;
-  left: 0;
-
-  text-align: center;
-  width: 100%;
 }

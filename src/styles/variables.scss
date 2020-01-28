@@ -1,0 +1,19 @@
+@mixin phone {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media only screen and (min-width: 768px) and (max-width: 991px){
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+$silc-purple: #4b4b6e;
+$silc-purple-bright: #505096;
+$gradient: linear-gradient(to right, #4b4b6e, #4c4c78, #4e4e82, #4f4f8c, #505096);

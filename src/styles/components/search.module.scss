@@ -1,7 +1,8 @@
+@import '../variables.scss';
 .search {
   display: grid;
   grid-template-columns: 1fr;
-  background-image: linear-gradient(to right, #4b4b6e, #4c4c78, #4e4e82, #4f4f8c, #505096);
+  background-image: $gradient;
   form {
     display: grid;
     grid-template-columns: 80% auto;

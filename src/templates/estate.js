@@ -3,12 +3,13 @@ import { graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import eS from "../styles/pages/estate.module.scss"
+import '../styles/index.scss'
 
 import Layout from "../components/layout"
 import Carousel from "../components/carousel"
 import RichText from "../components/richText"
+import Map from "../components/map";
 
-import '../styles/index.scss'
 
 export const query = graphql`
   query($reference: String!) {
@@ -93,7 +94,7 @@ const EstateDetail = props => {
         <section className={eS.estateData}>
           <div>
             <div className={eS.roomCard}>
-            <FontAwesomeIcon icon={['fal', 'bed']} size="2x" className={eS.icon} />
+              <FontAwesomeIcon icon={['fal', 'bed']} size="2x" className={eS.icon} />
               <p>SLAAPKAMERS</p>
               <span>{estate.bedrooms}</span>
             </div>
@@ -101,7 +102,7 @@ const EstateDetail = props => {
           <div className={eS.verticalBorder}></div>
           <div>
             <div className={eS.roomCard}>
-            <FontAwesomeIcon icon={['fal', 'bath']} size="2x" className={eS.icon} />
+              <FontAwesomeIcon icon={['fal', 'bath']} size="2x" className={eS.icon} />
               <p>BADKAMERS</p>
               <span>{estate.bathrooms}</span>
             </div>
@@ -132,6 +133,16 @@ const EstateDetail = props => {
               </div>
             )
           })}
+        </section>
+
+        <section className={eS.map}>
+          <Map
+            location = {estate.location}
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgMROM_H8cvr9WZ-0gU1D53yC-C74D4wM&v=3.exp&libraries=geometry,drawing,places"
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `400px` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+          />
         </section>
       </article>
     </Layout>

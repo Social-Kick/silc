@@ -1,7 +1,16 @@
+@import "../variables.scss";
+
 .container {
   margin: 4rem 2.5rem 0 2.5rem;
-
+  display: grid;
+  grid-template:
+    "title"
+    "price"
+    "estate-data"
+    "description"
+    "amentities";
   .title {
+    grid-area: title;
     margin-bottom: 1rem;
     h3 {
       margin: 0;
@@ -12,13 +21,13 @@
   }
 
   .price {
+    grid-area: price;
     margin-bottom: 2.5rem;
-    font-size: 1.5rem;
-    font-weight: 200;
+    font-size: 1.3rem;
   }
 
   .amentities {
-    width: 50%;
+    grid-area: amentities;
     margin-bottom: 2.5rem;
     display: flex;
     flex-direction: row;
@@ -36,7 +45,7 @@
   }
 
   .description {
-    width: 50%;
+    grid-area: description;
     margin-bottom: 2.5rem;
     p {
       white-space: pre-wrap;
@@ -50,13 +59,13 @@
   }
 
   .estate-data {
-    width: 50%;
+    grid-area: estate-data;
     margin-bottom: 1.5rem;
     display: grid;
     grid-template-columns: 1fr min-content 1fr min-content 1fr;
     gap: 1rem;
-    justify-content: center;
-    align-items: center;
+    place-content: center;
+    place-items: center;
     .room-card {
       display: grid;
       width: min-content;
@@ -66,7 +75,7 @@
         color: lighten($color: #000, $amount: 40);
       }
       p {
-        font-size: .7rem;
+        font-size: 0.7rem;
         color: lighten($color: #000, $amount: 40);
       }
       span {
@@ -79,11 +88,33 @@
       align-content: center;
       margin: 0 auto;
     }
-    .vertical-border{
+    .vertical-border {
       height: 85%;
       width: 1px;
       border-right: 1px solid rgba(0, 0, 0, 0.315);
       border-radius: 1rem;
+    }
+  }
+  .map{
+    margin-bottom: 2rem;
+  }
+
+  @include desktop {
+    grid-template:
+      "title price"
+      "estate-data map"
+      "description map"
+      "amentities ."
+      / 2fr 1fr;
+    
+    gap: 0 1rem;
+
+    .price {
+      justify-self: end;
+    }
+    .map {
+      align-self: end;
+      margin-bottom: 0;
     }
   }
 }

@@ -1,7 +1,9 @@
+@import '../variables.scss';
+
 footer {
   display: grid;
   grid-template-rows: 1fr min-content;
-  background-image: linear-gradient(to right, #4b4b6e, #4c4c78, #4e4e82, #4f4f8c, #505096);
+  background-image: $gradient;
   color: #fff;
 }
 
