@@ -48,15 +48,15 @@ footer {
   .links {
     grid-area: links;
     display: grid;
-    align-content: center;
-    justify-content: center;
+    place-content: center;
     .social {
+      min-width: 120px;
       display: flex;
       justify-content: space-evenly;
     }
   }
 
-  @media screen and (min-width: 600px) {
+  @include desktop {
     grid-template: "logo adress contact links";
     justify-content: space-between;
     gap: 0;

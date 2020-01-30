@@ -2,26 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "gatsby";
 import { globalHistory as history } from '@reach/router';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useMediaQuery } from 'react-responsive'
-
 import headerStyles from "../styles/components/header.module.scss";
-
-const Desktop = ({ children }) => {
-  const isDesktop = useMediaQuery({ minWidth: 992 })
-  return isDesktop ? children : null
-}
-const Tablet = ({ children }) => {
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 })
-  return isTablet ? children : null
-}
-const Mobile = ({ children }) => {
-  const isMobile = useMediaQuery({ maxWidth: 767 })
-  return isMobile ? children : null
-}
-const Default = ({ children }) => {
-  const isNotMobile = useMediaQuery({ minWidth: 768 })
-  return isNotMobile ? children : null
-}
 
 const Nav = () => {
   return (
@@ -75,23 +56,26 @@ class Header extends Component {
     const { location } = history;
 
     return (
-      <header className={location.pathname === '/' ? headerStyles.indexHeader : ''}>
-        <img className={headerStyles.logo} src="https://silcestates.com/wp-content/uploads/2019/07/logo-SILC-states.png" alt="logo"></img>
+      <div>
+        <header className={location.pathname === '/' ? headerStyles.indexHeader : ''}>
+          <img className={headerStyles.logo} src="https://silcestates.com/wp-content/uploads/2019/07/logo-SILC-states.png" alt="logo"></img>
 
-
-        <Mobile>
-          {this.state.isExpanded && <Nav />}
-
-          <button className={headerStyles.btn} onClick={this.toggle}>{
-            this.state.isExpanded ? <FontAwesomeIcon icon={['fal', 'times']} /> : <FontAwesomeIcon icon={['fal', 'bars']} />}
+          <button className={headerStyles.btn} onClick={this.toggle}>
+            <FontAwesomeIcon icon={['fal', 'bars']} size={'2x'}/>
           </button>
-        </Mobile>
 
-        <Default>
-          <Nav />
-        </Default>
+        </header>
 
-      </header>
+        {this.state.isExpanded &&
+          <div className={headerStyles.fullscreen}>
+            <div className={headerStyles.topRow}>
+              <img src="https://silcestates.com/wp-content/uploads/2019/07/logo_contouren_wit-copia-1.png" />
+              <button onClick={this.toggle} className={headerStyles.closeFullscreen}><FontAwesomeIcon icon={['fal', 'times']} size={"2x"} /></button>
+            </div>
+            <Nav />
+          </div>
+        }
+      </div>
     )
   }
 }

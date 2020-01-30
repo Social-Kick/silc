@@ -44,13 +44,11 @@ const Index = () => {
           className={indexStyles.hero}
         >
           <h1>SILC ESTATES</h1>
+          <h2>Wij maken uw dromen waar!</h2>
         </BackgroundImage>
-        {/* <div className={indexStyles.search}>
-          <EstateSearch estates={data.allContentfulSilcEstate.edges}/>
-        </div> */}
         <section className={indexStyles.section}>
-          <div className={indexStyles.img}></div>
-          <div className={indexStyles.content}>
+          <div data-sal="fade" data-sal-duration="1000" className={indexStyles.img}></div>
+          <div data-sal="fade" data-sal-duration="1000" className={indexStyles.content}>
             <h1>Bekijk ons aanbod huizen in Spanje</h1>
             <h2>Appartementen en villa's voor elk budget</h2>
             <p>
@@ -59,11 +57,11 @@ const Index = () => {
               reprehenderit at obcaecati eius nesciunt natus magnam illo earum.
               Ullam provident vel sequi.
           </p>
-          <Link to="/estates">Bekijk ons aanbod</Link>
+            <Link to="/estates">Bekijk ons aanbod</Link>
           </div>
         </section>
         <section className={indexStyles.sectionReverse}>
-          <div className={indexStyles.content}>
+          <div data-sal="fade" data-sal-duration="1000" className={indexStyles.content}>
             <h1>Bezichtigingstrips Spanje</h1>
             <h2>Bezoek de projecten van uw dromen</h2>
             <p>
@@ -75,10 +73,10 @@ const Index = () => {
           </p>
             <a href="/">Lees meer</a>
           </div>
-          <div className={indexStyles.img}></div>
+          <div data-sal="fade" data-sal-duration="1000" className={indexStyles.img}></div>
         </section>
-        <section className={indexStyles.featured}>
-          <h2 className="text-center">Spaanse Projecten in de Kijker</h2>
+        <section data-sal="fade" data-sal-duration="1000" className={indexStyles.featured}>
+          <h2 className="text-center">Projecten in de Kijker</h2>
           <div className={indexStyles.gallery}>
             {data.allContentfulSilcEstate.edges.map((edge, i) => {
               let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()

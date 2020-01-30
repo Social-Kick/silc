@@ -102,7 +102,7 @@
   @include desktop {
     grid-template:
       "title price"
-      "estate-data map"
+      "estate-data estate-data"
       "description map"
       "amentities ."
       / 2fr 1fr;

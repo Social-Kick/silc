@@ -1,7 +1,7 @@
 @import "../variables.scss";
 
 header {
-  display: grid;
+  display: flex;
   grid-template: "logo links";
   height: auto;
   width: 100%;
@@ -9,7 +9,7 @@ header {
   justify-content: space-between;
   align-content: center;
   background-color: white;
-  z-index: 1000;
+  z-index: 1;
   transition: height 2s;
 
   .logo {
@@ -22,61 +22,46 @@ header {
     grid-area: btn;
     justify-self: end;
   }
+}
 
-  .nav {
-    grid-area: links;
-    display: flex;
-    height: auto;
-    flex-direction: row;
-    align-items: center;
+.nav {
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  align-items: center;
+  justify-self: center;
+  padding: 2rem 0;
 
-    .nav-list {
-      display: flex;
-      list-style-type: none;
-      margin: auto 0;
-      height: min-content;
+  .nav-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    list-style-type: none;
+    margin: auto 0;
+    height: min-content;
 
-      li {
-        margin: auto;
-      }
+    li {
+      margin: auto;
+    }
 
-      .nav-item {
+    .nav-item {
+      text-transform: uppercase;
+      font-size: 2rem;
+      font-weight: 200;
+      letter-spacing: 1px;
+      margin: auto 0.5rem;
+      a {
+        text-decoration: none;
         text-transform: uppercase;
-        font-size: 0.85rem;
-        letter-spacing: 1px;
-        margin: auto 0.5rem;
-        a {
-          text-decoration: none;
-          text-transform: uppercase;
-          color: rgb(58, 58, 58);
-        }
-        &:hover {
-          cursor: pointer;
-          border-bottom: 2px solid $silc-purple-bright;
-        }
+        color: rgb(58, 58, 58);
       }
-      .active {
-        border-bottom: 2px solid $silc-purple-bright;
+      &:hover {
+        cursor: pointer;
+        border-bottom: 2px solid #fff;
       }
     }
-  }
-  @include phone {
-    grid-template:
-    "logo btn"
-    "links links";
-
-    .nav{
-      justify-self: center;
-      padding: 2rem 0;
-      .nav-list {
-        display: grid;
-        grid-template-columns: 1fr;
-      }
-
+    .active {
+      border-bottom: 2px solid $silc-purple-bright;
     }
-  }
-  @include tablet {
-
   }
 }
 
@@ -84,10 +69,47 @@ header {
   background-color: transparent;
   position: absolute;
   color: #fff;
-  .nav-item{
+  .nav-item {
     color: #000;
   }
   .btn {
     background-color: transparent;
+  }
+}
+
+.fullscreen {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content auto;
+  place-items: center;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  background-color: $silc-purple-bright;
+  color: #fff;
+  z-index: 2;
+
+  .top-row{
+    padding: 2rem 2rem 0 2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    height: min-content;
+
+    img{
+      display: block;
+      margin: 0;
+      height: 125px;
+    }
+  }
+
+
+  .close-fullscreen{
+    margin: 1rem 1rem 0 auto;
+    background-color: transparent;
+    color: #fff;
   }
 }

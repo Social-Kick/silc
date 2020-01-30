@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import estatesStyles from "../styles/pages/estates.module.scss"
+import searchStyles from "../styles/components/search.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import SearchEstates from "./searchEstates"
@@ -11,7 +12,8 @@ class EstateList extends Component {
     super(props, context)
     this.state = {
       estates: [],
-      screenWidth: null
+      screenWidth: null,
+      searchIsFixed: false,
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
@@ -40,25 +42,25 @@ class EstateList extends Component {
     })
   }
 
+  toggleIsFixed = isFixed => {
+    console.log(!isFixed)
+    this.setState({
+      searchIsFixed: !isFixed
+    })
+  }
+
   render() {
     const converter = Intl.NumberFormat("nl")
     return (
       <div>
-        {this.state.screenWidth > 600 ?
-          <Sticky>
-            < SearchEstates
-              estates={this.state.estates}
-              handleFilter={this.setEstates}
-              handleReset={this.resetFilter}
-            />
-          </Sticky>
-          :
-          < SearchEstates
+        <Sticky onFixedToggle={this.toggleIsFixed}>
+          <SearchEstates
+            className={this.state.searchIsFixed ? '' : searchStyles.searchIsFixed}
             estates={this.state.estates}
             handleFilter={this.setEstates}
             handleReset={this.resetFilter}
           />
-        }
+        </Sticky>
         <div className={estatesStyles.estates}>
           {this.state.estates.length > 0 ? this.state.estates.map((edge, i) => {
             let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()

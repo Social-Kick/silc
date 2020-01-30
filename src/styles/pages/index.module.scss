@@ -3,26 +3,35 @@
 .hero {
   background-color: #fff;
   color: #fff;
-  height: 90vh;
+  height: 100vh;
   display: grid;
   justify-content: center;
   align-content: center;
-  h1 {
+  h1,h2 {
     text-align: center;
   }
   @include phone {
     h1 {
       font-size: 5rem;
     }
+    h2{
+
+    }
   }
   @include tablet {
     h1 {
       font-size: 10rem;
     }
+    h2{
+      
+    }
   }
   @include desktop{
     h1 {
-      font-size: 15rem;
+      font-size: 12rem;
+    }
+    h2{
+      font-size: 4rem;
     }
   }
 }

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import searchStyles from "../styles/components/search.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { Tablet, Mobile } from "../components/breakpoint";
+
+
 class EstateSearch extends Component {
   constructor(props, context) {
     super(props, context)
@@ -9,7 +12,8 @@ class EstateSearch extends Component {
       bathrooms: "",
       bedrooms: "",
       region: "",
-      type: ""
+      type: "",
+      formIsVisible: true,
     }
   }
 
@@ -77,53 +81,74 @@ class EstateSearch extends Component {
       region: "",
       type: ""
     })
+  }
 
+  toggleForm = () => {
+    this.setState(pS => ({ formIsVisible: !pS.formIsVisible }))
   }
 
   render() {
     // let amountOfEstates = this.props.estates.length;
     return (
       <div className={searchStyles.search}>
-        <form onSubmit={this.filterEstates}>
-          <div className={searchStyles.inputs}>
-            <select value={this.state.bedrooms} onChange={this.setBedrooms}>
-              <option value="" defaultChecked>Aantal slaapkamers</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4+">4+</option>
-            </select>
-            <select value={this.state.bathrooms} onChange={this.setBathRooms}>
-              <option value="" defaultChecked>Aantal badkamers</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4+">4+</option>
-            </select>
-            <select value={this.state.region} onChange={this.setRegion}>
-              <option value="" defaultChecked>Regio</option>
-              <option value="Costa Almría">Costa Almería</option>
-              <option value="Cost Blanca Norte">Costa Blanca Norte</option>
-              <option value="Costa Blanca Sur">Costa Blanca Sur</option>
-              <option value="Costa Cálida">Costa Cálida</option>
-              <option value="Costa Del Sol">Costa Del Sol</option>
-            </select>
-            <select value={this.state.type} onChange={this.setType}>
-              <option value="" defaultChecked>Type woning</option>
-              <option value="villa">Villa</option>
-              <option value="dakappertement">Dakappertement</option>
-              <option value="Appartement">Appartement</option>
-              <option value="Rijwoning">Rijwoning</option>
-              <option value="Bungalow">Bungalow</option>
-            </select>
-          </div>
-          <div className={searchStyles.buttonGroup}>
-            <button type="submit" className={searchStyles.btn}>Zoeken</button>
-            <button type="button" className={searchStyles.btnIcon} onClick={this.resetFilter}>
-              <FontAwesomeIcon icon={['fal', 'redo']} />
+        {this.state.formIsVisible &&
+          <form onSubmit={this.filterEstates}>
+            <div className={searchStyles.inputs}>
+              <select value={this.state.bedrooms} onChange={this.setBedrooms}>
+                <option value="" defaultChecked>Aantal slaapkamers</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4+">4+</option>
+              </select>
+              <select value={this.state.bathrooms} onChange={this.setBathRooms}>
+                <option value="" defaultChecked>Aantal badkamers</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4+">4+</option>
+              </select>
+              <select value={this.state.region} onChange={this.setRegion}>
+                <option value="" defaultChecked>Regio</option>
+                <option value="Costa Almría">Costa Almería</option>
+                <option value="Cost Blanca Norte">Costa Blanca Norte</option>
+                <option value="Costa Blanca Sur">Costa Blanca Sur</option>
+                <option value="Costa Cálida">Costa Cálida</option>
+                <option value="Costa Del Sol">Costa Del Sol</option>
+              </select>
+              <select value={this.state.type} onChange={this.setType}>
+                <option value="" defaultChecked>Type woning</option>
+                <option value="villa">Villa</option>
+                <option value="dakappertement">Dakappertement</option>
+                <option value="Appartement">Appartement</option>
+                <option value="Rijwoning">Rijwoning</option>
+                <option value="Bungalow">Bungalow</option>
+              </select>
+            </div>
+            <div className={searchStyles.buttonGroup}>
+              <button type="submit" className={searchStyles.btn}>Zoeken</button>
+              <button type="button" className={searchStyles.btnIcon} onClick={this.resetFilter}>
+                <FontAwesomeIcon icon={['fal', 'redo']} />
+              </button>
+            </div>
+          </form>
+        }
+        <Tablet>
+          <div className={searchStyles.mobileRow}>
+            <span>{this.state.formIsVisible ? 'Close Filter' : 'Show Filter'}</span>
+            <button onClick={this.toggleForm}>
+              {this.state.formIsVisible ? <FontAwesomeIcon icon={['fal', 'chevron-up']} /> : <FontAwesomeIcon icon={['fal', 'chevron-down']} />}
             </button>
           </div>
-        </form>
+        </Tablet>
+        <Mobile>
+          <div className={searchStyles.mobileRow}>
+            <span>{this.state.formIsVisible ? 'Close Filter' : 'Show Filter'}</span>
+            <button onClick={this.toggleForm}>
+              {this.state.formIsVisible ? <FontAwesomeIcon icon={['fal', 'chevron-up']} /> : <FontAwesomeIcon icon={['fal', 'chevron-down']} />}
+            </button>
+          </div>
+        </Mobile>
       </div>
     );
   }
