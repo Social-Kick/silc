@@ -61,7 +61,7 @@ class Header extends Component {
           <img className={headerStyles.logo} src="https://silcestates.com/wp-content/uploads/2019/07/logo-SILC-states.png" alt="logo"></img>
 
           <button className={headerStyles.btn} onClick={this.toggle}>
-            <FontAwesomeIcon icon={['fal', 'bars']} size={'2x'}/>
+            <FontAwesomeIcon icon={['fal', 'bars']}/>
           </button>
 
         </header>
@@ -72,7 +72,7 @@ class Header extends Component {
               <img src="https://silcestates.com/wp-content/uploads/2019/07/logo_contouren_wit-copia-1.png" />
               <button onClick={this.toggle} className={headerStyles.closeFullscreen}><FontAwesomeIcon icon={['fal', 'times']} size={"2x"} /></button>
             </div>
-            <Nav />
+            <Nav className={headerStyles.nav}/>
           </div>
         }
       </div>

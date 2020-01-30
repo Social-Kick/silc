@@ -22,6 +22,10 @@ header {
     grid-area: btn;
     justify-self: end;
   }
+
+  @include phone {
+    padding: 1rem;
+  }
 }
 
 .nav {
@@ -56,11 +60,11 @@ header {
       }
       &:hover {
         cursor: pointer;
-        border-bottom: 2px solid #fff;
+        border-bottom: 1px solid #fff;
       }
     }
     .active {
-      border-bottom: 2px solid $silc-purple-bright;
+      border-bottom: 1px solid #fff;
     }
   }
 }
@@ -81,17 +85,16 @@ header {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content auto;
-  place-items: center;
   position: fixed;
   height: 100vh;
   width: 100vw;
   left: 0;
   top: 0;
-  background-color: $silc-purple-bright;
+  background-color: $silc-purple;
   color: #fff;
   z-index: 2;
 
-  .top-row{
+  .top-row {
     padding: 2rem 2rem 0 2rem;
     display: flex;
     align-items: flex-start;
@@ -99,15 +102,18 @@ header {
     width: 100%;
     height: min-content;
 
-    img{
+    img {
       display: block;
       margin: 0;
       height: 125px;
     }
   }
+  
+  .nav{
+    margin-top: -161px; //height of top-row to center
+  }
 
-
-  .close-fullscreen{
+  .close-fullscreen {
     margin: 1rem 1rem 0 auto;
     background-color: transparent;
     color: #fff;
