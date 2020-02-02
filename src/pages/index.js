@@ -65,11 +65,7 @@ const Index = () => {
             <h1>Bezichtigingstrips Spanje</h1>
             <h2>Bezoek de projecten van uw dromen</h2>
             <p>
-              Interesse in een huis in Spanje? Boek een verkenningstrip naar
-              Spanje met Hip Estates. Gedurende drie dagen bezoeken we met u de
-              projecten van uw dromen, we gidsen u door de regio, leggen de
-              contacten, geven uitleg over de financiële en fiscale aspecten van
-              een aankoop tweede verblijf in Spanje.
+              Interesse in een huis in Spanje? Boek een verkenningstrip naar Spanje met SILC ESTATES.
           </p>
             <Link to="/about">Lees meer</Link>
           </div>
