@@ -157,13 +157,13 @@ const EstateDetail = props => {
           <h2>Interesse in deze woning? Laat het ons weten!</h2>
           <form name="estateIntrest" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
             <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="form-name" value="estate-intrest" />
             <div className={eS.row}>
               <input type="text" placeholder="Voornaam" />
               <input type="text" placeholder="Naam" />
             </div>
             <div className={eS.row}>
-              <input type="text" placeholder="E-mail" />
+              <input type="email" placeholder="E-mail" />
               <input type="text" placeholder="Telefoon of GSM" />
             </div>
             <input type="hidden" name="estate-reference" value={location.href}/>

@@ -38,7 +38,7 @@ const Contact = () => {
                   <input type="text" name="lastname" placeholder="Naam" />
                 </div>
                 <div size={cS.row}>
-                  <input type="text" name="email" placeholder="E-mail" />
+                  <input type="email" name="email" placeholder="E-mail" />
                   <input type="text" name="phone" placeholder="Telefoon of GSM" />
                 </div>
                 <textarea placeholder="Opmerkingen" name="message" rows="5"></textarea>
