@@ -118,10 +118,10 @@ const EstateDetail = props => {
           <div className={eS.verticalBorder}></div>
           <div className={eS.details}>
             <p><b>Bouwjaar:</b> {estate.yearOfConstruction}</p>
-            <p><b>Woning:</b> {estate.sizeLivingSpace} M<sup>2</sup></p>
-            <p><b>Terras:</b> {estate.sizeTerrace} M<sup>2</sup></p>
-            <p><b>Perceel:</b> {estate.sizeOfPlot} M<sup>2</sup></p>
-            <p><b>Solarium:</b> {estate.sizeSolarium} M<sup>2</sup></p>
+            {estate.sizeLivingSpace > 0 &&<p><b>Woning:</b> {estate.sizeLivingSpace} M<sup>2</sup></p>}
+            {estate.sizeTerrace > 0 &&<p><b>Terras:</b> {estate.sizeTerrace} M<sup>2</sup></p>}
+            {estate.sizeOfPlot > 0 &&<p><b>Perceel:</b> {estate.sizeOfPlot} M<sup>2</sup></p>}
+            {estate.sizeSolarium > 0 &&<p><b>Solarium:</b> {estate.sizeSolarium} M<sup>2</sup></p>}
           </div>
         </section>
 
