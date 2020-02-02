@@ -168,7 +168,7 @@ const EstateDetail = props => {
             </div>
             <input type="hidden" name="estate-reference" value={location.href}/>
             <textarea placeholder="Opmerkingen" name="message" rows="5"></textarea>
-            <button type="submit">Verzenden</button>
+            <button className={eS.btn} type="submit">Verzenden</button>
           </form>
         </section>
       </article>

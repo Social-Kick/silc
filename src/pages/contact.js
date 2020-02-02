@@ -26,8 +26,9 @@ const Contact = () => {
                   <FontAwesomeIcon icon={['fal', 'paper-plane']} size="3x" />
                 </Mobile>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nisi quod
-                  temporibus qui eveniet repellat minima veniam.
+                  Had je graag meer informatie gehad over één van onze projecten? 
+                  Of had je graag een persoonlijk gesprek om te kijken wat het best bij jouw behoeften past? 
+                  Aarzel dan niet om contact met ons op te nemen.
                 </p>
               </div>
               <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">

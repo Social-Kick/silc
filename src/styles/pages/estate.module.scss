@@ -122,7 +122,7 @@
         max-width: 100%;
         resize: none;
         border: none;
-        border-bottom: 1px solid #000;
+        border-bottom: 2px solid $silc-purple;
         &:focus {
           outline: none;
         }
@@ -131,14 +131,22 @@
           opacity: 0.8;
         }
       }
-      button[type="submit"] {
+      button {
+        padding: 0.3rem 0.7rem;
+        font-size: 1rem;
+        color: #000;
+        transition: ease-in 0.15s;
         background-color: #fff;
-        border: 1px solid #000;
-        padding: 0 2rem;
-        transition: ease-in 0.25s;
+        border: solid 2px lighten($color: $silc-purple, $amount: 10);
+        &:focus {
+          outline: none;
+        }
+      }
+      .btn {
+        border-radius: 2px 0 0 2px;
         &:hover {
           cursor: pointer;
-          background-color: #000;
+          background-color: lighten($color: $silc-purple, $amount: 10);
           color: #fff;
         }
       }

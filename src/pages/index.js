@@ -52,11 +52,11 @@ const Index = () => {
             <h1>Bekijk ons aanbod huizen in Spanje</h1>
             <h2>Appartementen en villa's voor elk budget</h2>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt,
-              officia, mollitia doloremque distinctio quae ipsam sint, ad
-              reprehenderit at obcaecati eius nesciunt natus magnam illo earum.
-              Ullam provident vel sequi.
-          </p>
+              Ben jij op zoek naar jouw vaste plek onder de Spaanse zon? 
+              Of ben je op zoek naar een interessante investering? 
+              Of het nu gaat over een woning voor met de hele familie op vakantie te gaan of een opbrengsteneigendom, 
+              SILC ESTATES is jouw professionele partner om op zoek te gaan naar de meest geschikte eigendom.
+            </p>
             <Link to="/estates">Bekijk ons aanbod</Link>
           </div>
         </section>
@@ -71,7 +71,7 @@ const Index = () => {
               contacten, geven uitleg over de financiële en fiscale aspecten van
               een aankoop tweede verblijf in Spanje.
           </p>
-            <a href="/">Lees meer</a>
+            <Link to="/about">Lees meer</Link>
           </div>
           <div data-sal="fade" data-sal-duration="1000" className={indexStyles.img2}></div>
         </section>
