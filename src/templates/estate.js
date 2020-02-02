@@ -159,15 +159,15 @@ const EstateDetail = props => {
             <input type="hidden" name="bot-field" />
             <input type="hidden" name="form-name" value="estate-intrest" />
             <div className={eS.row}>
-              <input type="text" placeholder="Voornaam" />
-              <input type="text" placeholder="Naam" />
+              <input type="text" name="firstname" placeholder="Voornaam" />
+              <input type="text" name="lastname" placeholder="Naam" />
             </div>
             <div className={eS.row}>
-              <input type="email" placeholder="E-mail" />
-              <input type="text" placeholder="Telefoon of GSM" />
+              <input type="email" name="email" placeholder="E-mail" />
+              <input type="text" name="phone" placeholder="Telefoon of GSM" />
             </div>
             <input type="hidden" name="estate-reference" value={location.href}/>
-            <textarea placeholder="Opmerkingen" rows="5"></textarea>
+            <textarea placeholder="Opmerkingen" name="message" rows="5"></textarea>
             <button type="submit">Verzenden</button>
           </form>
         </section>
