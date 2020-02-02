@@ -34,14 +34,14 @@ const Contact = () => {
                 <input type="hidden" name="bot-field" />
                 <input type="hidden" name="form-name" value="contact" />
                 <div size={cS.row}>
-                  <input type="text" placeholder="Voornaam" />
-                  <input type="text" placeholder="Naam" />
+                  <input type="text" name="firstname" placeholder="Voornaam" />
+                  <input type="text" name="lastname" placeholder="Naam" />
                 </div>
                 <div size={cS.row}>
-                  <input type="text" placeholder="E-mail" />
-                  <input type="text" placeholder="Telefoon of GSM" />
+                  <input type="text" name="email" placeholder="E-mail" />
+                  <input type="text" name="phone" placeholder="Telefoon of GSM" />
                 </div>
-                <textarea placeholder="Opmerkingen" rows="5"></textarea>
+                <textarea placeholder="Opmerkingen" name="message" rows="5"></textarea>
                 <button className={cS.btn} type="submit">Verzenden</button>
               </form>
             </div>

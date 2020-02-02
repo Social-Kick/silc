@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { globalHistory as history } from '@reach/router';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import eS from "../styles/pages/estate.module.scss"
@@ -78,6 +79,7 @@ function capitalizeFirstLetter(string) {
 
 const EstateDetail = props => {
   const estate = props.data.contentfulSilcEstate
+  const { location } = history;
   return (
     <Layout>
       <Default>
@@ -153,7 +155,9 @@ const EstateDetail = props => {
 
         <section className={eS.contactForm}>
           <h2>Interesse in deze woning? Laat het ons weten!</h2>
-          <form name="estateIntrest" netlify>
+          <form name="estateIntrest" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
             <div className={eS.row}>
               <input type="text" placeholder="Voornaam" />
               <input type="text" placeholder="Naam" />
@@ -162,6 +166,7 @@ const EstateDetail = props => {
               <input type="text" placeholder="E-mail" />
               <input type="text" placeholder="Telefoon of GSM" />
             </div>
+            <input type="hidden" name="estate-reference" value={location.href}/>
             <textarea placeholder="Opmerkingen" rows="5"></textarea>
             <button type="submit">Verzenden</button>
           </form>
