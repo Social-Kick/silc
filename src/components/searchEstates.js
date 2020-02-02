@@ -134,7 +134,7 @@ class EstateSearch extends Component {
         }
         <Tablet>
           <button onClick={this.toggleForm} className={searchStyles.mobileRow}>
-            <span>{this.state.formIsVisible ? 'Close Filter' : 'Show Filter'}</span>
+            <span>{this.state.formIsVisible ? 'Sluit zoekopdraht' : 'Open zoekopdracht'}</span>
             <div className={searchStyles.closeIcon}>
               {this.state.formIsVisible ? <FontAwesomeIcon icon={['fal', 'chevron-up']} /> : <FontAwesomeIcon icon={['fal', 'chevron-down']} />}
             </div>
@@ -142,7 +142,7 @@ class EstateSearch extends Component {
         </Tablet>
         <Mobile>
           <button onClick={this.toggleForm} className={searchStyles.mobileRow}>
-            <span>{this.state.formIsVisible ? 'Close Filter' : 'Show Filter'}</span>
+            <span>{this.state.formIsVisible ? 'Sluit Zoekopdracht' : 'Open zoekopdracht'}</span>
             <div className={searchStyles.closeIcon}>
               {this.state.formIsVisible ? <FontAwesomeIcon icon={['fal', 'chevron-up']} /> : <FontAwesomeIcon icon={['fal', 'chevron-down']} />}
             </div>

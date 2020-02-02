@@ -18,7 +18,7 @@ const Nav = () => {
           <Link activeClassName={headerStyles.active} to="about" className={headerStyles.navItem}>Over ons</Link>
         </li>
         <li>
-          <Link activeClassName={headerStyles.active} to="services" className={headerStyles.navItem}>Diesnten</Link>
+          <Link activeClassName={headerStyles.active} to="services" className={headerStyles.navItem}>Diensten</Link>
         </li>
         <li>
           <Link activeClassName={headerStyles.active} to="blog" className={headerStyles.navItem}>Nieuws</Link>
@@ -67,7 +67,7 @@ class Header extends Component {
           <img className={headerStyles.logo} src="https://silcestates.com/wp-content/uploads/2019/07/logo-SILC-states.png" alt="logo"></img>
 
           <button className={headerStyles.btn} onClick={this.toggle}>
-            <FontAwesomeIcon icon={['fal', 'bars']}/>
+            <FontAwesomeIcon icon={['fal', 'bars']} />
           </button>
 
         </header>
@@ -78,7 +78,7 @@ class Header extends Component {
               <img src="https://silcestates.com/wp-content/uploads/2019/07/logo_contouren_wit-copia-1.png" />
               <button onClick={this.toggle} className={headerStyles.closeFullscreen}><FontAwesomeIcon icon={['fal', 'times']} size={"2x"} /></button>
             </div>
-            <Nav className={headerStyles.nav}/>
+            <Nav className={headerStyles.nav} />
           </div>
         }
       </div>

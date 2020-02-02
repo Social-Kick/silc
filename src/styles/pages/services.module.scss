@@ -1,0 +1,36 @@
+@import "../variables.scss";
+
+.section {
+  display: grid;
+  min-height: 40vh;
+  grid-template: "left-section right-section" / 1fr 1fr;
+  .section-left {
+    grid-area: left-section;
+    height: inherit;
+  }
+
+  .section-right {
+    grid-area: right-section;
+    height: inherit;
+    padding: 4rem;
+    justify-self: center;
+    align-self: center;
+    @include phone {
+      padding: 2rem;
+    }
+  }
+  @include phone {
+    grid-template:
+      "left-section" 20vh
+      "right-section";
+  }
+}
+
+.section:nth-child(odd) {
+  grid-template: "right-section left-section" / 1fr 1fr;
+  @include phone {
+    grid-template:
+      "left-section" 20vh
+      "right-section";
+  }
+}

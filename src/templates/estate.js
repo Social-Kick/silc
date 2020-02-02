@@ -10,6 +10,7 @@ import Carousel from "../components/carousel"
 import Map from "../components/map";
 import RichText from "../utils/richText"
 
+import { Mobile, Default } from "../utils/breakpoint"
 
 export const query = graphql`
   query($reference: String!) {
@@ -79,7 +80,12 @@ const EstateDetail = props => {
   const estate = props.data.contentfulSilcEstate
   return (
     <Layout>
-      <Carousel images={estate.estateImages} />
+      <Default>
+        <Carousel slides={2.5} images={estate.estateImages} />
+      </Default>
+      <Mobile>
+        <Carousel slides={1.25} images={estate.estateImages} />
+      </Mobile>
       <article className={eS.container}>
         <section className={eS.title}>
           <h3>{estate.title}</h3>
@@ -137,12 +143,28 @@ const EstateDetail = props => {
 
         <section className={eS.map}>
           <Map
-            location = {estate.location}
+            location={estate.location}
             googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgMROM_H8cvr9WZ-0gU1D53yC-C74D4wM&v=3.exp&libraries=geometry,drawing,places"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `400px` }} />}
             mapElement={<div style={{ height: `100%` }} />}
           />
+        </section>
+
+        <section className={eS.contactForm}>
+          <h2>Interesse in deze woning? Laat het ons weten!</h2>
+          <form>
+            <div className={eS.row}>
+              <input type="text" placeholder="Voornaam" />
+              <input type="text" placeholder="Naam" />
+            </div>
+            <div className={eS.row}>
+              <input type="text" placeholder="E-mail" />
+              <input type="text" placeholder="Telefoon of GSM" />
+            </div>
+            <textarea placeholder="Opmerkingen" rows="5"></textarea>
+            <button type="submit">Verzenden</button>
+          </form>
         </section>
       </article>
     </Layout>

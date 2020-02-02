@@ -1,3 +1,5 @@
+@import "../variables.scss";
+
 .wrapper {
   background-image: url("https://ramboll.com/-/media/images/environ/countries/spain-port-de-soller-1360x765.jpg?h=765&la=en&w=1360");
   background-position: center;
@@ -8,14 +10,14 @@
   height: 95vh;
 
   .content {
-    width: 50%;
-    margin: 5rem auto;
+    max-width: 50%;
+    margin: auto;
     .header {
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
       position: absolute;
       .card {
         background-color: white;
-        padding: 3rem;
+        padding: 2rem;
         h1,
         h2 {
           margin: 0;
@@ -26,7 +28,7 @@
       .card {
         background-color: white;
         padding: 7rem 3rem 5rem 3rem;
-        margin: 5rem 0 0 5rem;
+        margin: 3rem 0 0 3rem;
         .row {
           display: flex;
           flex-direction: row;
@@ -46,29 +48,74 @@
           }
           input,
           textarea {
-            margin-top: 0.5rem;
             width: 100%;
             max-width: 100%;
+            margin-top: 0.5rem;
+            padding: 0.25rem 0;
             resize: none;
             border: none;
-            border-bottom: 1px solid #000;
+            border-bottom: 2px solid $silc-purple;
+            border-radius: 2px;
+            background-color: #fff;
+            color: #000;
             &:focus {
               outline: none;
             }
             &::placeholder {
-              color: black;
+              color: #000;
               opacity: 0.8;
             }
           }
-          button[type=submit]{
+          button {
+            padding: 0.3rem 0.7rem;
+            font-size: 1rem;
+            color: #000;
+            transition: ease-in 0.15s;
             background-color: #fff;
-            border: 1px solid #000;
-            padding: 0 2rem;
-            transition: ease-in .25s;
-            &:hover{
+            border: solid 2px lighten($color: $silc-purple, $amount: 10);
+            &:focus {
+              outline: none;
+            }
+          }
+          .btn {
+            border-radius: 2px 0 0 2px;
+            &:hover {
               cursor: pointer;
-              background-color: #000;
+              background-color: lighten($color: $silc-purple, $amount: 10);
               color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include phone {
+  .wrapper {
+    display: block;
+    background: #fff;
+    .content {
+      max-width: 100%;
+      padding: 0 2rem;
+      .header {
+        position: unset;
+        box-shadow: none;
+        .card {
+          padding: 1rem 0;
+        }
+      }
+      .body {
+        width: 100%;
+        // padding: 3rem 0 0 0;
+        // margin: 0;
+        .card {
+          margin: 0;
+          padding: 0;
+          .row {
+            p {
+              margin-left: 1rem;
+              font-size: 0.8rem;
             }
           }
         }

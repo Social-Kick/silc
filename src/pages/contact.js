@@ -3,6 +3,7 @@ import React from 'react';
 import cS from '../styles/pages/contact.module.scss'
 import Layout from '../components/layout'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Default, Mobile } from "../utils/breakpoint";
 
 const Contact = () => {
   return (
@@ -18,7 +19,12 @@ const Contact = () => {
           <div className={cS.body}>
             <div className={cS.card}>
               <div className={cS.row}>
-                <FontAwesomeIcon icon={['fal', 'paper-plane']} size="4x" />
+                <Default>
+                  <FontAwesomeIcon icon={['fal', 'paper-plane']} size="4x" />
+                </Default>
+                <Mobile>
+                  <FontAwesomeIcon icon={['fal', 'paper-plane']} size="3x" />
+                </Mobile>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam nisi quod
                   temporibus qui eveniet repellat minima veniam.
@@ -34,7 +40,7 @@ const Contact = () => {
                   <input type="text" placeholder="Telefoon of GSM" />
                 </div>
                 <textarea placeholder="Opmerkingen" rows="5"></textarea>
-                <button type="submit">Verzenden</button>
+                <button className={cS.btn} type="submit">Verzenden</button>
               </form>
             </div>
           </div>

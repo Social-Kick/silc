@@ -1,3 +1,5 @@
+@import "../variables.scss";
+
 .blog-posts {
   .blog-post {
     display: grid;
@@ -12,38 +14,54 @@
     .content {
       grid-area: cont;
       max-height: 30vh;
-      padding: 4rem;
+      padding: 3rem;
       justify-self: start;
       align-self: center;
-      h1{
+      h1 {
         margin: 0;
+        @include phone{
+          font-size: 1.5rem;
+        }
       }
-      span{
+      span {
         color: lighten($color: #000000, $amount: 50);
       }
-      p{
+      p {
         margin-top: 1rem;
       }
+      @include phone {
+        padding: 2rem;
+      }
+    }
+    @include phone {
+      grid-template:
+        "img" 20vh
+        "cont";
     }
   }
 }
 
-.blog-posts section:nth-child(odd){
+.blog-posts section:nth-child(odd) {
   .blog-post {
     grid-template: "cont img" / 1fr 1fr;
+    @include phone {
+      grid-template:
+        "img" 20vh
+        "cont";
+    }
   }
 }
 
-.post{
+.post {
   width: 50%;
   margin: auto;
-  h1{
+  h1 {
     margin-bottom: 0;
   }
-  span{
+  span {
     color: lighten($color: #000000, $amount: 50);
   }
-  p{
+  p {
     margin-top: 1rem;
   }
 }

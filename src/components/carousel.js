@@ -10,13 +10,14 @@ import {
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 import cS from '../styles/components/carousel.module.scss'
+import { Mobile, Default } from "../utils/breakpoint"
 
 const Carousel = props => {
   let images = props.images
   return (
     <div className={cS.gallery}>
       <CarouselProvider
-        visibleSlides={2.5}
+        visibleSlides={props.slides}
         totalSlides={images.length}
         infinite
         naturalSlideHeight={480}
@@ -32,8 +33,22 @@ const Carousel = props => {
               )
             })}
           </Slider>
-          <ButtonBack className={cS.buttonBack}><FontAwesomeIcon icon={['fal', 'chevron-left']} size="3x" /></ButtonBack>
-          <ButtonNext className={cS.buttonNext}><FontAwesomeIcon icon={['fal', 'chevron-right']} size="3x" /></ButtonNext>
+          <ButtonBack className={cS.buttonBack}>
+            <Default>
+              <FontAwesomeIcon icon={['fal', 'chevron-left']} size="3x" />
+            </Default>
+            <Mobile>
+              <FontAwesomeIcon icon={['fal', 'chevron-left']} size="2x" />
+            </Mobile>
+          </ButtonBack>
+          <ButtonNext className={cS.buttonNext}>
+          <Default>
+              <FontAwesomeIcon icon={['fal', 'chevron-right']} size="3x" />
+            </Default>
+            <Mobile>
+              <FontAwesomeIcon icon={['fal', 'chevron-right']} size="2x" />
+            </Mobile>
+          </ButtonNext>
         </div>
       </CarouselProvider>
     </div>
