@@ -155,9 +155,9 @@ const EstateDetail = props => {
 
         <section className={eS.contactForm}>
           <h2>Interesse in deze woning? Laat het ons weten!</h2>
-          <form name="estateIntrest" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+          <form name="estate-interest" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
             <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="estate-intrest" />
+            <input type="hidden" name="form-name" value="estate-interest" />
             <div className={eS.row}>
               <input type="text" name="firstname" placeholder="Voornaam" />
               <input type="text" name="lastname" placeholder="Naam" />
