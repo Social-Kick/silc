@@ -1,0 +1,130 @@
+@import "../variables.scss";
+
+.team {
+  padding: 4rem 0;
+  margin-bottom: 4rem;
+  background: $gradient;
+  color: #fff;
+  h1 {
+    text-align: center;
+    margin: 0;
+  }
+  h2 {
+    margin: 0;
+  }
+  p {
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+  }
+  .team-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 75%;
+    margin: auto;
+    .person {
+      display: grid;
+      grid-template:
+        "img title"
+        "img role"
+        "img about";
+      gap: 0 1rem;
+      .person-img {
+        margin: 0;
+        max-height: 250px;
+        grid-area: img;
+        border-radius: 4px;
+      }
+      .person-title {
+        grid-area: title;
+        span {
+          font-weight: bold;
+        }
+      }
+      .person-about {
+        margin: 0;
+        grid-area: about;
+        align-self: end;
+        text-align: start;
+      }
+      @include phone {
+        &:nth-child(1){
+          border-right: none !important;
+          border-bottom: 1px solid #fff;
+          padding: 0 0 1rem 0 !important;
+        }
+        &:nth-child(2){
+          margin: 0 0 1rem 0 !important;
+        }
+      }
+
+      &:nth-child(1){
+        border-right: 1px solid #fff;
+        padding-right: 3rem;
+      }
+      &:nth-child(2){
+        margin-left: 3rem;
+      }
+    }
+
+    @include phone {
+      gap: 1rem;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+}
+
+.why-silc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  place-items: center;
+  margin-bottom: 4rem;
+  width: 90%;
+  margin: 0 auto 4rem auto;
+  .why-left {
+    display: grid;
+    background-image: url("../../images/why-silc.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    color: #fff;
+    border-radius: 4px;
+    @include phone{
+      display: none;
+    }
+  }
+  .accordion {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom-color: transparent;
+    border-radius: 4px;
+    min-width: 100%;
+    .item {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      .heading {
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+        padding: 16px;
+        .toggle-icon {
+          margin-right: 12px;
+        }
+        .title {
+          flex: 1;
+          font-weight: bold;
+        }
+      }
+      .content {
+        display: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.3);
+        padding: 16px;
+      }
+    }
+  }
+  @include phone {
+    grid-template-columns: 1fr;
+  }
+}

@@ -7,8 +7,8 @@ import '../styles/index.scss'
 
 import Layout from "../components/layout"
 import Carousel from "../components/carousel"
-import RichText from "../components/richText"
 import Map from "../components/map";
+import RichText from "../utils/richText"
 
 
 export const query = graphql`

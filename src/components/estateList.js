@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
-import estatesStyles from "../styles/pages/estates.module.scss"
-import searchStyles from "../styles/components/search.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import estatesStyles from "../styles/pages/estates.module.scss"
+import searchStyles from "../styles/components/search.module.scss"
 import SearchEstates from "./searchEstates"
 import Sticky from 'react-sticky-el';
 
@@ -50,7 +50,8 @@ class EstateList extends Component {
   }
 
   render() {
-    const converter = Intl.NumberFormat("nl")
+    const converter = Intl.NumberFormat("nl");
+    let amountOfEstates = this.state.estates.length;
     return (
       <div>
         <Sticky onFixedToggle={this.toggleIsFixed}>
@@ -61,6 +62,9 @@ class EstateList extends Component {
             handleReset={this.resetFilter}
           />
         </Sticky>
+        <div className={searchStyles.found}>
+          {amountOfEstates} {amountOfEstates > 1 ? "woningen" : "woning"} gevonden
+        </div>
         <div className={estatesStyles.estates}>
           {this.state.estates.length > 0 ? this.state.estates.map((edge, i) => {
             let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()

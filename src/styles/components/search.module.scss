@@ -4,8 +4,8 @@
   grid-template-columns: 1fr;
   background-color: $silc-purple;
   -webkit-box-shadow: 0 10px 6px -6px #777;
-	-moz-box-shadow: 0 10px 6px -6px #777;
-	box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
   form {
     display: grid;
     grid-template-columns: 80% auto;
@@ -23,13 +23,14 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='#fff'><polygon points='0,0 100,0 50,50'/></svg>") no-repeat;
+        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='#fff'><polygon points='0,0 100,0 50,50'/></svg>")
+          no-repeat;
         background-size: 12px;
         background-position: calc(100% - 20px) center;
         background-repeat: no-repeat;
         background-color: lighten($color: $silc-purple, $amount: 10);
         width: 100%;
-        padding: 0.5rem;
+        padding: 0.25rem 0.5rem;
         &::placeholder {
           color: #fff;
         }
@@ -54,7 +55,7 @@
         }
       }
       .btn {
-        border-right: solid .25px lighten($color: $silc-purple, $amount: 10);
+        border-right: solid 0.25px lighten($color: $silc-purple, $amount: 10);
         border-radius: 2px 0 0 2px;
         &:hover {
           cursor: pointer;
@@ -68,8 +69,19 @@
           background-color: lighten($color: $silc-purple, $amount: 10);
         }
       }
+      @include phone {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 !important;
+      }
+      @include tablet {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 !important;
+      }
     }
     @include phone {
+      gap: 0.5rem;
       padding: 1rem;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr min-content;
@@ -84,20 +96,34 @@
   }
 
   .mobile-row {
+    background-color: inherit;
+    padding: 1rem 1rem;
+    margin: inherit;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 1.5rem;
-    span{
-      color: #fff
+    span {
+      color: #fff;
     }
-    button{
+    .closeIcon {
       background-color: transparent;
       color: #fff;
       padding: 0;
       margin: 0;
-      &:focus{
-        outline: none
-      }
     }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.found {
+  padding: 1rem 2rem;
+  color: lighten($color: #000000, $amount: 50);
+
+  @include phone {
+    padding: 1rem 1rem;
+  }
+  @include tablet {
+    padding: 1rem 1rem;
   }
 }

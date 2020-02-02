@@ -41,9 +41,9 @@ const Blog = () => {
           }
           return (
             <section key={i}>
-              <Link to={`/blog/${formattedTitle}`} className={blogStyles.blogPost}>
-                <div style={blogImgStyle} className={blogStyles.heroImg}></div>
-                <div className={blogStyles.content}>
+              <Link to={`/blog/${formattedTitle}`} className={`${blogStyles.blogPost} section`}>
+                <div style={blogImgStyle} className={'section-left'}></div>
+                <div className={`${blogStyles.content} section-right`}>
                   <h1>{blog.title}</h1>
                   <span>{blog.createdAt}</span>
                   <p>{blog.heroBody.heroBody}</p>

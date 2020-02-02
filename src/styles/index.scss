@@ -1,3 +1,5 @@
+@import "../styles/variables.scss";
+
 body {
   color: #000;
   font-size: 16px;
@@ -5,19 +7,19 @@ body {
 
 a {
   text-decoration: inherit;
-  color:inherit;
+  color: inherit;
 }
 
 .text-center {
   text-align: center;
 }
 
-.row-space-between{
+.row-space-between {
   display: flex;
   justify-content: space-between;
 }
 
-button{ 
+button {
   padding: 0.3rem 0.7rem;
   color: #000;
   transition: ease-in 0.15s;
@@ -27,7 +29,38 @@ button{
   &:focus {
     outline: none;
   }
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
+}
+
+.section {
+  display: grid;
+  min-height: 40vh;
+  grid-template: "section-left right-section" / 1fr 1fr;
+  .section-left {
+    grid-area: section-left;
+    height: inherit;
+  }
+
+  .section-right {
+    grid-area: right-section;
+    height: inherit;
+    padding: 4rem;
+    justify-self: center;
+    align-self: center;
+    @include phone {
+      padding: 2rem;
+    }
+  }
+  @include phone {
+    grid-template:
+      "left-section" auto
+      "right-section" min-content
+      / 1fr;
+  }
+}
+
+.section:nth-child(odd) {
+  grid-template: "right-section section-left" / 1fr 1fr;
 }

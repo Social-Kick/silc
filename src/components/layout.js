@@ -3,7 +3,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fal } from "@fortawesome/pro-light-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 
-import Head from './head'
+import Head from '../utils/head'
 import Header from './header';
 import Footer from './footer';
 import layoutStyles from '../styles/components/layout.module.scss';

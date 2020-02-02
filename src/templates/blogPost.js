@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import RichText from '../components/richText';
+import RichText from '../utils/richText';
 
 import blogStyles from "../styles/pages/blog.module.scss"
 
@@ -26,7 +26,6 @@ export const query = graphql`
     }
   }
 `
-// let converter = Intl.NumberFormat("nl")
 
 const BlogPost = props => {
   const blog = props.data.contentfulBlog

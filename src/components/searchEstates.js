@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import searchStyles from "../styles/components/search.module.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Tablet, Mobile } from "../components/breakpoint";
+import { Tablet, Mobile } from "../utils/breakpoint";
 
 
 class EstateSearch extends Component {
@@ -88,7 +88,6 @@ class EstateSearch extends Component {
   }
 
   render() {
-    // let amountOfEstates = this.props.estates.length;
     return (
       <div className={searchStyles.search}>
         {this.state.formIsVisible &&
@@ -134,20 +133,20 @@ class EstateSearch extends Component {
           </form>
         }
         <Tablet>
-          <div className={searchStyles.mobileRow}>
+          <button onClick={this.toggleForm} className={searchStyles.mobileRow}>
             <span>{this.state.formIsVisible ? 'Close Filter' : 'Show Filter'}</span>
-            <button onClick={this.toggleForm}>
+            <div className={searchStyles.closeIcon}>
               {this.state.formIsVisible ? <FontAwesomeIcon icon={['fal', 'chevron-up']} /> : <FontAwesomeIcon icon={['fal', 'chevron-down']} />}
-            </button>
-          </div>
+            </div>
+          </button>
         </Tablet>
         <Mobile>
-          <div className={searchStyles.mobileRow}>
+          <button onClick={this.toggleForm} className={searchStyles.mobileRow}>
             <span>{this.state.formIsVisible ? 'Close Filter' : 'Show Filter'}</span>
-            <button onClick={this.toggleForm}>
+            <div className={searchStyles.closeIcon}>
               {this.state.formIsVisible ? <FontAwesomeIcon icon={['fal', 'chevron-up']} /> : <FontAwesomeIcon icon={['fal', 'chevron-down']} />}
-            </button>
-          </div>
+            </div>
+          </button>
         </Mobile>
       </div>
     );

@@ -1,3 +1,5 @@
+@import "../variables.scss";
+
 .estates {
   .estate-item {
     display: grid;
@@ -9,7 +11,7 @@
     .content {
       grid-area: cont;
       max-height: 50vh;
-      padding: 4rem 4rem;
+      padding: 4rem;
       justify-self: start;
       align-self: center;
       .price {
@@ -33,10 +35,9 @@
   }
   .wrapper {
     display: grid;
-    align-content: center;
-    justify-content: center;
-    min-height: calc(100vh - 192px);
-    p{
+    place-content: center;
+    min-height: calc(100vh - 237px);
+    p {
       margin-bottom: 1rem;
     }
     .not-found {
@@ -44,6 +45,9 @@
       color: lighten($color: #000000, $amount: 20);
       padding: 2rem;
       border-radius: 5px;
+      @include phone{
+        margin: 0 2rem;
+      }
     }
   }
 }

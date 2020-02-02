@@ -15,6 +15,12 @@ const Nav = () => {
           <Link activeClassName={headerStyles.active} to="estates" className={headerStyles.navItem}>Aanbod</Link>
         </li>
         <li>
+          <Link activeClassName={headerStyles.active} to="about" className={headerStyles.navItem}>Over ons</Link>
+        </li>
+        <li>
+          <Link activeClassName={headerStyles.active} to="services" className={headerStyles.navItem}>Diesnten</Link>
+        </li>
+        <li>
           <Link activeClassName={headerStyles.active} to="blog" className={headerStyles.navItem}>Nieuws</Link>
         </li>
         <li>
