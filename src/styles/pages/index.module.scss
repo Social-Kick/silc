@@ -28,7 +28,7 @@
   }
   @include desktop{
     h1 {
-      font-size: 12rem;
+      font-size: 10rem;
     }
     h2{
       font-size: 4rem;
@@ -78,7 +78,18 @@
 .img {
   grid-area: img;
   height: inherit;
-  background-image: url("https://www.hipestates.com/thumbs/home/aanbod-back-800x800.jpg");
+  background-image: url("../../images/index.jpg");
+  background-repeat: none;
+  background-size: cover;
+  background-position: center;
+  @include phone {
+    height: 35vh;
+  }
+}
+.img2 {
+  grid-area: img;
+  height: inherit;
+  background-image: url("../../images/index2.jpg");
   background-repeat: none;
   background-size: cover;
   background-position: center;
@@ -96,6 +107,9 @@
   @include phone {
     justify-content: start;
     padding: 1rem;
+  }
+  h1{
+    margin-bottom: .5rem;
   }
   a {
     color: #505096;

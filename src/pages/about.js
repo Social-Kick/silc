@@ -34,7 +34,7 @@ const About = () => {
               <img className={styles.personImg} src="https://silcestates.be/wp-content/uploads/2019/10/FOTO_STEFAN.jpg" alt="Stefan Noben" />
               <div className={styles.personTitle}>
                 <h2>Stefan Noben</h2>
-                <span>Commercieel en algemeen directeur</span>
+                <span>Commercieel directeur</span>
               </div>
               <p className={styles.personAbout} >
                 Licentiaat in de Economie en Master in de Financiën met méér dan 20 jaar ervaring op de internationale vastgoedmarkt.
@@ -45,7 +45,7 @@ const About = () => {
               <img className={styles.personImg} src="https://silcestates.be/wp-content/uploads/2019/10/FOTO_CHEMA.jpg" alt="Chema Álvarez" />
               <div className={styles.personTitle}>
                 <h2>Chema Álvarez</h2>
-                <span>CEO en algemeen directeur</span>
+                <span>Algemeen directeur</span>
               </div>
               <p className={styles.personAbout}>
                 Licentiaat in de Economie en een Bachelor Degree van de Jönköping International Business School.

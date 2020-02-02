@@ -36,22 +36,7 @@ class Header extends Component {
     super(props, context)
     this.state = {
       isExpanded: null,
-      screenWidth: null
     };
-  }
-
-  componentDidMount = () => {
-    window.addEventListener("resize", this.updateWindowDimensions());
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.updateWindowDimensions)
-  }
-
-  updateWindowDimensions = () => {
-    this.setState({
-      screenWidth: window.innerWidth
-    });
   }
 
   toggle = () => {
@@ -60,11 +45,13 @@ class Header extends Component {
 
   render() {
     const { location } = history;
-
+    // className={location.pathname === '/' ? headerStyles.indexHeader : ''}
     return (
       <div>
-        <header className={location.pathname === '/' ? headerStyles.indexHeader : ''}>
-          <img className={headerStyles.logo} src="https://silcestates.com/wp-content/uploads/2019/07/logo-SILC-states.png" alt="logo"></img>
+        <header>
+          <Link to="/">
+            <img className={headerStyles.logo} src="https://silcestates.com/wp-content/uploads/2019/07/logo-SILC-states.png" alt="logo"></img>
+          </Link>
 
           <button className={headerStyles.btn} onClick={this.toggle}>
             <FontAwesomeIcon icon={['fal', 'bars']} />

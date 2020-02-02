@@ -30,7 +30,7 @@ const Contact = () => {
                   temporibus qui eveniet repellat minima veniam.
                 </p>
               </div>
-              <form>
+              <form name="contact" netlify>
                 <div size={cS.row}>
                   <input type="text" placeholder="Voornaam" />
                   <input type="text" placeholder="Naam" />

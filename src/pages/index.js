@@ -73,7 +73,7 @@ const Index = () => {
           </p>
             <a href="/">Lees meer</a>
           </div>
-          <div data-sal="fade" data-sal-duration="1000" className={indexStyles.img}></div>
+          <div data-sal="fade" data-sal-duration="1000" className={indexStyles.img2}></div>
         </section>
         <section data-sal="fade" data-sal-duration="1000" className={indexStyles.featured}>
           <h2 className="text-center">Projecten in de Kijker</h2>

@@ -153,7 +153,7 @@ const EstateDetail = props => {
 
         <section className={eS.contactForm}>
           <h2>Interesse in deze woning? Laat het ons weten!</h2>
-          <form>
+          <form name="estateIntrest" netlify>
             <div className={eS.row}>
               <input type="text" placeholder="Voornaam" />
               <input type="text" placeholder="Naam" />
