@@ -20,7 +20,7 @@ const Contact = () => {
             <div className={cS.card}>
               <div className={cS.row}>
                 <Default>
-                  <FontAwesomeIcon icon={['fal', 'paper-plane']} size="4x" />
+                  <FontAwesomeIcon icon={['fal', 'paper-plane']} color={"#505096"} size="4x" />
                 </Default>
                 <Mobile>
                   <FontAwesomeIcon icon={['fal', 'paper-plane']} size="3x" />
