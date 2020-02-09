@@ -56,8 +56,17 @@ footer {
     }
   }
 
+  .biv{
+    grid-area: biv;
+    display: grid;
+    place-content: center;
+    a{
+      text-decoration: underline;
+    }
+  }
+
   @include desktop {
-    grid-template: "logo adress contact links";
+    grid-template: "logo adress contact links biv";
     justify-content: space-between;
     gap: 0;
     max-width: 1200px;

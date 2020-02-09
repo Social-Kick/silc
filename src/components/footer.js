@@ -33,6 +33,9 @@ const Footer = () => {
             </a>
           </div>
         </div>
+        <div className={footerStyles.biv}>
+          <a href="https://biv.be" target="__blank">biv.be</a>
+        </div>
       </div>
       <div className={footerStyles.bottomRow}>
         <p>© Copyright Elimmo BVBA 2020</p>
