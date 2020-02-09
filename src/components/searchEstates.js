@@ -49,7 +49,7 @@ class EstateSearch extends Component {
       query.estateType = type
     }
 
-    filteredEstates = await this.props.estates.filter(function (item) {
+    filteredEstates = await this.props.unfilteredEstates.filter(function (item) {
       let propertyName = Object.getOwnPropertyNames(query);
       for (var key in query) {
         if (propertyName[0] === "bedrooms" && query.bedrooms === '4+') {
@@ -66,25 +66,25 @@ class EstateSearch extends Component {
       return true;
     })
 
-    this.setState({
-      estates: filteredEstates
-    });
-
     this.props.handleFilter(filteredEstates);
   }
 
   resetFilter = evt => {
     this.props.handleReset(evt);
+    this.emptyFields();
+  }
+
+  toggleForm = () => {
+    this.setState(pS => ({ formIsVisible: !pS.formIsVisible }))
+  }
+
+  emptyFields() {
     this.setState({
       bathrooms: "",
       bedrooms: "",
       region: "",
       type: ""
-    })
-  }
-
-  toggleForm = () => {
-    this.setState(pS => ({ formIsVisible: !pS.formIsVisible }))
+    });
   }
 
   render() {
@@ -98,6 +98,7 @@ class EstateSearch extends Component {
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
+                <option value="4">4</option>
                 <option value="4+">4+</option>
               </select>
               <select value={this.state.bathrooms} onChange={this.setBathRooms}>
@@ -105,12 +106,13 @@ class EstateSearch extends Component {
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
+                <option value="4">4</option>
                 <option value="4+">4+</option>
               </select>
               <select value={this.state.region} onChange={this.setRegion}>
                 <option value="" defaultChecked>Regio</option>
-                <option value="Costa Almría">Costa Almería</option>
-                <option value="Cost Blanca Norte">Costa Blanca Norte</option>
+                <option value="Costa Almería">Costa Almería</option>
+                <option value="Costa Blanca Norte">Costa Blanca Norte</option>
                 <option value="Costa Blanca Sur">Costa Blanca Sur</option>
                 <option value="Costa Cálida">Costa Cálida</option>
                 <option value="Costa Del Sol">Costa Del Sol</option>
@@ -118,10 +120,10 @@ class EstateSearch extends Component {
               <select value={this.state.type} onChange={this.setType}>
                 <option value="" defaultChecked>Type woning</option>
                 <option value="villa">Villa</option>
-                <option value="dakappertement">Dakappertement</option>
-                <option value="Appartement">Appartement</option>
-                <option value="Rijwoning">Rijwoning</option>
-                <option value="Bungalow">Bungalow</option>
+                <option value="dakappartement">Dakappartement</option>
+                <option value="appartement">Appartement</option>
+                <option value="rijwoning">Rijwoning</option>
+                <option value="bungalow">Bungalow</option>
               </select>
             </div>
             <div className={searchStyles.buttonGroup}>

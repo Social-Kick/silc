@@ -22,7 +22,7 @@ class EstateList extends Component {
     this.setState({ estates: this.props.edges })
     window.addEventListener("resize", this.updateWindowDimensions());
   }
-
+  
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateWindowDimensions)
   }
@@ -43,7 +43,6 @@ class EstateList extends Component {
   }
 
   toggleIsFixed = isFixed => {
-    console.log(!isFixed)
     this.setState({
       searchIsFixed: !isFixed
     })
@@ -57,6 +56,7 @@ class EstateList extends Component {
         <Sticky onFixedToggle={this.toggleIsFixed}>
           <SearchEstates
             className={this.state.searchIsFixed ? '' : searchStyles.searchIsFixed}
+            unfilteredEstates={this.props.edges}
             estates={this.state.estates}
             handleFilter={this.setEstates}
             handleReset={this.resetFilter}
