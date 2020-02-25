@@ -6,15 +6,24 @@ import { Tablet, Mobile } from "../utils/breakpoint";
 
 
 class EstateSearch extends Component {
-  constructor(props, context) {
-    super(props, context)
+  constructor() {
+    super();
     this.state = {
+      estates: [],
       bathrooms: "",
       bedrooms: "",
       region: "",
       type: "",
+      minPrice: "",
+      maxPrice: "",
       formIsVisible: true,
     }
+  }
+
+  componentDidMount() {
+    this.setState({
+      estates: this.props.items
+    })
   }
 
   setBathRooms = evt => {
@@ -29,44 +38,62 @@ class EstateSearch extends Component {
   setType = evt => {
     this.setState({ type: evt.target.value });
   }
+  setMinPrice = evt => {
+    this.setState({ minPrice: evt.target.value });
+  }
+  setMaxPrice = evt => {
+    this.setState({ maxPrice: evt.target.value });
+  }
 
   filterEstates = async evt => {
-    let filteredEstates = [];
     evt.preventDefault();
-    let { bathrooms, bedrooms, region, type } = this.state;
 
+    let filteredEstates = this.props.items;
+    let { bathrooms, bedrooms, region, type, minPrice, maxPrice } = this.state;
+    let query = this._setQuery(bedrooms, bathrooms, region, type, minPrice, maxPrice);
+    console.log(query);
+    if ('bedrooms' in query) {
+      filteredEstates = filteredEstates.filter(item => {return item.node.bedrooms !== query['bedrooms'] ? false : true })
+    }
+    if ('bathrooms' in query) {
+      filteredEstates = filteredEstates.filter(item => { return item.node.bathrooms !== query['bathrooms'] ? false : true })
+    }
+    if ('region' in query) {
+      filteredEstates = filteredEstates.filter(item => { return item.node.region !== query['region'] ? false : true })
+    }
+    if ('type' in query) {
+      filteredEstates = filteredEstates.filter(item => { return item.node.type !== query['type'] ? false : true })
+    }
+    if ('minPrice' in query) {
+      filteredEstates = filteredEstates.filter(item => { return item.node.price <= query['minPrice'] ? false : true })
+    }
+    if ('maxPrice' in query) {
+      filteredEstates = filteredEstates.filter(item => { return item.node.price >= query['maxPrice'] ? false : true })
+    }
+    this.props.handleFilter(filteredEstates);
+  }
+
+  _setQuery(bedrooms, bathrooms, region, type, minPrice, maxPrice) {
     let query = {}
     if (bedrooms !== "") {
-      bedrooms === "4+" ? query.bedrooms = bedrooms : query.bedrooms = parseInt(bedrooms)
+      query.bedrooms = parseInt(bedrooms)
     }
     if (bathrooms !== "") {
-      bathrooms === "4+" ? query.bathrooms = bathrooms : query.bathrooms = parseInt(bathrooms)
+      query.bathrooms = parseInt(bathrooms)
     }
     if (region !== "") {
       query.region = region
     }
     if (type !== "") {
-      query.estateType = type
+      query.type = type
     }
-
-    filteredEstates = await this.props.unfilteredEstates.filter(function (item) {
-      let propertyName = Object.getOwnPropertyNames(query);
-      for (var key in query) {
-        if (propertyName[0] === "bedrooms" && query.bedrooms === '4+') {
-          if (item.node.bedrooms > 4) return true
-        }
-        if (propertyName[1] === "bathrooms" && query.bathrooms === '4+') {
-          if (item.node.bathrooms > 4) return true
-        }
-        if (item.node[key] === undefined || item.node[key] !== query[key]) {
-          return false;
-        }
-        return true
-      }
-      return true;
-    })
-
-    this.props.handleFilter(filteredEstates);
+    if (minPrice !== "") {
+      query.minPrice = minPrice
+    }
+    if (maxPrice !== "") {
+      query.maxPrice = maxPrice
+    }
+    return query
   }
 
   resetFilter = evt => {
@@ -99,7 +126,7 @@ class EstateSearch extends Component {
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
-                <option value="4+">4+</option>
+                {/* <option value="5">4+</option> */}
               </select>
               <select value={this.state.bathrooms} onChange={this.setBathRooms}>
                 <option value="" defaultChecked>Aantal badkamers</option>
@@ -107,7 +134,7 @@ class EstateSearch extends Component {
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
-                <option value="4+">4+</option>
+                {/* <option value="5">4+</option> */}
               </select>
               <select value={this.state.region} onChange={this.setRegion}>
                 <option value="" defaultChecked>Regio</option>
@@ -125,6 +152,8 @@ class EstateSearch extends Component {
                 <option value="rijwoning">Rijwoning</option>
                 <option value="bungalow">Bungalow</option>
               </select>
+              <input type="number" placeholder="Prijs min" value={this.state.minPrice} onChange={this.setMinPrice}/>
+              <input type="number" placeholder="Prijs max" value={this.state.maxPrice} onChange={this.setMaxPrice}/>
             </div>
             <div className={searchStyles.buttonGroup}>
               <button type="submit" className={searchStyles.btn}>Zoeken</button>
@@ -136,7 +165,7 @@ class EstateSearch extends Component {
         }
         <Tablet>
           <button onClick={this.toggleForm} className={searchStyles.mobileRow}>
-            <span>{this.state.formIsVisible ? 'Sluit zoekopdraht' : 'Open zoekopdracht'}</span>
+            <span>{this.state.formIsVisible ? 'Sluit zoekopdracht' : 'Open zoekopdracht'}</span>
             <div className={searchStyles.closeIcon}>
               {this.state.formIsVisible ? <FontAwesomeIcon icon={['fal', 'chevron-up']} /> : <FontAwesomeIcon icon={['fal', 'chevron-down']} />}
             </div>
@@ -144,7 +173,7 @@ class EstateSearch extends Component {
         </Tablet>
         <Mobile>
           <button onClick={this.toggleForm} className={searchStyles.mobileRow}>
-            <span>{this.state.formIsVisible ? 'Sluit Zoekopdracht' : 'Open zoekopdracht'}</span>
+            <span>{this.state.formIsVisible ? 'Sluit zoekopdracht' : 'Open zoekopdracht'}</span>
             <div className={searchStyles.closeIcon}>
               {this.state.formIsVisible ? <FontAwesomeIcon icon={['fal', 'chevron-up']} /> : <FontAwesomeIcon icon={['fal', 'chevron-down']} />}
             </div>

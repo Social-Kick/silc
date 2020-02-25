@@ -45,6 +45,7 @@ const Index = () => {
         >
           <h1>SILC ESTATES</h1>
           <h2>Wij maken uw dromen waar!</h2>
+          <Link to="/estates" className={indexStyles.cta}>Bekijk onze projecten</Link>
         </BackgroundImage>
         <section className={indexStyles.section}>
           <div data-sal="fade" data-sal-duration="1000" className={indexStyles.img}></div>

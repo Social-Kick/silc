@@ -1,4 +1,4 @@
-@import '../variables.scss';
+@import "../variables.scss";
 
 footer {
   display: grid;
@@ -40,7 +40,7 @@ footer {
     grid-area: contact;
     display: grid;
     align-content: center;
-    a{
+    a {
       text-decoration: underline;
     }
   }
@@ -56,12 +56,16 @@ footer {
     }
   }
 
-  .biv{
+  .biv {
     grid-area: biv;
     display: grid;
     place-content: center;
-    a{
+    a {
       text-decoration: underline;
+      img {
+        margin: 0;
+        filter: brightness(0) invert(1);
+      }
     }
   }
 

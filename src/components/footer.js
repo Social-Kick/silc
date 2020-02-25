@@ -1,5 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import biv from '../images/logo-biv-1.png'
 
 import footerStyles from "../styles/components/footer.module.scss"
 
@@ -34,7 +35,7 @@ const Footer = () => {
           </div>
         </div>
         <div className={footerStyles.biv}>
-          <a href="https://biv.be" target="__blank">biv.be</a>
+          <a href="https://biv.be" target="__blank"> <img src={biv} height="50" alt="" /></a>
         </div>
       </div>
       <div className={footerStyles.bottomRow}>

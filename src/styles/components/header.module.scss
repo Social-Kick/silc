@@ -74,6 +74,26 @@ header {
   }
 }
 
+.desktop-nav{
+  display: grid;
+  place-items: center;
+  ul{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    li{
+      margin: 0;
+      &:not(:last-child){
+        margin-right: .5rem;
+      }
+    }
+    .active{
+      font-weight: bold;
+      border-bottom: 2px solid lighten($color: $silc-purple, $amount: 10);
+    }
+  }
+}
+
 .indexHeader {
   background-color: transparent;
   position: absolute;
