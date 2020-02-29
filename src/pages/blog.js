@@ -4,6 +4,7 @@ import blogStyles from "../styles/pages/blog.module.scss"
 
 import { graphql, useStaticQuery } from 'gatsby';
 import { Link } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
 
 const Blog = () => {
   const data = useStaticQuery(graphql`
@@ -17,8 +18,8 @@ const Blog = () => {
               heroBody
             }
             heroImage{
-              file{
-                url
+              fluid(quality:100) {
+              ...GatsbyContentfulFluid
               }
             }
           }
@@ -33,16 +34,10 @@ const Blog = () => {
         {data.allContentfulBlog.edges.map((edge, i) => {
           let formattedTitle = edge.node.title.replace(/\s+/g, '-').toLowerCase()
           let blog = edge.node;
-          const blogImgStyle = {
-            backgroundImage: `url(${blog.heroImage.file.url})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
-          }
           return (
             <section key={i}>
               <Link to={`/blog/${formattedTitle}`} className={blogStyles.blogPost}>
-                <div style={blogImgStyle} className={blogStyles.heroImg}></div>
+                <BackgroundImage fluid={blog.heroImage.fluid} className={blogStyles.heroImg}></BackgroundImage>
                 <div className={blogStyles.content}>
                   <h1>{blog.title}</h1>
                   <span>{blog.createdAt}</span>

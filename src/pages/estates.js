@@ -30,8 +30,8 @@ export const data = graphql`
           bedrooms
           region
           heroImage{
-            file{
-              url
+            fluid(quality:100) {
+              ...GatsbyContentfulFluid
             }
           }
         }

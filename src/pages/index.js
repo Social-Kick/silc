@@ -90,7 +90,7 @@ const Index = () => {
                 <Link to={`/estate/${formattedReference}`} key={i}>
                   <div key={i} className={indexStyles.imageContainer}>
                     <div className={indexStyles.child} style={estateImgStyle}></div>
-                    <div className={indexStyles.overlay}>{edge.node.title} <br /> € {converter.format(edge.node.price)}</div>
+                    <div className={indexStyles.overlay}>{edge.node.title} <br /> € {converter.format(edge.node.minPrice)}</div>
                   </div>
                 </Link>
               )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import BackgroundImage from 'gatsby-background-image'
 
 import estatesStyles from "../styles/pages/estates.module.scss"
 import searchStyles from "../styles/components/search.module.scss"
@@ -60,16 +61,10 @@ class EstateList extends Component {
           {this.state.estates.length > 0 ?
             this.state.estates.map((edge, i) => {
               let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()
-              const estateImgStyle = {
-                backgroundImage: `url(${edge.node.heroImage.file.url})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-              }
               return (
                 <div key={i}>
                   <Link to={`/estate/${formattedReference}`} className={estatesStyles.estateItem}>
-                    <div style={estateImgStyle} className={estatesStyles.heroImg}></div>
+                    <BackgroundImage fluid={edge.node.heroImage.fluid} className={estatesStyles.heroImg}></BackgroundImage>
                     <div className={estatesStyles.content}>
                       <h2>{edge.node.title}</h2>
                       <p className={estatesStyles.price}>Vanaf&nbsp;&nbsp;€ {converter.format(edge.node.minPrice)}</p>

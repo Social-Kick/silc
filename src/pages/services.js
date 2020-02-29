@@ -1,5 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image'
+
 
 import Layout from "../components/layout";
 import RichText from "../utils/richText"
@@ -17,8 +19,8 @@ const Services = () => {
             json
           }
           image{
-            file{
-              url
+            fluid(quality:100) {
+              ...GatsbyContentfulFluid
             }
           }
         }
@@ -31,15 +33,9 @@ const Services = () => {
       <article>
         {data.allContentfulServices.edges.map((edge, i) => {
           const service = edge.node;
-          const serviceImageStyle = {
-            backgroundImage: `url(${service.image.file.url})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat'
-          }
           return (
             <section key={i} className={styles.section}>
-              <div className={styles.sectionLeft} style={serviceImageStyle}></div>
+              <BackgroundImage fluid={service.image.fluid} className={styles.sectionLeft}></BackgroundImage>
               <div className={styles.sectionRight}>
                 <h2>{service.title}</h2>
                 <RichText text={service.body.json}></RichText>
