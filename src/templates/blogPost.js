@@ -18,11 +18,6 @@ export const query = graphql`
       body{
         json
       }
-      heroImage{
-        file{
-          url
-        }
-      }
     }
   }
 `
