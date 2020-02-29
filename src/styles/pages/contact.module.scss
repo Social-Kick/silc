@@ -1,13 +1,13 @@
 @import "../variables.scss";
 
 .wrapper {
-  background-image: url("https://ramboll.com/-/media/images/environ/countries/spain-port-de-soller-1360x765.jpg?h=765&la=en&w=1360");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
-  height: 95vh;
+  min-height: 95vh;
+  padding: 1rem 0;
 
   .content {
     max-width: 50%;
@@ -88,6 +88,11 @@
         }
       }
     }
+  }
+}
+@include tablet{
+  .content {
+    margin: 2rem 0;
   }
 }
 

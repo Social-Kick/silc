@@ -14,19 +14,19 @@ const Nav = () => {
             <Link activeClassName={headerStyles.active} to="/" className={headerStyles.navItem}>Home</Link>
           </li>
           <li>
-            <Link activeClassName={headerStyles.active} to="estates" className={headerStyles.navItem}>Aanbod</Link>
+            <Link activeClassName={headerStyles.active} to="/estates" className={headerStyles.navItem}>Aanbod</Link>
           </li>
           <li>
-            <Link activeClassName={headerStyles.active} to="about" className={headerStyles.navItem}>Over ons</Link>
+            <Link activeClassName={headerStyles.active} to="/about" className={headerStyles.navItem}>Over ons</Link>
           </li>
           <li>
-            <Link activeClassName={headerStyles.active} to="services" className={headerStyles.navItem}>Diensten</Link>
+            <Link activeClassName={headerStyles.active} to="/services" className={headerStyles.navItem}>Diensten</Link>
           </li>
           <li>
-            <Link activeClassName={headerStyles.active} to="blog" className={headerStyles.navItem}>Nieuws</Link>
+            <Link activeClassName={headerStyles.active} to="/blog" className={headerStyles.navItem}>Nieuws</Link>
           </li>
           <li>
-            <Link activeClassName={headerStyles.active} to="contact" className={headerStyles.navItem}>Contact</Link>
+            <Link activeClassName={headerStyles.active} to="/contact" className={headerStyles.navItem}>Contact</Link>
           </li>
         </ul>
       </nav>
@@ -66,19 +66,19 @@ class Header extends Component {
                   <Link activeClassName={headerStyles.active} to="/" className={headerStyles.navItem}>Home</Link>
                 </li>
                 <li>
-                  <Link activeClassName={headerStyles.active} to="estates" className={headerStyles.navItem}>Aanbod</Link>
+                  <Link activeClassName={headerStyles.active} to="/estates" className={headerStyles.navItem}>Aanbod</Link>
                 </li>
                 <li>
-                  <Link activeClassName={headerStyles.active} to="about" className={headerStyles.navItem}>Over ons</Link>
+                  <Link activeClassName={headerStyles.active} to="/about" className={headerStyles.navItem}>Over ons</Link>
                 </li>
                 <li>
-                  <Link activeClassName={headerStyles.active} to="services" className={headerStyles.navItem}>Diensten</Link>
+                  <Link activeClassName={headerStyles.active} to="/services" className={headerStyles.navItem}>Diensten</Link>
                 </li>
                 <li>
-                  <Link activeClassName={headerStyles.active} to="blog" className={headerStyles.navItem}>Nieuws</Link>
+                  <Link activeClassName={headerStyles.active} to="/blog" className={headerStyles.navItem}>Nieuws</Link>
                 </li>
                 <li>
-                  <Link activeClassName={headerStyles.active} to="contact" className={headerStyles.navItem}>Contact</Link>
+                  <Link activeClassName={headerStyles.active} to="/contact" className={headerStyles.navItem}>Contact</Link>
                 </li>
               </ul>
             </nav>

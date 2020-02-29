@@ -4,11 +4,24 @@ import cS from '../styles/pages/contact.module.scss'
 import Layout from '../components/layout'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Default, Mobile } from "../utils/breakpoint";
+import { useStaticQuery, graphql } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
 
 const Contact = () => {
+  const data = useStaticQuery(graphql`
+    {
+      file(relativePath: {eq: "contact.jpg"}) {
+        childImageSharp{
+          fluid(maxWidth:1920, quality:100){
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
   return (
     <Layout>
-      <div className={cS.wrapper}>
+      <BackgroundImage fluid={data.file.childImageSharp.fluid} className={cS.wrapper}>
         <div className={cS.content}>
           <div className={cS.header}>
             <div className={cS.card}>
@@ -48,7 +61,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
+      </BackgroundImage>
     </Layout>
   );
 }
