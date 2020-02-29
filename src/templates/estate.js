@@ -18,7 +18,8 @@ export const query = graphql`
     contentfulSilcEstate(reference: { eq: $reference }) {
       reference
       title
-      price
+      minPrice
+      maxPrice
       region
       description{
         json
@@ -108,7 +109,7 @@ const EstateDetail = props => {
           </section>
 
           <section className={eS.price}>
-            <p>€ {converter.format(estate.price)}</p>
+            <p>Van € {converter.format(estate.minPrice)} - tot {converter.format(estate.maxPrice)}</p>
           </section>
 
           <section className={eS.estateData}>

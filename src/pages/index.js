@@ -18,7 +18,8 @@ const Index = () => {
                 url
               }
             }
-            price
+            minPrice
+            maxPrice
             region
           }
         }

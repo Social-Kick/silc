@@ -23,7 +23,8 @@ export const data = graphql`
           shortDescription{
             json
           }
-          price
+          minPrice
+          maxPrice
           estateType
           bathrooms
           bedrooms

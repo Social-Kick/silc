@@ -52,11 +52,11 @@ class EstateSearch extends Component {
     let { bathrooms, bedrooms, region, type, minPrice, maxPrice } = this.state;
     let query = this._setQuery(bedrooms, bathrooms, region, type, minPrice, maxPrice);
     console.log(query);
-    if ('bedrooms' in query) {
-      filteredEstates = filteredEstates.filter(item => {return item.node.bedrooms !== query['bedrooms'] ? false : true })
+    if ('bedrooms' in query) { 
+      filteredEstates = filteredEstates.filter(item => { return item.node.bedrooms >= query['bedrooms'] ? true : false })
     }
     if ('bathrooms' in query) {
-      filteredEstates = filteredEstates.filter(item => { return item.node.bathrooms !== query['bathrooms'] ? false : true })
+      filteredEstates = filteredEstates.filter(item => { return item.node.bathrooms >= query['bathrooms'] ? false : true })
     }
     if ('region' in query) {
       filteredEstates = filteredEstates.filter(item => { return item.node.region !== query['region'] ? false : true })
@@ -65,10 +65,10 @@ class EstateSearch extends Component {
       filteredEstates = filteredEstates.filter(item => { return item.node.type !== query['type'] ? false : true })
     }
     if ('minPrice' in query) {
-      filteredEstates = filteredEstates.filter(item => { return item.node.price <= query['minPrice'] ? false : true })
+      filteredEstates = filteredEstates.filter(item => { return item.node.minPrice <= query['minPrice'] ? false : true })
     }
     if ('maxPrice' in query) {
-      filteredEstates = filteredEstates.filter(item => { return item.node.price >= query['maxPrice'] ? false : true })
+      filteredEstates = filteredEstates.filter(item => { return item.node.maxPrice >= query['maxPrice'] ? false : true })
     }
     this.props.handleFilter(filteredEstates);
   }
@@ -121,36 +121,31 @@ class EstateSearch extends Component {
           <form onSubmit={this.filterEstates}>
             <div className={searchStyles.inputs}>
               <select value={this.state.bedrooms} onChange={this.setBedrooms}>
-                <option value="" defaultChecked>Aantal slaapkamers</option>
+                <option value="" defaultChecked>Min slaapkamers</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
-                {/* <option value="5">4+</option> */}
               </select>
               <select value={this.state.bathrooms} onChange={this.setBathRooms}>
-                <option value="" defaultChecked>Aantal badkamers</option>
+                <option value="" defaultChecked>Min badkamers</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
-                {/* <option value="5">4+</option> */}
               </select>
               <select value={this.state.region} onChange={this.setRegion}>
                 <option value="" defaultChecked>Regio</option>
                 <option value="Costa Almería">Costa Almería</option>
-                <option value="Costa Blanca Norte">Costa Blanca Norte</option>
-                <option value="Costa Blanca Sur">Costa Blanca Sur</option>
+                <option value="Costa Blanca Noord">Costa Blanca Norte</option>
+                <option value="Costa Blanca Zuid">Costa Blanca Sur</option>
                 <option value="Costa Cálida">Costa Cálida</option>
                 <option value="Costa Del Sol">Costa Del Sol</option>
               </select>
               <select value={this.state.type} onChange={this.setType}>
                 <option value="" defaultChecked>Type woning</option>
                 <option value="villa">Villa</option>
-                <option value="dakappartement">Dakappartement</option>
                 <option value="appartement">Appartement</option>
-                <option value="rijwoning">Rijwoning</option>
-                <option value="bungalow">Bungalow</option>
               </select>
               <input type="number" placeholder="Prijs min" value={this.state.minPrice} onChange={this.setMinPrice}/>
               <input type="number" placeholder="Prijs max" value={this.state.maxPrice} onChange={this.setMaxPrice}/>

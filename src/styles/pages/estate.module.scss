@@ -26,9 +26,9 @@
   .price {
     grid-area: price;
     height: min-content;
-    width: 140px;
+    max-width: 400px;
     padding: .5rem;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     text-align: center;
     color: #fff;
     background: $gradient;
