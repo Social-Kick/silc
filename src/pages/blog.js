@@ -5,6 +5,7 @@ import blogStyles from "../styles/pages/blog.module.scss"
 import { graphql, useStaticQuery } from 'gatsby';
 import { Link } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
+import SEO from '../utils/seo';
 
 const Blog = () => {
   const data = useStaticQuery(graphql`
@@ -30,6 +31,7 @@ const Blog = () => {
 
   return (
     <Layout>
+      <SEO title={"Nieuws"}/>
       <article className={blogStyles.blogPosts}>
         {data.allContentfulBlog.edges.map((edge, i) => {
           let formattedTitle = edge.node.title.replace(/\s+/g, '-').toLowerCase()

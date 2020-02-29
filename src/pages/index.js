@@ -4,6 +4,7 @@ import BackgroundImage from 'gatsby-background-image'
 
 import Layout from "../components/layout"
 import indexStyles from "../styles/pages/index.module.scss"
+import SEO from "../utils/seo"
 
 const Index = () => {
   const data = useStaticQuery(graphql`
@@ -38,6 +39,7 @@ const Index = () => {
   const imageData = data.file.childImageSharp.fluid
   return (
     <Layout>
+      <SEO title={"Home"}/>
       <article>
         <BackgroundImage
           Tag="section"

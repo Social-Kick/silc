@@ -1,11 +1,12 @@
 import React from 'react';
-
-import cS from '../styles/pages/contact.module.scss'
-import Layout from '../components/layout'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Default, Mobile } from "../utils/breakpoint";
 import { useStaticQuery, graphql } from 'gatsby';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import BackgroundImage from 'gatsby-background-image';
+
+import { Default, Mobile } from "../utils/breakpoint";
+import SEO from '../utils/seo'
+import Layout from '../components/layout'
+import cS from '../styles/pages/contact.module.scss'
 
 const Contact = () => {
   const data = useStaticQuery(graphql`
@@ -21,6 +22,7 @@ const Contact = () => {
   `)
   return (
     <Layout>
+      <SEO title={"Contact"}/>
       <BackgroundImage fluid={data.file.childImageSharp.fluid} className={cS.wrapper}>
         <div className={cS.content}>
           <div className={cS.header}>

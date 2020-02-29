@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../styles/pages/about.module.scss'
 import Layout from '../components/layout'
 import RichText from '../utils/richText';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SEO from '../utils/seo'
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -25,6 +26,7 @@ const About = () => {
 
   return (
     <Layout>
+      <SEO title="Over ons" />
       <article>
         <section className={styles.team}>
           <h1>Wie zijn wij?</h1>

@@ -1,6 +1,12 @@
 const path = require(`path`)
 
 module.exports = {
+  siteMetadata: {
+    title: `SILC Estates`,
+    description: `Website van SILC Estates`,
+    author: `Digital Kick`,
+    siteUrl: "https://silcestates.netlify.com/",
+  },
   plugins: [
     "gatsby-plugin-sass",
     // "gatsby-image",
@@ -8,6 +14,8 @@ module.exports = {
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
     `gatsby-plugin-scroll-reveal`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

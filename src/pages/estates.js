@@ -3,10 +3,12 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import EstateList from '../components/estateList'
+import SEO from '../utils/seo'
 
 const Estates = ({ data: { allContentfulSilcEstate } }) => {
   return (
     <Layout>
+      <SEO title={"Aanbod"}/>
       <EstateList edges={allContentfulSilcEstate.edges} />
     </Layout >
   )

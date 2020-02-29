@@ -7,6 +7,7 @@ import Layout from "../components/layout";
 import RichText from "../utils/richText"
 
 import styles from '../styles/pages/services.module.scss'
+import SEO from '../utils/seo';
 
 const Services = () => {
   const data = useStaticQuery(graphql`
@@ -30,6 +31,7 @@ const Services = () => {
 `)
   return (
     <Layout>
+      <SEO title={"Diensten"}/>
       <article>
         {data.allContentfulServices.edges.map((edge, i) => {
           const service = edge.node;
