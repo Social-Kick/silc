@@ -109,7 +109,7 @@ const EstateDetail = props => {
           </section>
 
           <section className={eS.price}>
-            <p>Van € {converter.format(estate.minPrice)} - tot {converter.format(estate.maxPrice)}</p>
+            <p>Van € {converter.format(estate.minPrice)} -  {converter.format(estate.maxPrice)}</p>
           </section>
 
           <section className={eS.estateData}>
