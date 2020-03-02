@@ -27,7 +27,7 @@ const Index = () => {
       }
       file(relativePath: {eq: "hero.jpg"}) {
         childImageSharp{
-          fluid(maxWidth:1920, quality:100){
+          fluid(maxWidth:1920, quality:80){
             ...GatsbyImageSharpFluid_withWebp
           }
         }
