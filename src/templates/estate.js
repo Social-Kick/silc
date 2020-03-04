@@ -109,7 +109,7 @@ const EstateDetail = props => {
           </section>
 
           <section className={eS.price}>
-            {estate.maxPrice ? <p>Van €{converter.format(estate.minPrice)} - €{converter.format(estate.maxPrice)}</p>
+            {estate.maxPrice ? <p>Van € {converter.format(estate.minPrice)} - € {converter.format(estate.maxPrice)}</p>
             :
               <p>€ {converter.format(estate.minPrice)}</p>
             }
