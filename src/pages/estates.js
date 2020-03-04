@@ -22,9 +22,6 @@ export const data = graphql`
         node{
           reference
           title
-          shortDescription{
-            json
-          }
           minPrice
           maxPrice
           estateType
