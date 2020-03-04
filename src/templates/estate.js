@@ -140,7 +140,7 @@ const EstateDetail = props => {
 
           <section className={eS.description}>
             <RichText text={estate.description.json} />
-            <a target="__blank" className={eS.leaflet} href={estate.infographicPdf.file.url}>Bekijk de brochure</a>
+            {estate.infographicPdf && <a target="__blank" className={eS.leaflet} href={estate.infographicPdf.file.url}>Bekijk de brochure</a>}
           </section>
 
           <section className={eS.amentities}>
