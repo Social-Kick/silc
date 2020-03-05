@@ -46,7 +46,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={footerStyles.bottomRow}>
-        <p>© Copyright Elimmo BV 2020</p>
+        <p>© Copyright Elimmo BV {new Date().getFullYear()}</p>
         <p>Proudly made by Digital Kick</p>
         <a href={pp} target="__blank">Privacy policy</a>
         <a href={cp} target="__blank">Cookie policy</a>

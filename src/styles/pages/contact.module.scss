@@ -90,7 +90,7 @@
     }
   }
 }
-@include tablet{
+@include tablet {
   .content {
     margin: 2rem 0;
   }
@@ -99,10 +99,11 @@
 @include phone {
   .wrapper {
     display: block;
-    background: #fff;
+    padding: 0;
+    min-height: min-content;
     .content {
       max-width: 100%;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
       .header {
         position: unset;
         box-shadow: none;
