@@ -53,10 +53,10 @@ class EstateSearch extends Component {
     let query = this._setQuery(bedrooms, bathrooms, region, type, minPrice, maxPrice);
     console.log(query);
     if ('bedrooms' in query) {
-      filteredEstates = filteredEstates.filter(item => { return item.node.bedrooms >= query['bedrooms'] ? true : false })
+      filteredEstates = filteredEstates.filter(item => { return item.node.bedrooms >= parseInt(query['bedrooms']) ? true : false })
     }
     if ('bathrooms' in query) {
-      filteredEstates = filteredEstates.filter(item => { return item.node.bathrooms >= query['bathrooms'] ? false : true })
+      filteredEstates = filteredEstates.filter(item => { return item.node.bathrooms >= parseInt(query['bathrooms']) ? true : false })
     }
     if ('region' in query) {
       filteredEstates = filteredEstates.filter(item => { return item.node.region !== query['region'] ? false : true })
@@ -65,10 +65,10 @@ class EstateSearch extends Component {
       filteredEstates = filteredEstates.filter(item => { return item.node.type !== query['type'] ? false : true })
     }
     if ('minPrice' in query) {
-      filteredEstates = filteredEstates.filter(item => { return item.node.minPrice <= query['minPrice'] ? false : true })
+      filteredEstates = filteredEstates.filter(item => { return item.node.minPrice <= parseInt(query['minPrice']) ? false : true })
     }
     if ('maxPrice' in query) {
-      filteredEstates = filteredEstates.filter(item => { return item.node.maxPrice >= query['maxPrice'] ? false : true })
+      filteredEstates = filteredEstates.filter(item => { return item.node.maxPrice >= parseInt(query['maxPrice']) ? false : true })
     }
     this.props.handleFilter(filteredEstates);
   }
@@ -137,10 +137,10 @@ class EstateSearch extends Component {
               <select value={this.state.region} onChange={this.setRegion}>
                 <option value="" defaultChecked>Regio</option>
                 <option value="Costa Almería">Costa Almería</option>
-                <option value="Costa Blanca Noord">Costa Blanca Norte</option>
-                <option value="Costa Blanca Zuid">Costa Blanca Sur</option>
+                <option value="Costa Blanca Noord">Costa Blanca Noord</option>
+                <option value="Costa Blanca Zuid">Costa Blanca Zuid</option>
                 <option value="Costa Cálida">Costa Cálida</option>
-                <option value="Costa Del Sol">Costa Del Sol</option>
+                <option value="Costa Del Sol">Costa del Sol</option>
               </select>
               <select value={this.state.type} onChange={this.setType}>
                 <option value="" defaultChecked>Type woning</option>
