@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { globalHistory as history } from '@reach/router';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Mobile, Default, Tablet } from "../utils/breakpoint";
+import { Mobile, Desktop, Tablet } from "../utils/breakpoint";
 
 import eS from "../styles/pages/estate.module.scss"
 import '../styles/index.scss'

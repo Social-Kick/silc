@@ -26,7 +26,7 @@ const Index = () => {
           }
         }
       }
-      hero: file(relativePath: {eq: "hero.jpg"}) {
+      hero: file(relativePath: {eq: "hero.jpeg"}) {
         childImageSharp{
           fluid(maxWidth:1920, quality:80){
             ...GatsbyImageSharpFluid_withWebp
@@ -48,14 +48,15 @@ const Index = () => {
   const logoData = data.logo.childImageSharp.fixed
   return (
     <Layout>
-      <SEO title={"Home"}/>
+      <SEO title={"Home"} />
       <article>
         <BackgroundImage
           Tag="section"
           fluid={imageData}
           className={indexStyles.hero}
+          classId='qwerty'
         >
-          <Img className={indexStyles.logo} fixed={logoData}/>
+          <Img className={indexStyles.logo} fixed={logoData} />
           <h1>SILC ESTATES</h1>
           <h2>Wij maken uw dromen waar!</h2>
           <Link to="/estates" className={indexStyles.cta}>Bekijk onze projecten</Link>
@@ -66,9 +67,9 @@ const Index = () => {
             <h1>Bekijk ons aanbod huizen in Spanje</h1>
             <h2>Appartementen en villa's voor elk budget</h2>
             <p>
-              Ben jij op zoek naar jouw vaste plek onder de Spaanse zon? 
-              Of ben je op zoek naar een interessante investering? 
-              Of het nu gaat over een woning voor met de hele familie op vakantie te gaan of een opbrengsteneigendom, 
+              Ben jij op zoek naar jouw vaste plek onder de Spaanse zon?
+              Of ben je op zoek naar een interessante investering?
+              Of het nu gaat over een woning voor met de hele familie op vakantie te gaan of een opbrengsteneigendom,
               SILC ESTATES is jouw professionele partner om op zoek te gaan naar de meest geschikte eigendom.
             </p>
             <Link to="/estates">Bekijk ons aanbod</Link>
@@ -86,7 +87,7 @@ const Index = () => {
           <div data-sal="fade" data-sal-duration="1000" className={indexStyles.img2}></div>
         </section>
         <section data-sal="fade" data-sal-duration="1000" className={indexStyles.featured}>
-          <h2 className="text-center">Projecten in de Kijker</h2>
+          <h2 className="text-center">Projecten in de kijker</h2>
           <div className={indexStyles.gallery}>
             {data.allContentfulSilcEstate.edges.map((edge, i) => {
               let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()

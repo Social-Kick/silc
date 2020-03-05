@@ -52,7 +52,7 @@ class EstateSearch extends Component {
     let { bathrooms, bedrooms, region, type, minPrice, maxPrice } = this.state;
     let query = this._setQuery(bedrooms, bathrooms, region, type, minPrice, maxPrice);
     console.log(query);
-    if ('bedrooms' in query) { 
+    if ('bedrooms' in query) {
       filteredEstates = filteredEstates.filter(item => { return item.node.bedrooms >= query['bedrooms'] ? true : false })
     }
     if ('bathrooms' in query) {
@@ -147,8 +147,10 @@ class EstateSearch extends Component {
                 <option value="villa">Villa</option>
                 <option value="appartement">Appartement</option>
               </select>
-              <input type="number" placeholder="Prijs min" value={this.state.minPrice} onChange={this.setMinPrice}/>
-              <input type="number" placeholder="Prijs max" value={this.state.maxPrice} onChange={this.setMaxPrice}/>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '.5rem' }}>
+                <input type="number" placeholder="Prijs min" value={this.state.minPrice} onChange={this.setMinPrice} />
+                <input type="number" placeholder="Prijs max" value={this.state.maxPrice} onChange={this.setMaxPrice} />
+              </div>
             </div>
             <div className={searchStyles.buttonGroup}>
               <button type="submit" className={searchStyles.btn}>Zoeken</button>
