@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { globalHistory as history } from '@reach/router';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Mobile, Default } from "../utils/breakpoint";
+import { Mobile, Default, Tablet } from "../utils/breakpoint";
 
 import eS from "../styles/pages/estate.module.scss"
 import '../styles/index.scss'
@@ -85,14 +85,22 @@ const EstateDetail = props => {
   return (
     <div>
       <Layout>
-        <Default>
+        <Desktop>
           <Slider
             images={estate.estateImages.map((img) => { return (img.file.url) })}
             slidesPerPage={2.5}
             arrowLeft
             arrowRight
           />
-        </Default>
+        </Desktop>
+        <Tablet>
+          <Slider
+            images={estate.estateImages.map((img) => { return (img.file.url) })}
+            slidesPerPage={1.25}
+            arrowLeft={false}
+            arrowRight={false}
+          />
+        </Tablet>
         <Mobile>
           <Slider
             images={estate.estateImages.map((img) => { return (img.file.url) })}
@@ -110,7 +118,7 @@ const EstateDetail = props => {
 
           <section className={eS.price}>
             {estate.maxPrice ? <p>Van € {converter.format(estate.minPrice)} - € {converter.format(estate.maxPrice)}</p>
-            :
+              :
               <p>€ {converter.format(estate.minPrice)}</p>
             }
           </section>

@@ -10,6 +10,10 @@
   h1,h2 {
     text-align: center;
   }
+  .logo{
+    justify-self: center;
+    filter: brightness(0) invert(1)
+  }
   @include phone {
     h1 {
       font-size: 5rem;

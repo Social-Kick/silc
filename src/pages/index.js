@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import Img from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'
 
 import Layout from "../components/layout"
@@ -25,10 +26,17 @@ const Index = () => {
           }
         }
       }
-      file(relativePath: {eq: "hero.jpg"}) {
+      hero: file(relativePath: {eq: "hero.jpg"}) {
         childImageSharp{
           fluid(maxWidth:1920, quality:80){
             ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      logo: file(relativePath: {eq: "logo-silc.png"}) {
+        childImageSharp{
+          fixed(width:100 height:100){
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
@@ -36,7 +44,8 @@ const Index = () => {
 `)
 
   let converter = Intl.NumberFormat("nl")
-  const imageData = data.file.childImageSharp.fluid
+  const imageData = data.hero.childImageSharp.fluid
+  const logoData = data.logo.childImageSharp.fixed
   return (
     <Layout>
       <SEO title={"Home"}/>
@@ -46,6 +55,7 @@ const Index = () => {
           fluid={imageData}
           className={indexStyles.hero}
         >
+          <Img className={indexStyles.logo} fixed={logoData}/>
           <h1>SILC ESTATES</h1>
           <h2>Wij maken uw dromen waar!</h2>
           <Link to="/estates" className={indexStyles.cta}>Bekijk onze projecten</Link>
