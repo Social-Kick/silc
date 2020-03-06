@@ -113,11 +113,11 @@ const EstateDetail = props => {
           <section className={eS.title}>
             <h3>{estate.title}</h3>
             <p>{estate.reference}</p>
-            <p>{capitalizeFirstLetter(estate.estateType)}</p>
+            <p>{capitalizeFirstLetter(estate.estateType)} in {estate.region}</p>
           </section>
 
           <section className={eS.price}>
-            {estate.maxPrice ? <p>Van € {converter.format(estate.minPrice)} - € {converter.format(estate.maxPrice)}</p>
+            {estate.minPrice !== estate.maxPrice ? <p>Van € {converter.format(estate.minPrice)} - € {converter.format(estate.maxPrice)}</p>
               :
               <p>€ {converter.format(estate.minPrice)}</p>
             }

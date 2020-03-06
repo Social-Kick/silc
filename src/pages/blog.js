@@ -35,6 +35,8 @@ const Blog = () => {
       <article className={blogStyles.blogPosts}>
         {data.allContentfulBlog.edges.map((edge, i) => {
           let formattedTitle = edge.node.title.replace(/\s+/g, '-').toLowerCase()
+          if (formattedTitle.includes('?')) formattedTitle = formattedTitle.split('?').join('')
+          if (formattedTitle.includes('#')) formattedTitle = formattedTitle.split('#').join('')
           let blog = edge.node;
           return (
             <section key={i}>

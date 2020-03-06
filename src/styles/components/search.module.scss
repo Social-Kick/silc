@@ -64,6 +64,15 @@
         }
       }
     }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance:textfield;
+    }
     .button-group {
       display: grid;
       grid-template-columns: 3fr 1fr;

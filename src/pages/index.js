@@ -35,7 +35,7 @@ const Index = () => {
       }
       logo: file(relativePath: {eq: "logo-silc.png"}) {
         childImageSharp{
-          fixed(width:100 height:100){
+          fixed(width:200 height:200){
             ...GatsbyImageSharpFixed_withWebp
           }
         }

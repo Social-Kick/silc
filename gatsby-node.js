@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  
+
   const estateTemplate = path.resolve('./src/templates/estate.js')
   const res = await graphql(`
     query {
@@ -17,7 +17,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
   `)
 
   res.data.allContentfulSilcEstate.edges.forEach((edge) => {
-    let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()
+    let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase();
+
     createPage({
       component: estateTemplate,
       path: `/estate/${formattedReference}`,
@@ -43,7 +44,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
   resBlog.data.allContentfulBlog.edges.forEach((edge) => {
     let formattedReference = edge.node.title.replace(/\s+/g, '-').toLowerCase()
-
+    if (formattedReference.includes('?')) formattedReference = formattedReference.split('?').join('')
+    if (formattedReference.includes('#')) formattedReference = formattedReference.split('#').join('')
     createPage({
       component: blogTemplate,
       path: `/blog/${formattedReference}`,
