@@ -82,7 +82,7 @@ const Index = () => {
             <p>
               Interesse in een huis of een appartement in Spanje? Boek een verkenningstrip naar Spanje met SILC ESTATES.
           </p>
-            <Link to="/about">Lees meer</Link>
+            <Link to="/trip">Lees meer</Link>
           </div>
           <div data-sal="fade" data-sal-duration="1000" className={indexStyles.img2}></div>
         </section>
