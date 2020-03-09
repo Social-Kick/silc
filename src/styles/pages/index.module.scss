@@ -12,6 +12,7 @@
     text-align: center;
   }
   .logo {
+    filter: brightness(0) invert(1);
     justify-self: center;
   }
   @include phone {
