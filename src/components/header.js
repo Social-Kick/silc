@@ -17,6 +17,9 @@ const Nav = () => {
             <Link activeClassName={headerStyles.active} to="/estates" className={headerStyles.navItem}>Aanbod</Link>
           </li>
           <li>
+            <Link style={{fontSize: '1.6rem'}} activeClassName={headerStyles.active} to="/trip" className={headerStyles.navItem}>Bezichtigingsreis</Link>
+          </li>
+          <li>
             <Link activeClassName={headerStyles.active} to="/about" className={headerStyles.navItem}>Over ons</Link>
           </li>
           <li>
@@ -67,6 +70,9 @@ class Header extends Component {
                 </li>
                 <li>
                   <Link activeClassName={headerStyles.active} to="/estates" className={headerStyles.navItem}>Aanbod</Link>
+                </li>
+                <li>
+                  <Link activeClassName={headerStyles.active} to="/trip" className={headerStyles.navItem}>Bezichtigingsreis</Link>
                 </li>
                 <li>
                   <Link activeClassName={headerStyles.active} to="/about" className={headerStyles.navItem}>Over ons</Link>

@@ -37,13 +37,18 @@ footer {
     grid-area: adress;
     display: grid;
     align-content: center;
+    @include desktop {
+      text-align: start;
+    }
   }
 
   .contact {
     grid-area: contact;
     display: grid;
     align-content: center;
-    text-align: start;
+    @include desktop {
+      text-align: start;
+    }
     a {
       text-decoration: underline;
     }
@@ -102,7 +107,7 @@ footer {
   font-size: 0.6rem;
   @include desktop {
     margin-top: 0;
-    font-size: .7rem;
+    font-size: 0.7rem;
     padding: 0.25rem 2.5rem;
     :not(:last-child) {
       margin-right: 2rem;

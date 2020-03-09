@@ -30,7 +30,6 @@ const About = () => {
       <article>
         <section className={styles.team}>
           <h1>Wie zijn wij?</h1>
-          <p>SILC ESTATES, professionals in multi-market en multi-channel vastgoedmarketing in Spanje.</p>
           <div className={styles.teamRow}>
             <div className={styles.person}>
               <img className={styles.personImg} src="https://silcestates.be/wp-content/uploads/2019/10/FOTO_STEFAN.jpg" alt="Stefan Noben" />

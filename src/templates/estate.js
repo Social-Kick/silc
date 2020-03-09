@@ -10,6 +10,7 @@ import '../styles/index.scss'
 import Layout from "../components/layout"
 import Map from "../components/map";
 import RichText from "../utils/richText"
+import SEO from '../utils/seo'
 
 import Slider from "../components/Slider";
 
@@ -32,11 +33,6 @@ export const query = graphql`
       estateType
       bedrooms
       bathrooms
-      yearOfConstruction
-      sizeLivingSpace
-      sizeTerrace
-      sizeOfPlot
-      sizeSolarium
       estateImages{
         file{
           url
@@ -55,20 +51,12 @@ let converter = Intl.NumberFormat("nl")
 
 function setIcon(edge) {
   switch (edge) {
-    case "uitzicht":
-      return <FontAwesomeIcon icon={['fal', 'cloud-sun']} size="lg" />
-    case "tuin":
-      return <FontAwesomeIcon icon={['fal', 'tree']} size="lg" />
     case "zwembad":
       return <FontAwesomeIcon icon={['fal', 'swimming-pool']} size="lg" />
-    case "verwarming":
-      return <FontAwesomeIcon icon={['fal', 'fire']} size="lg" />
     case "airconditioning":
       return <FontAwesomeIcon icon={['fal', 'wind']} size="lg" />
-    case "parkeerplaats":
-      return <FontAwesomeIcon icon={['fal', 'parking']} size="lg" />
-    case "berging":
-      return <FontAwesomeIcon icon={['fal', 'boxes']} size="lg" />
+    case "terras/tuin":
+      return <FontAwesomeIcon icon={['fal', 'trees']} size="lg" />
     default:
       break;
   }
@@ -85,6 +73,7 @@ const EstateDetail = props => {
   return (
     <div>
       <Layout>
+        <SEO title={estate.title} />
         <Desktop>
           <Slider
             images={estate.estateImages.map((img) => { return (img.file.url) })}
@@ -140,12 +129,17 @@ const EstateDetail = props => {
               </div>
             </div>
             <div className={eS.verticalBorder}></div>
-            <div className={eS.details}>
-              <p><b>Bouwjaar:</b> {estate.yearOfConstruction}</p>
-              {estate.sizeLivingSpace > 0 && <p><b>Woning:</b> {estate.sizeLivingSpace} M<sup>2</sup></p>}
-              {estate.sizeTerrace > 0 && <p><b>Terras:</b> {estate.sizeTerrace} M<sup>2</sup></p>}
-              {estate.sizeOfPlot > 0 && <p><b>Perceel:</b> {estate.sizeOfPlot} M<sup>2</sup></p>}
-              {estate.sizeSolarium > 0 && <p><b>Solarium:</b> {estate.sizeSolarium} M<sup>2</sup></p>}
+            <div className={eS.amentities}>
+              {estate.amentities.map((edge, i) => {
+                return (
+                  <div className={eS.amentity} key={i}>
+                    {setIcon(edge)}
+                    <div key={i}>
+                      <span>{capitalizeFirstLetter(edge)}</span>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
           </section>
 
@@ -154,7 +148,7 @@ const EstateDetail = props => {
             {estate.infographicPdf && <a target="__blank" className={eS.leaflet} href={estate.infographicPdf.file.url}>Bekijk de brochure</a>}
           </section>
 
-          <section className={eS.amentities}>
+          {/* {estate.amentities && <section className={eS.amentities}>
             {estate.amentities.map((edge, i) => {
               return (
                 <div className={eS.amentity} key={i}>
@@ -165,7 +159,7 @@ const EstateDetail = props => {
                 </div>
               )
             })}
-          </section>
+          </section>} */}
 
           <section className={eS.map}>
             <Map

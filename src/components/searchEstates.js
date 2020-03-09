@@ -146,6 +146,7 @@ class EstateSearch extends Component {
                 <option value="" defaultChecked>Type woning</option>
                 <option value="villa">Villa</option>
                 <option value="appartement">Appartement</option>
+                <option value="woning">Woning</option>
               </select>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '.5rem' }}>
                 <input type="number" placeholder="Prijs min" value={this.state.minPrice} onChange={this.setMinPrice} />

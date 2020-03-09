@@ -1,0 +1,33 @@
+@import "../variables.scss";
+
+.trip {
+  padding: 0 1.5rem;
+  .card-wrapper {
+    margin-bottom: 1rem;
+    .card {
+      margin-top: 2rem;
+      img {
+        display: block;
+      }
+      h2 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 75%;
+    .card-wrapper {
+      display: flex;
+      .card {
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

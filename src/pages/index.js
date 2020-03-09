@@ -57,19 +57,19 @@ const Index = () => {
           classId='qwerty'
         >
           <Img className={indexStyles.logo} fixed={logoData} />
-          <h1>SILC ESTATES</h1>
+          {/* <h1>SILC ESTATES</h1> */}
           <h2>Wij maken uw dromen waar!</h2>
           <Link to="/estates" className={indexStyles.cta}>Bekijk onze projecten</Link>
         </BackgroundImage>
         <section className={indexStyles.section}>
           <div data-sal="fade" data-sal-duration="1000" className={indexStyles.img}></div>
           <div data-sal="fade" data-sal-duration="1000" className={indexStyles.content}>
-            <h1>Bekijk ons aanbod huizen in Spanje</h1>
-            <h2>Appartementen en villa's voor elk budget</h2>
+            <h1>Bekijk ons aanbod</h1>
+            <h2>Appartementen, woningen en villa's voor elk budget</h2>
             <p>
               Ben jij op zoek naar jouw vaste plek onder de Spaanse zon?
               Of ben je op zoek naar een interessante investering?
-              Of het nu gaat over een woning voor met de hele familie op vakantie te gaan of een opbrengsteneigendom,
+              Of het nu gaat over een vakantieplek voor met de hele familie op vakantie te gaan of een opbrengsteneigendom,
               SILC ESTATES is jouw professionele partner om op zoek te gaan naar de meest geschikte eigendom.
             </p>
             <Link to="/estates">Bekijk ons aanbod</Link>
@@ -77,10 +77,10 @@ const Index = () => {
         </section>
         <section className={indexStyles.sectionReverse}>
           <div data-sal="fade" data-sal-duration="1000" className={indexStyles.content}>
-            <h1>Bezichtigingstrips Spanje</h1>
+            <h1>Bezichtigingstrip</h1>
             <h2>Bezoek de projecten van uw dromen</h2>
             <p>
-              Interesse in een huis in Spanje? Boek een verkenningstrip naar Spanje met SILC ESTATES.
+              Interesse in een huis of een appartement in Spanje? Boek een verkenningstrip naar Spanje met SILC ESTATES.
           </p>
             <Link to="/about">Lees meer</Link>
           </div>

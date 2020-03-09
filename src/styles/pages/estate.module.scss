@@ -1,17 +1,15 @@
 @import "../variables.scss";
 
 .container {
-  margin: 2rem 2.5rem 0 2.5rem;
+  margin: 0rem 2.5rem 0 2.5rem;
   display: grid;
   grid-template:
     "title"
     "price"
     "estate-data"
-    "amentities"
     "description"
     "map"
-    "form"
-    ;
+    "form";
   .title {
     grid-area: title;
     margin-bottom: 1rem;
@@ -27,28 +25,12 @@
     grid-area: price;
     height: min-content;
     max-width: 400px;
-    padding: .5rem;
+    padding: 0.5rem;
     font-size: 1.1rem;
     text-align: center;
     color: #fff;
     background: $gradient;
     border-radius: 4px;
-  }
-
-  .amentities {
-    grid-area: amentities;
-    margin-bottom: 2.5rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-    .amentity {
-      display: grid;
-      justify-items: center;
-      align-content: center;
-      span {
-        font-size: 0.85rem;
-      }
-    }
   }
 
   .description {
@@ -67,12 +49,12 @@
 
   .estate-data {
     grid-area: estate-data;
-    margin: 3rem 0;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: min-content min-content min-content min-content min-content;
-    place-items: center; 
-    gap: .5rem;
+    margin: 6rem 0;
+    display: flex;
+    height: 80%;
+    justify-content: space-around;
+    align-self: center;
+    align-items: center;
     .room-card {
       display: grid;
       width: min-content;
@@ -89,16 +71,27 @@
         font-size: 1.3rem;
       }
     }
-    .details {
-      display: grid;
-      justify-items: start;
-      align-content: center;
-      margin: 0 auto;
-    }
     .vertical-border {
-      width: 85%;
-      border-bottom: 2px solid $silc-purple-bright;
+      height: 60%;
+      width: 1px;
+      border-right: 2px solid $silc-purple-bright;
       border-radius: 1rem;
+    }
+    .amentities {
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+      justify-content: space-around;
+      .amentity {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        span {
+          font-size: 0.85rem;
+        }
+      }
     }
   }
   .map {
@@ -154,11 +147,10 @@
   }
 
   @include desktop {
-    margin-top: 4rem;
+    margin-top: 1rem;
     grid-template:
       "title price"
       "estate-data map"
-      "amentities map"
       "description form"
       / 1fr 1fr;
 
@@ -171,15 +163,9 @@
       align-self: end;
       margin-bottom: 2.5rem;
     }
-    .estate-data{
-      border-bottom: 2px solid $silc-purple-bright;
-      grid-template-rows: 1fr;
-      grid-template-columns: 1fr min-content 1fr min-content 1fr;
+    .estate-data {
       .vertical-border {
-        height: 85%;
-        width: 1px;
-        border-right: 2px solid $silc-purple-bright;
-        border-radius: 1rem;
+        height: 65%;
       }
     }
   }

@@ -20,7 +20,7 @@ const Footer = () => {
         </div>
         <div className={footerStyles.contact}>
           <p><FontAwesomeIcon icon={['fal', 'phone']} /> &nbsp;<a href="callto:0476 42 54 16">0476 42 54 16</a></p>
-          <p><FontAwesomeIcon icon={['fal', 'at']} /> &nbsp;<a href="mailto:em@elimmo.be">em@silcestates.be</a></p>
+          <p><FontAwesomeIcon icon={['fal', 'at']} /> &nbsp;<a href="mailto:em@silcestates.com">em@silcestates.com</a></p>
           <p><FontAwesomeIcon icon={['fal', 'building']} /> &nbsp;BE0687 895 294</p>
         </div>
         <div className={footerStyles.links}>
