@@ -129,7 +129,7 @@ const EstateDetail = props => {
               </div>
             </div>
             <div className={eS.verticalBorder}></div>
-            <div className={eS.amentities}>
+            {estate.amentities && <div className={eS.amentities}>
               {estate.amentities.map((edge, i) => {
                 return (
                   <div className={eS.amentity} key={i}>
@@ -140,7 +140,7 @@ const EstateDetail = props => {
                   </div>
                 )
               })}
-            </div>
+            </div>}
           </section>
 
           <section className={eS.description}>
