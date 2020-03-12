@@ -64,7 +64,7 @@ class EstateList extends Component {
               return (
                 <div key={i}>
                   <Link to={`/estate/${formattedReference}`} className={estatesStyles.estateItem}>
-                    <BackgroundImage fluid={edge.node.heroImage.fluid} className={estatesStyles.heroImg}></BackgroundImage>
+                    {edge.node.heroImage && <BackgroundImage fluid={edge.node.heroImage.fluid} className={estatesStyles.heroImg}></BackgroundImage>}
                     <div className={estatesStyles.content}>
                       <h2>{edge.node.title}</h2>
                       <p className={estatesStyles.price}>Vanaf&nbsp;&nbsp;€ {converter.format(edge.node.minPrice)}</p>
