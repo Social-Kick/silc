@@ -26,6 +26,25 @@ const Index = () => {
           }
         }
       }
+      allContentfulHomeContent {
+        edges {
+          node {
+            id
+            title
+            subTitle
+            link
+            linkName
+            text{
+              text
+            }
+            image{
+              fluid{
+                ...GatsbyContentfulFluid
+              }
+            }
+          }
+        }
+      }
       hero: file(relativePath: {eq: "hero.jpg"}) {
         childImageSharp{
           fluid(maxWidth:1920, quality:80){
@@ -46,6 +65,7 @@ const Index = () => {
   let converter = Intl.NumberFormat("nl")
   const imageData = data.hero.childImageSharp.fluid
   const logoData = data.logo.childImageSharp.fixed
+  const homeContent = data.allContentfulHomeContent
   return (
     <Layout>
       <SEO title={"Home"} />
@@ -54,38 +74,27 @@ const Index = () => {
           Tag="section"
           fluid={imageData}
           className={indexStyles.hero}
-          classId='qwerty'
         >
           <Img className={indexStyles.logo} fixed={logoData} />
-          {/* <h1>SILC ESTATES</h1> */}
           <h2>Wij maken uw dromen waar!</h2>
           <Link to="/estates" className={indexStyles.cta}>Bekijk onze projecten</Link>
         </BackgroundImage>
-        <section className={indexStyles.section}>
-          <div data-sal="fade" data-sal-duration="1000" className={indexStyles.img}></div>
-          <div data-sal="fade" data-sal-duration="1000" className={indexStyles.content}>
-            <h1>Bekijk ons aanbod</h1>
-            <h2>Appartementen, woningen en villa's voor elk budget</h2>
-            <p>
-              Ben jij op zoek naar jouw vaste plek onder de Spaanse zon?
-              Of ben je op zoek naar een interessante investering?
-              Of het nu gaat over een vakantieplek voor met de hele familie op vakantie te gaan of een opbrengsteneigendom,
-              SILC ESTATES is jouw professionele partner om op zoek te gaan naar de meest geschikte eigendom.
-            </p>
-            <Link to="/estates">Bekijk ons aanbod</Link>
-          </div>
-        </section>
-        <section className={indexStyles.sectionReverse}>
-          <div data-sal="fade" data-sal-duration="1000" className={indexStyles.content}>
-            <h1>Bezichtigingstrip</h1>
-            <h2>Bezoek de projecten van uw dromen</h2>
-            <p>
-              Interesse in een huis of een appartement in Spanje? Boek een verkenningstrip naar Spanje met SILC ESTATES.
-          </p>
-            <Link to="/trip">Lees meer</Link>
-          </div>
-          <div data-sal="fade" data-sal-duration="1000" className={indexStyles.img2}></div>
-        </section>
+        {homeContent.edges.map((edge, i) => {
+          const isOdd = (i % homeContent.edges.length) === 1 ? false : true;
+          return (
+            <section data-sal="fade" data-sal-duration="1000" key={i} className={isOdd ? indexStyles.section : indexStyles.sectionReverse}>
+              <BackgroundImage fluid={edge.node.image.fluid}/>
+              <div className={indexStyles.content}>
+                <h1>{edge.node.title}</h1>
+                <h2>{edge.node.subTitle}</h2>
+                <p>
+                  {edge.node.text.text}
+                </p>
+                {edge.node.link && <Link to={edge.node.link}>{edge.node.linkName}</Link>}
+              </div>
+            </section>
+          )
+        })}
         <section data-sal="fade" data-sal-duration="1000" className={indexStyles.featured}>
           <h2 className="text-center">Projecten in de kijker</h2>
           <div className={indexStyles.gallery}>
