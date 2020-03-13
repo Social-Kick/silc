@@ -62,7 +62,7 @@ class EstateSearch extends Component {
       filteredEstates = filteredEstates.filter(item => { return item.node.region !== query['region'] ? false : true })
     }
     if ('type' in query) {
-      filteredEstates = filteredEstates.filter(item => { return item.node.type !== query['type'] ? false : true })
+      filteredEstates = filteredEstates.filter(item => { return item.node.estateType !== query['type'] ? false : true })
     }
     if ('minPrice' in query) {
       filteredEstates = filteredEstates.filter(item => { return item.node.minPrice <= parseInt(query['minPrice']) ? false : true })
