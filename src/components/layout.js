@@ -2,6 +2,7 @@ import React from 'react'
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fal } from "@fortawesome/pro-light-svg-icons";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import CookieConsent from 'react-cookie-consent'
 
 import Head from '../utils/head'
 import Header from './header';
@@ -12,16 +13,27 @@ import '../styles/index.scss';
 library.add(fal, fab)
 
 const Layout = (props) => {
-   return (
-      <div className={layoutStyles.container}>
-         <Head />
-         <div className={layoutStyles.content}>
-            <Header />
-            {props.children}
-         </div>
-         <Footer />
+  return (
+    <div className={layoutStyles.container}>
+      <Head />
+      <div className={layoutStyles.content}>
+        <Header />
+        {props.children}
       </div>
-   )
+      <CookieConsent
+        acceptOnScroll  
+        location="bottom"
+        buttonText="Ok!"
+        cookieName="cookieConsent"
+        style={{ background: "#fff", heigh: 'fit-content'}}
+        buttonStyle={{ backgroundColor: "#4b4b6e", color:'#fff', fontSize: "11px" }}
+        expires={150}
+      >
+        <span style={{ color: "#7d7d7d", fontSize: "12px"}}>Deze website maakt gebruik van cookies om gebruiksgemak te verbeteren.</span>
+      </CookieConsent>
+      <Footer />
+    </div>
+  )
 }
 
 export default Layout
