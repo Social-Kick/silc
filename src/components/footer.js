@@ -42,11 +42,12 @@ const Footer = () => {
         <div className={footerStyles.legal}>
           <p>Waarborgorganisme ELIMMO: <br /> NV AXA Belgium</p>
           <p>Polisnummer beroepsaansprakelijkheid ELIMMO: <br /> 730.390.160</p>
+          <p>Gewaarborgde activiteit: <br/> bemiddelaar, makelaarij</p>
         </div>
       </div>
       <div className={footerStyles.bottomRow}>
         <p>© Copyright Elimmo BV {new Date().getFullYear()}</p>
-        <p>Proudly made by Digital Kick</p>
+        <p>Proudly made by Social Kick</p>
         <a href={pp} target="__blank">Privacy policy</a>
         <a href={cp} target="__blank">Cookie policy</a>
       </div>
