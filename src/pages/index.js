@@ -16,8 +16,8 @@ const Index = () => {
             reference
             title
             heroImage{
-              file{
-                url
+              fluid(quality: 100){
+                ...GatsbyContentfulFluid
               }
             }
             minPrice
@@ -47,7 +47,7 @@ const Index = () => {
       }
       hero: file(relativePath: {eq: "hero.jpg"}) {
         childImageSharp{
-          fluid(quality:60){
+          fluid(quality:90){
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -100,18 +100,10 @@ const Index = () => {
           <div className={indexStyles.gallery}>
             {data.allContentfulSilcEstate.edges.map((edge, i) => {
               let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()
-              const estateImgStyle = {
-                width: '100%',
-                height: '100%',
-                backgroundImage: `url(${edge.node.heroImage.file.url})`,
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-              }
               return (
                 <Link to={`/estate/${formattedReference}`} key={i}>
                   <div key={i} className={indexStyles.imageContainer}>
-                    <div className={indexStyles.child} style={estateImgStyle}></div>
+                    <BackgroundImage Tag="div" style={{width: '100%', height: '100%'}} fluid={edge.node.heroImage.fluid} className={indexStyles.child}/>
                     <div className={indexStyles.overlay}>{edge.node.title} <br /> € {converter.format(edge.node.minPrice)}</div>
                   </div>
                 </Link>
