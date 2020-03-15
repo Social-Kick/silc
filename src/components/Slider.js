@@ -25,10 +25,25 @@ class Slider extends Component {
       arrowLeft: this.props.arrowLeft,
       arrowRight: this.props.arrowRight
     })
+    document.addEventListener("keydown", this.handleKeyDown)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyDown)
   }
 
   toggleFullScreen = () => {
     this.setState(pS => ({ isFullScreen: !pS.isFullScreen }))
+  }
+
+  handleKeyDown = (e) => {
+    if (e.keyCode === 27) {
+      this.setState({ isFullScreen: false })
+    } else if (e.keyCode === 37) {
+      document.querySelector('.BrainhubCarousel__custom-arrowLeft').click();
+    } else if (e.keyCode === 39) {
+      document.querySelector('.BrainhubCarousel__custom-arrowRight').click();
+    }
   }
 
   render() {

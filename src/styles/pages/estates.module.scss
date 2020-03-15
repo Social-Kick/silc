@@ -1,4 +1,5 @@
 @import "../variables.scss";
+@import "../variables.scss";
 
 .estates {
   .estate-item {
@@ -22,16 +23,23 @@
         text-transform: uppercase;
         border-bottom: 1px solid #000;
       }
-      @media screen and (max-width: 600px) {
+      @include phone {
         padding: 2rem;
+        h2 {
+          font-size: 1.2rem;
+        }
+        .detailsLink {
+          font-size: .8rem;
+        }
       }
     }
-    @media screen and (max-width: 600px) {
+    @include phone {
       grid-template:
         "img" auto
         "cont" min-content
         / 1fr;
     }
+    margin-top: 3rem;
   }
   .wrapper {
     display: grid;
@@ -45,7 +53,7 @@
       color: lighten($color: #000000, $amount: 20);
       padding: 2rem;
       border-radius: 5px;
-      @include phone{
+      @include phone {
         margin: 0 2rem;
       }
     }
