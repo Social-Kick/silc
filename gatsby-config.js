@@ -1,11 +1,10 @@
-const path = require(`path`)
-
+const path = require('path')
 module.exports = {
   siteMetadata: {
     title: `SILC Estates`,
     description: `Website van SILC Estates`,
     author: `Social Kick`,
-    siteUrl: "https://silcestates.netlify.com/",
+    siteUrl: "https://silcestates.eu/",
   },
   plugins: [
     {
@@ -16,16 +15,6 @@ module.exports = {
         anonymize: true,
         reszpectDNT: true,
         pageTransitionDelay: 0,
-        // Enables Google Optimize using your container Id
-        // optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
-        // // Enables Google Optimize Experiment ID
-        // experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
-        // // Set Variation ID. 0 for original 1,2,3....
-        // variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
-        // // Any additional optional fields
-        // sampleRate: 5,
-        // siteSpeedSampleRate: 10,
-        // cookieDomain: "silcestates.eu",
       },
     },
     "gatsby-plugin-sass",
