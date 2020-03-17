@@ -25,7 +25,7 @@ class Slider extends Component {
       arrowLeft: this.props.arrowLeft,
       arrowRight: this.props.arrowRight
     })
-    document.addEventListener("keydown", this.handleKeyDown)
+      document.addEventListener("keydown", this.handleKeyDown)
   }
 
   componentWillUnmount() {
@@ -37,12 +37,14 @@ class Slider extends Component {
   }
 
   handleKeyDown = (e) => {
-    if (e.keyCode === 27) {
-      this.setState({ isFullScreen: false })
-    } else if (e.keyCode === 37) {
-      document.querySelector('.BrainhubCarousel__custom-arrowLeft').click();
-    } else if (e.keyCode === 39) {
-      document.querySelector('.BrainhubCarousel__custom-arrowRight').click();
+    if(window) {
+      if (e.keyCode === 27) {
+        this.setState({ isFullScreen: false })
+      } else if (e.keyCode === 37) {
+        document.querySelector('.BrainhubCarousel__custom-arrowLeft').click();
+      } else if (e.keyCode === 39) {
+        document.querySelector('.BrainhubCarousel__custom-arrowRight').click();
+      }
     }
   }
 
