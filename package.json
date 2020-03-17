@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "env-cmd -f .env.development gatsby build",
     "develop": "env-cmd -f .env.development gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
@@ -27,6 +27,7 @@
     "gatsby": "^2.18.12",
     "gatsby-background-image": "^0.9.12",
     "gatsby-image": "^2.2.41",
+    "gatsby-plugin-facebook-pixel": "^1.0.3",
     "gatsby-plugin-google-analytics": "^2.1.37",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sass": "^2.1.26",

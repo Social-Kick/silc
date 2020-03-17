@@ -38,7 +38,7 @@ const Index = () => {
               text
             }
             image{
-              fluid(maxHeight: 440){
+              fluid(maxHeight: 440, quality: 90){
                 ...GatsbyContentfulFluid
               }
             }
@@ -48,14 +48,14 @@ const Index = () => {
       hero: file(relativePath: {eq: "hero.jpg"}) {
         childImageSharp{
           fluid(quality:90){
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }
       logo: file(relativePath: {eq: "logo-silc.png"}) {
         childImageSharp{
           fixed(width:200 height:200){
-            ...GatsbyImageSharpFixed_withWebp
+            ...GatsbyImageSharpFixed
           }
         }
       }
