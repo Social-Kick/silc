@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-// import Carousel from '@brainhubeu/react-carousel'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Loadable from 'react-loadable';
+import Carousel from '@brainhubeu/react-carousel'
 import '@brainhubeu/react-carousel/lib/style.css';
 import styles from '../styles/components/slider.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-const { default: Carousel } = typeof window !== `undefined` ? require("@brainhubeu/react-carousel") : null;
+
+const SliderComponent = Loadable({
+  loader: () => import('@brainhubeu/react-carousel'),
+  loading: Carousel
+})
 
 export class Slider extends Component {
   constructor(props) {
@@ -62,7 +67,7 @@ export class Slider extends Component {
         {isFullScreen && <div className={styles.topRow}>
           <FontAwesomeIcon icon={['fal', 'times']} size={'2x'} color={'#fff'} onClick={this.toggleFullScreen} />
         </div>}
-        <Carousel
+        <SliderComponent
           slides={this.state.slides}
           className={isFullScreen ? styles.carouselFull : styles.carousel}
           slidesPerPage={isFullScreen ? 1 : this.state.slidesPerPage}
