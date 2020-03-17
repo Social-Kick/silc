@@ -37,7 +37,7 @@ class Slider extends Component {
   }
 
   handleKeyDown = (e) => {
-    if(window) {
+    if (typeof window !== `undefined`) {
       if (e.keyCode === 27) {
         this.setState({ isFullScreen: false })
       } else if (e.keyCode === 37) {
