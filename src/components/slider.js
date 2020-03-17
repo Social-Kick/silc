@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-const Carousel = typeof window !== `undefined` ? require("module") : null;
 import '@brainhubeu/react-carousel/lib/style.css';
 import styles from '../styles/components/slider.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+const Carousel = typeof window !== `undefined` ? require("@brainhubeu/react-carousel") : null;
 
 class Slider extends Component {
   constructor(props) {
