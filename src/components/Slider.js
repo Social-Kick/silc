@@ -25,11 +25,15 @@ class Slider extends Component {
       arrowLeft: this.props.arrowLeft,
       arrowRight: this.props.arrowRight
     })
+    if(typeof window !== `undefined`) {
       document.addEventListener("keydown", this.handleKeyDown)
+    }
   }
 
   componentWillUnmount() {
-    document.removeEventListener("keydown", this.handleKeyDown)
+    if(typeof window !== `undefined`) {
+      document.removeEventListener("keydown", this.handleKeyDown)
+    }
   }
 
   toggleFullScreen = () => {
