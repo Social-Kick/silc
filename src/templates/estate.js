@@ -12,7 +12,7 @@ import Map from "../components/map";
 import RichText from "../utils/richText"
 import SEO from '../utils/seo'
 
-import Slider from "../components/slider";
+import Slider from "../components/Slider";
 
 export const query = graphql`
   query($reference: String!) {

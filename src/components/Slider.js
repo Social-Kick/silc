@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
+import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import styles from '../styles/components/slider.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
