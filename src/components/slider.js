@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Carousel from '@brainhubeu/react-carousel'
+try {
+  import Carousel from '@brainhubeu/react-carousel'
+} catch (error) {}
 import '@brainhubeu/react-carousel/lib/style.css';
 import styles from '../styles/components/slider.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,15 +28,15 @@ export class Slider extends Component {
       arrowLeft: this.props.arrowLeft,
       arrowRight: this.props.arrowRight
     })
-    // if (typeof window !== `undefined`) {
-    document.addEventListener("keydown", this.handleKeyDown)
-    // }
+    if (typeof window !== `undefined`) {
+      document.addEventListener("keydown", this.handleKeyDown)
+    }
   }
 
   componentWillUnmount() {
-    // if (typeof window !== `undefined`) {
-    document.removeEventListener("keydown", this.handleKeyDown)
-    // }
+    if (typeof window !== `undefined`) {
+      document.removeEventListener("keydown", this.handleKeyDown)
+    }
   }
 
   toggleFullScreen = () => {
@@ -42,15 +44,15 @@ export class Slider extends Component {
   }
 
   handleKeyDown = (e) => {
-    // if (typeof window !== `undefined`) {
-    if (e.keyCode === 27) {
-      this.setState({ isFullScreen: false })
-    } else if (e.keyCode === 37) {
-      document.querySelector('.BrainhubCarousel__custom-arrowLeft').click();
-    } else if (e.keyCode === 39) {
-      document.querySelector('.BrainhubCarousel__custom-arrowRight').click();
+    if (typeof window !== `undefined`) {
+      if (e.keyCode === 27) {
+        this.setState({ isFullScreen: false })
+      } else if (e.keyCode === 37) {
+        document.querySelector('.BrainhubCarousel__custom-arrowLeft').click();
+      } else if (e.keyCode === 39) {
+        document.querySelector('.BrainhubCarousel__custom-arrowRight').click();
+      }
     }
-    // }
   }
 
   render() {
