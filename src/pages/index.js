@@ -38,7 +38,7 @@ const Index = () => {
               text
             }
             image{
-              fluid(maxHeight: 440, quality: 90){
+              fluid(maxHeight: 440){
                 ...GatsbyContentfulFluid
               }
             }
@@ -47,7 +47,7 @@ const Index = () => {
       }
       hero: file(relativePath: {eq: "hero.jpg"}) {
         childImageSharp{
-          fluid(quality:90){
+          fluid(quality:100 maxWidth:1920){
             ...GatsbyImageSharpFluid
           }
         }
