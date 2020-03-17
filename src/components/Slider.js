@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-try {
-  import Carousel from '@brainhubeu/react-carousel'
-} catch (error) {}
+// import Carousel from '@brainhubeu/react-carousel'
 import '@brainhubeu/react-carousel/lib/style.css';
 import styles from '../styles/components/slider.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// const Carousel = typeof window !== `undefined` ? require("@brainhubeu/react-carousel") : null;
+const { default: Carousel } = typeof window !== `undefined` ? require("@brainhubeu/react-carousel") : null;
 
 export class Slider extends Component {
   constructor(props) {
