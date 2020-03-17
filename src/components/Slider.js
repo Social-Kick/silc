@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Carousel from '@brainhubeu/react-carousel';
+const Carousel = typeof window !== `undefined` ? require("module") : null;
 import '@brainhubeu/react-carousel/lib/style.css';
 import styles from '../styles/components/slider.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -25,13 +25,13 @@ class Slider extends Component {
       arrowLeft: this.props.arrowLeft,
       arrowRight: this.props.arrowRight
     })
-    if(typeof window !== `undefined`) {
+    if (typeof window !== `undefined`) {
       document.addEventListener("keydown", this.handleKeyDown)
     }
   }
 
   componentWillUnmount() {
-    if(typeof window !== `undefined`) {
+    if (typeof window !== `undefined`) {
       document.removeEventListener("keydown", this.handleKeyDown)
     }
   }
