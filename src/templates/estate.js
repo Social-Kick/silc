@@ -33,6 +33,11 @@ export const query = graphql`
       estateType
       bedrooms
       bathrooms
+      heroImage {
+        file {
+          url
+        }
+      }
       estateImages{
         file{
           url
@@ -74,31 +79,33 @@ const EstateDetail = props => {
     <div>
       <Layout>
         <SEO title={estate.title} />
-        <Desktop>
-          <Slider
-            images={estate.estateImages.map((img) => { return (img.file.url) })}
-            slidesPerPage={2.5}
-            arrowLeft
-            arrowRight
-          />
-        </Desktop>
-        <Tablet>
-          <Slider
-            images={estate.estateImages.map((img) => { return (img.file.url) })}
-            slidesPerPage={1.25}
-            arrowLeft={false}
-            arrowRight={false}
-          />
-        </Tablet>
-        <Mobile>
-          <Slider
-            images={estate.estateImages.map((img) => { return (img.file.url) })}
-            slidesPerPage={1.25}
-            arrowLeft={false}
-            arrowRight={false}
-          />
-        </Mobile>
-        
+        <div className="no-print">
+          <Desktop>
+            <Slider
+              images={estate.estateImages.map((img) => { return (img.file.url) })}
+              slidesPerPage={2.5}
+              arrowLeft
+              arrowRight
+            />
+          </Desktop>
+          <Tablet>
+            <Slider
+              images={estate.estateImages.map((img) => { return (img.file.url) })}
+              slidesPerPage={1.25}
+              arrowLeft={false}
+              arrowRight={false}
+            />
+          </Tablet>
+          <Mobile>
+            <Slider
+              images={estate.estateImages.map((img) => { return (img.file.url) })}
+              slidesPerPage={1.25}
+              arrowLeft={false}
+              arrowRight={false}
+            />
+          </Mobile>
+        </div>
+
         <article className={eS.container}>
           <section className={eS.title}>
             <h3>{estate.title}</h3>
@@ -112,8 +119,10 @@ const EstateDetail = props => {
               <p>€ {converter.format(estate.minPrice)}</p>
             }
           </section>
+          
+          <img className={eS.heroImage} src={estate.heroImage.file.url} alt=""/>
 
-          <section className={eS.estateData}>
+          <section className={eS.estateData} >
             <div>
               <div className={eS.roomCard}>
                 <FontAwesomeIcon icon={['fal', 'bed']} size="2x" className={eS.icon} />
@@ -146,7 +155,7 @@ const EstateDetail = props => {
 
           <section className={eS.description}>
             <RichText text={estate.description.json} />
-            {estate.infographicPdf && <button className={eS.leaflet} onClick={() => typeof window !== `undefined` ? window.print(): null}>Print brochure</button>}
+            {estate.infographicPdf && <button className={eS.print} onClick={() => typeof window !== `undefined` ? window.print() : null}>Print brochure</button>}
           </section>
 
           <section className={`${eS.map} no-print`}>

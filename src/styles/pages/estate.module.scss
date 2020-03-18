@@ -1,172 +1,324 @@
 @import "../variables.scss";
 
-.container {
-  margin: 0rem 2.5rem 0 2.5rem;
-  display: grid;
-  grid-template:
-    "title"
-    "price"
-    "estate-data"
-    "description"
-    "map"
-    "form";
-  .title {
-    grid-area: title;
-    margin-bottom: 1rem;
-    h3 {
-      margin: 0;
-    }
-    p {
-      color: lighten($color: #000000, $amount: 60);
-    }
-  }
-
-  .price {
-    grid-area: price;
-    height: min-content;
-    max-width: 400px;
-    padding: 0.5rem;
-    font-size: 1.1rem;
-    text-align: center;
-    color: #fff;
-    background: $gradient;
-    border-radius: 4px;
-    
-  }
-
-  .description {
-    grid-area: description;
-    margin-bottom: 2.5rem;
-    p {
-      white-space: pre-wrap;
-      margin-bottom: 1.5rem;
-    }
-    a {
-      color: #000;
-      font-weight: bold;
-      text-decoration: underline !important;
-    }
-  }
-
-  .estate-data {
-    grid-area: estate-data;
-    margin: 6rem 0;
-    display: flex;
-    height: 80%;
-    justify-content: space-around;
-    align-self: center;
-    align-items: center;
-    .room-card {
-      display: grid;
-      width: min-content;
-      margin: 0 auto;
-      justify-items: center;
-      .icon {
-        color: lighten($color: #000, $amount: 40);
+@media screen {
+  .container {
+    margin: 0rem 2.5rem 0 2.5rem;
+    display: grid;
+    grid-template:
+      "title"
+      "price"
+      "estate-data"
+      "description"
+      "map"
+      "form";
+    .title {
+      grid-area: title;
+      margin-bottom: 1rem;
+      h3 {
+        margin: 0;
       }
       p {
-        font-size: 0.7rem;
-        color: lighten($color: #000, $amount: 40);
-      }
-      span {
-        font-size: 1.3rem;
+        color: lighten($color: #000000, $amount: 60);
       }
     }
-    .vertical-border {
-      height: 60%;
-      width: 1px;
-      border-right: 2px solid $silc-purple-bright;
-      border-radius: 1rem;
-    }
-    .amentities {
-      height: 80%;
-      display: flex;
-      flex-direction: column;
-      align-content: space-between;
-      justify-content: space-around;
-      .amentity {
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        align-items: center;
-        span {
-          font-size: 0.85rem;
-        }
-      }
-    }
-  }
-  .map {
-    margin-bottom: 2rem;
-    grid-area: map;
-  }
-
-  .contact-form {
-    form {
-      grid-area: form;
-      margin-top: 2rem;
-      .row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.5rem;
-      }
-      input,
-      textarea {
-        margin-top: 0.5rem;
-        width: 100%;
-        max-width: 100%;
-        resize: none;
-        border: none;
-        border-bottom: 2px solid $silc-purple;
-        &:focus {
-          outline: none;
-        }
-        &::placeholder {
-          color: black;
-          opacity: 0.8;
-        }
-      }
-      button {
-        padding: 0.3rem 0.7rem;
-        font-size: 1rem;
-        color: #000;
-        transition: ease-in 0.15s;
-        background-color: #fff;
-        border: solid 2px lighten($color: $silc-purple, $amount: 10);
-        &:focus {
-          outline: none;
-        }
-      }
-      .btn {
-        border-radius: 2px 0 0 2px;
-        &:hover {
-          cursor: pointer;
-          background-color: lighten($color: $silc-purple, $amount: 10);
-          color: #fff;
-        }
-      }
-    }
-  }
-
-  @include desktop {
-    margin-top: 1rem;
-    grid-template:
-      "title price"
-      "estate-data map"
-      "description form"
-      / 1fr 1fr;
-
-    gap: 0 4rem;
 
     .price {
-      justify-self: end;
+      grid-area: price;
+      height: min-content;
+      max-width: 400px;
+      padding: 0.5rem;
+      font-size: 1rem;
+      text-align: center;
+      color: #fff;
+      background: $gradient;
+      border-radius: 4px;
+    }
+
+    .description {
+      grid-area: description;
+      margin-bottom: 2.5rem;
+      p {
+        white-space: pre-wrap;
+        margin-bottom: 1.5rem;
+      }
+      .print {
+        background-color: $gradient;
+      }
+    }
+
+    .estate-data {
+      grid-area: estate-data;
+      margin: 6rem 0;
+      display: flex;
+      height: 80%;
+      justify-content: space-around;
+      align-self: center;
+      align-items: center;
+      .room-card {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        justify-items: center;
+        .icon {
+          color: lighten($color: #000, $amount: 40);
+        }
+        p {
+          font-size: 0.7rem;
+          color: lighten($color: #000, $amount: 40);
+        }
+        span {
+          font-size: 1.3rem;
+        }
+      }
+      .vertical-border {
+        height: 60%;
+        width: 1px;
+        border-right: 2px solid $silc-purple-bright;
+        border-radius: 1rem;
+      }
+      .amentities {
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        justify-content: space-around;
+        .amentity {
+          display: flex;
+          flex-direction: column;
+          justify-items: center;
+          align-items: center;
+          span {
+            font-size: 0.85rem;
+          }
+        }
+      }
     }
     .map {
-      align-self: end;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
+      grid-area: map;
     }
+
+    .contact-form {
+      form {
+        grid-area: form;
+        margin-top: 2rem;
+        .row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.5rem;
+        }
+        input,
+        textarea {
+          margin-top: 0.5rem;
+          width: 100%;
+          max-width: 100%;
+          resize: none;
+          border: none;
+          border-bottom: 2px solid $silc-purple;
+          &:focus {
+            outline: none;
+          }
+          &::placeholder {
+            color: black;
+            opacity: 0.8;
+          }
+        }
+        button {
+          padding: 0.3rem 0.7rem;
+          font-size: 1rem;
+          color: #000;
+          transition: ease-in 0.15s;
+          background-color: #fff;
+          border: solid 2px lighten($color: $silc-purple, $amount: 10);
+          &:focus {
+            outline: none;
+          }
+        }
+        .btn {
+          border-radius: 2px 0 0 2px;
+          &:hover {
+            cursor: pointer;
+            background-color: lighten($color: $silc-purple, $amount: 10);
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    @include desktop {
+      margin-top: 1rem;
+      grid-template:
+        "title price"
+        "estate-data map"
+        "description form"
+        / 1fr 1fr;
+
+      gap: 0 4rem;
+
+      .price {
+        justify-self: end;
+      }
+      .map {
+        align-self: end;
+        margin-bottom: 2.5rem;
+      }
+      .estate-data {
+        .vertical-border {
+          height: 65%;
+        }
+      }
+    }
+  }
+}
+
+.heroImage {
+  display: none;
+}
+
+@media print {
+  .container {
+    margin: 1rem;
+    display: grid;
+    grid-template:
+      "title price"
+      "img img"
+      "estate-data estate-data"
+      "description description";
+    .title {
+      grid-area: title;
+      margin-bottom: 1rem;
+      h3 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+      p {
+        color: lighten($color: #000000, $amount: 60);
+      }
+    }
+
+    .price {
+      align-self: end;
+      padding-bottom: 1rem;
+      font-size: 1.1rem;
+      grid-area: price;
+      color: #000;
+    }
+
+    .description {
+      grid-area: description;
+      margin-bottom: 2.5rem;
+      p {
+        font-size: .8rem;
+        white-space: pre-wrap;
+        margin-bottom: 1.5rem;
+      }
+      .print {
+        display: none;
+      }
+    }
+
+    .heroImage {
+      margin-top: 2rem;
+      grid-area: img;
+      display: block;
+    }
+
     .estate-data {
+      grid-area: estate-data;
+      margin: 2rem 0;
+      display: flex;
+      height: 80%;
+      justify-content: space-around;
+      align-self: center;
+      align-items: center;
+      .room-card {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        justify-items: center;
+        .icon {
+          color: lighten($color: #000, $amount: 40);
+        }
+        p {
+          font-size: 0.7rem;
+          color: lighten($color: #000, $amount: 40);
+        }
+        span {
+          font-size: 1.3rem;
+        }
+      }
       .vertical-border {
-        height: 65%;
+        height: 60%;
+        width: 1px;
+        border-right: 2px solid $silc-purple-bright;
+        border-radius: 1rem;
+      }
+      .amentities {
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        justify-content: space-around;
+        .amentity {
+          display: flex;
+          flex-direction: column;
+          justify-items: center;
+          align-items: center;
+          span {
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
+    .map {
+      margin-bottom: 2rem;
+      grid-area: map;
+    }
+
+    .contact-form {
+      form {
+        grid-area: form;
+        margin-top: 2rem;
+        .row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.5rem;
+        }
+        input,
+        textarea {
+          margin-top: 0.5rem;
+          width: 100%;
+          max-width: 100%;
+          resize: none;
+          border: none;
+          border-bottom: 2px solid $silc-purple;
+          &:focus {
+            outline: none;
+          }
+          &::placeholder {
+            color: black;
+            opacity: 0.8;
+          }
+        }
+        button {
+          padding: 0.3rem 0.7rem;
+          font-size: 1rem;
+          color: #000;
+          transition: ease-in 0.15s;
+          background-color: #fff;
+          border: solid 2px lighten($color: $silc-purple, $amount: 10);
+          &:focus {
+            outline: none;
+          }
+        }
+        .btn {
+          border-radius: 2px 0 0 2px;
+          &:hover {
+            cursor: pointer;
+            background-color: lighten($color: $silc-purple, $amount: 10);
+            color: #fff;
+          }
+        }
       }
     }
   }
