@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { Tablet, Mobile } from "../utils/breakpoint";
 
-
 class EstateSearch extends Component {
   constructor() {
     super();
@@ -16,6 +15,7 @@ class EstateSearch extends Component {
       type: "",
       minPrice: "",
       maxPrice: "",
+      reference: "",
       formIsVisible: true,
     }
   }
@@ -44,13 +44,16 @@ class EstateSearch extends Component {
   setMaxPrice = evt => {
     this.setState({ maxPrice: evt.target.value });
   }
+  setReference = evt => {
+    this.setState({ reference: evt.target.value });
+  }
 
   filterEstates = async evt => {
     evt.preventDefault();
 
     let filteredEstates = this.props.items;
-    let { bathrooms, bedrooms, region, type, minPrice, maxPrice } = this.state;
-    let query = this._setQuery(bedrooms, bathrooms, region, type, minPrice, maxPrice);
+    let { bathrooms, bedrooms, region, type, minPrice, maxPrice, reference } = this.state;
+    let query = this._setQuery(bedrooms, bathrooms, region, type, minPrice, maxPrice, reference);
     console.log(query);
     if ('bedrooms' in query) {
       filteredEstates = filteredEstates.filter(item => { return item.node.bedrooms >= parseInt(query['bedrooms']) ? true : false })
@@ -70,10 +73,13 @@ class EstateSearch extends Component {
     if ('maxPrice' in query) {
       filteredEstates = filteredEstates.filter(item => { return item.node.maxPrice >= parseInt(query['maxPrice']) ? false : true })
     }
+    if ('reference' in query) {
+      filteredEstates = filteredEstates.filter(item => { return item.node.reference.includes(query['reference']) ? true : false })
+    }
     this.props.handleFilter(filteredEstates);
   }
 
-  _setQuery(bedrooms, bathrooms, region, type, minPrice, maxPrice) {
+  _setQuery(bedrooms, bathrooms, region, type, minPrice, maxPrice, reference) {
     let query = {}
     if (bedrooms !== "") {
       query.bedrooms = parseInt(bedrooms)
@@ -92,6 +98,9 @@ class EstateSearch extends Component {
     }
     if (maxPrice !== "") {
       query.maxPrice = maxPrice
+    }
+    if (reference !== "") {
+      query.reference = reference
     }
     return query
   }
@@ -149,9 +158,10 @@ class EstateSearch extends Component {
                 <option value="woning">Woning</option>
               </select>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '.5rem' }}>
-                <input type="number" placeholder="Prijs min" value={this.state.minPrice} onChange={this.setMinPrice} />
-                <input type="number" placeholder="Prijs max" value={this.state.maxPrice} onChange={this.setMaxPrice} />
+                <input type="number" className={searchStyles.priceInput} placeholder="Min" value={this.state.minPrice} onChange={this.setMinPrice} />
+                <input type="number" className={searchStyles.priceInput} placeholder="Max" value={this.state.maxPrice} onChange={this.setMaxPrice} />
               </div>
+              <input type="text" placeholder="Referentie" value={this.state.reference} onChange={this.setReference} />
             </div>
             <div className={searchStyles.buttonGroup}>
               <button type="submit" className={searchStyles.btn}>Zoeken</button>

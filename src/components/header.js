@@ -52,7 +52,7 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <header>
+        <header className="no-print">
           <Link to="/">
             <img className={headerStyles.logo} src="https://silcestates.com/wp-content/uploads/2019/07/logo-SILC-states.png" alt="logo"></img>
           </Link>

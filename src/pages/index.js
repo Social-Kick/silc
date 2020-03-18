@@ -83,7 +83,7 @@ const Index = () => {
           const isOdd = (i % homeContent.edges.length) === 1 ? false : true;
           return (
             <section data-sal="fade" data-sal-duration="1000" key={i} className={isOdd ? indexStyles.section : indexStyles.sectionReverse}>
-              <BackgroundImage className={indexStyles.img} fluid={edge.node.image.fluid}/>
+              <BackgroundImage className={indexStyles.img} fluid={edge.node.image.fluid} />
               <div className={indexStyles.content}>
                 <h1>{edge.node.title}</h1>
                 <h2>{edge.node.subTitle}</h2>
@@ -103,8 +103,11 @@ const Index = () => {
               return (
                 <Link to={`/estate/${formattedReference}`} key={i}>
                   <div key={i} className={indexStyles.imageContainer}>
-                    <BackgroundImage Tag="div" style={{width: '100%', height: '100%'}} fluid={edge.node.heroImage.fluid} className={indexStyles.child}/>
-                    <div className={indexStyles.overlay}>{edge.node.title} <br /> € {converter.format(edge.node.minPrice)}</div>
+                    <BackgroundImage Tag="div" style={{ width: '100%', height: '100%' }} fluid={edge.node.heroImage.fluid} className={indexStyles.child} />
+                    <div className={indexStyles.overlay}>
+                      <div>{edge.node.title}</div>
+                      <div className={indexStyles.overlay__price}>Vanaf € {converter.format(edge.node.minPrice)}</div>
+                    </div>
                   </div>
                 </Link>
               )

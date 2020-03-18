@@ -38,6 +38,9 @@ button {
   z-index: 2;
 }
 
-// .gatsby-background-image-qwerty::before {
-//   filter: blur(2.5px);
-// }
+@media print {
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+}

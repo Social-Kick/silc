@@ -8,7 +8,7 @@ import footerStyles from "../styles/components/footer.module.scss"
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="no-print">
       <div className={footerStyles.topRow}>
         <div className={footerStyles.logo}>
           <img src="https://silcestates.com/wp-content/uploads/2019/07/logo_contouren_wit-copia-1.png" alt="silc logo" />
@@ -40,16 +40,25 @@ const Footer = () => {
           <a href="https://biv.be" target="__blank"> <img src={biv} height="40" alt="" /></a>
         </div>
         <div className={footerStyles.legal}>
-          <p>Waarborgorganisme ELIMMO: <br /> NV AXA Belgium</p>
-          <p>Polisnummer beroepsaansprakelijkheid ELIMMO: <br /> 730.390.160</p>
-          <p>Gewaarborgde activiteit: bemiddelaar, makelaarij</p>
         </div>
       </div>
+      <div className={footerStyles.legalRow}>
+        <p>&copy;Copyright Elimmo BV {new Date().getFullYear()}</p>
+        <p>●</p>
+        <p>Proudly made by <a href="https://socialkick.be">Social Kick</a></p>
+        <p>●</p>
+        <p><a href={pp} target="__blank">Privacy policy</a></p>
+        <p>●</p>
+        <p><a href={cp} target="__blank">Cookie policy</a></p>
+        <p>●</p>
+        <p>BIV 509931</p>
+      </div>
       <div className={footerStyles.bottomRow}>
-        <p>© Copyright Elimmo BV {new Date().getFullYear()}</p>
-        <p>Proudly made by Social Kick</p>
-        <a href={pp} target="__blank">Privacy policy</a>
-        <a href={cp} target="__blank">Cookie policy</a>
+        <p>Polisnummer beroepsaansprakelijkheid ELIMMO: 730.390.160</p>
+        <p className={footerStyles.spacer}>|</p>
+        <p>Waarborgorganisme ELIMMO: NV AXA Belgium</p>
+        <p className={footerStyles.spacer}>|</p>
+        <p>Gewaarborgde activiteit: bemiddelaar, makelaarij</p>
       </div>
     </footer>
   )

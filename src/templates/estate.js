@@ -98,6 +98,7 @@ const EstateDetail = props => {
             arrowRight={false}
           />
         </Mobile>
+        
         <article className={eS.container}>
           <section className={eS.title}>
             <h3>{estate.title}</h3>
@@ -145,34 +146,21 @@ const EstateDetail = props => {
 
           <section className={eS.description}>
             <RichText text={estate.description.json} />
-            {estate.infographicPdf && <a target="__blank" className={eS.leaflet} href={estate.infographicPdf.file.url}>Bekijk de brochure</a>}
+            {estate.infographicPdf && <button className={eS.leaflet} onClick={() => typeof window !== `undefined` ? window.print(): null}>Print brochure</button>}
           </section>
 
-          {/* {estate.amentities && <section className={eS.amentities}>
-            {estate.amentities.map((edge, i) => {
-              return (
-                <div className={eS.amentity} key={i}>
-                  {setIcon(edge)}
-                  <div key={i}>
-                    <span>{capitalizeFirstLetter(edge)}</span>
-                  </div>
-                </div>
-              )
-            })}
-          </section>} */}
-
-          <section className={eS.map}>
+          <section className={`${eS.map} no-print`}>
             <Map
               location={estate.location}
-              googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgMROM_H8cvr9WZ-0gU1D53yC-C74D4wM&v=3.exp&libraries=geometry,drawing,places"
+              googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDgMROM_H8cvr9WZ-0gU1D53yC-C74D4wM&v=3.exp&libraries=geometry,drawing,places`}
               loadingElement={<div style={{ height: `100%` }} />}
               containerElement={<div style={{ height: `400px` }} />}
               mapElement={<div style={{ height: `100%` }} />}
             />
           </section>
 
-          <section className={eS.contactForm}>
-            <h2>Interesse in deze woning? Laat het ons weten!</h2>
+          <section className={`${eS.contactForm} no-print`}>
+            <h2>Interesse in deze aanbieding? Laat het ons weten!</h2>
             <form name="estate-interest" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
               <input type="hidden" name="bot-field" />
               <input type="hidden" name="form-name" value="estate-interest" />
