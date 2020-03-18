@@ -120,7 +120,7 @@ const EstateDetail = props => {
             }
           </section>
           
-          <img className={eS.heroImage} src={estate.heroImage.file.url} alt=""/>
+          {estate.heroImage && <img className={eS.heroImage} src={estate.heroImage.file.url} alt=""/>}
 
           <section className={eS.estateData} >
             <div>
