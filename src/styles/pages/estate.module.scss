@@ -18,7 +18,7 @@
         margin: 0;
       }
       p {
-        color: lighten($color: #000000, $amount: 60);
+        color: lighten($color: #000, $amount: 60);
       }
     }
 
@@ -41,9 +41,11 @@
         white-space: pre-wrap;
         margin-bottom: 1.5rem;
       }
-      .print {
-        background-color: $gradient;
-      }
+    }
+
+    .print {
+      background: $gradient !important;
+      color: #fff;
     }
 
     .estate-data {
@@ -208,7 +210,7 @@
       grid-area: description;
       margin-bottom: 2.5rem;
       p {
-        font-size: .8rem;
+        font-size: 0.8rem;
         white-space: pre-wrap;
         margin-bottom: 1.5rem;
       }

@@ -1,6 +1,7 @@
 import Typography from "typography"
 
 const typography = new Typography({
+  fontDisplay: 'swap',
   baseFontSize: "18px",
   baseLineHeight: 1.666,
   headerFontFamily: ["Fira Sans"],
@@ -16,5 +17,7 @@ const typography = new Typography({
     }
   ],
 })
+
+typography.injectStyles();
 
 export default typography
