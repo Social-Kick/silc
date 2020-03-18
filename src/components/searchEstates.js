@@ -64,7 +64,8 @@ class EstateSearch extends Component {
     this.setState({ reference: evt.target.value });
   }
 
-  filterEstates = async() => {
+  filterEstates = async evt => {
+    if(evt) evt.preventDefault();
     let filteredEstates = this.props.items;
     let { bathrooms, bedrooms, region, type, minPrice, maxPrice, reference } = this.state;
     console.log(this.state)
@@ -185,12 +186,12 @@ class EstateSearch extends Component {
                 <input type="text" placeholder="Referentie" value={this.state.reference} onChange={this.setReference} />
               </div>
               <div className={searchStyles.buttonGroup}>
+                <button onClick={() => this.filterEstates()} className={searchStyles.btn}>Zoeken</button>
                 <button type="button" className={searchStyles.btnIcon} onClick={this.resetFilter}>
                   <FontAwesomeIcon icon={['fal', 'redo']} />
                 </button>
               </div>
             </form>
-            <button onClick={() => this.filterEstates()} className={searchStyles.btn}>Zoeken</button>
           </>
         }
         <Tablet>
