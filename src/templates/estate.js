@@ -150,7 +150,7 @@ const EstateDetail = props => {
 
           <section className={eS.description}>
             <RichText text={estate.description.json} />
-            {estate.infographicPdf && <button className={eS.print} onClick={() => typeof window !== `undefined` ? window.print() : null}>Print brochure</button>}
+            <button className={eS.print} onClick={() => typeof window !== `undefined` ? window.print() : null}>Print brochure</button>
           </section>
 
           <section className={`${eS.map} no-print`}>
