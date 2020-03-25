@@ -43,11 +43,6 @@ export const query = graphql`
           url
         }
       }
-      infographicPdf{
-        file{
-          url
-        }
-      }
     }
   }
 `
