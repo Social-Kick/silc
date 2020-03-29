@@ -154,6 +154,10 @@
 .found {
   padding: 1rem 2rem;
   color: lighten($color: #000000, $amount: 50);
+  .found-filter-warning {
+    color: $silc-purple-bright;
+    margin-left: 1rem;
+  }
 
   @include phone {
     padding: 1rem 1rem;

@@ -55,7 +55,8 @@ class EstateList extends Component {
           />
         </Sticky>
         <div className={searchStyles.found}>
-          {amountOfEstates} {amountOfEstates > 1 ? "woningen" : "woning"} gevonden
+          <span>{amountOfEstates} {amountOfEstates > 1 ? "woningen" : "woning"} gevonden</span>
+          {(this.props.edges.length !== this.state.estates.length) && <span className={searchStyles.foundFilterWarning}>Er is momenteel een filter actief!</span>}
         </div>
         <div className={estatesStyles.estates}>
           {this.state.estates.length > 0 ?
