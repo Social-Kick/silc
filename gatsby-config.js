@@ -56,5 +56,14 @@ module.exports = {
         pixelId: '2884813458228227',
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        commonmark: true,
+        footnotes: true,
+        pedantic: true,
+        gfm: true,
+      },
+    },
   ],
 }
