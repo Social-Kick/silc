@@ -10,7 +10,6 @@
     }
   }
   .card-wrapper {
-    margin-bottom: 1rem;
     .card {
       margin-top: 2rem;
       img {
@@ -18,27 +17,33 @@
       }
       h2 {
         font-size: 1.3rem;
-        margin: 1.5rem 0 .5rem 0;
+        margin: 1.5rem 0 0.5rem 0;
       }
     }
   }
 
   @include desktop {
-    margin: 0 auto;
     .hero > * {
       max-width: 75%;
       margin: 0 auto;
     }
     .card-wrapper {
-      display: grid;
-      margin: 0 auto;
-      gap: .75rem;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      max-width: 75%;
       .card {
-        &:not(:last-child) {
-          margin-right: 2rem;
+        margin-top: 0;
+        display: grid;
+        grid-template: "img cont" 45vh / 1fr 1fr;
+        .img {
+          grid-area: img;
+        }
+        .content {
+          grid-area: cont;
+          display: flex;
+          flex-direction: column;
+          max-width: 75%;
+          margin: auto;
+        }
+        &:nth-child(even) {
+        grid-template: "cont img" 45vh / 1fr 1fr;
         }
       }
     }

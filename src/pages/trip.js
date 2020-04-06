@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import BackgroundImage from 'gatsby-background-image'
 
 import Layout from '../components/layout';
 import SEO from '../utils/seo';
@@ -60,19 +61,19 @@ const Trip = () => {
     <Layout>
       <SEO title="Bezichtigingsreis" />
       <article className={styles.trip}>
-        <section className={styles.hero} dangerouslySetInnerHTML={{__html: tripData.abovePhotos.childMarkdownRemark.html}}></section>
+        <section className={styles.hero} dangerouslySetInnerHTML={{ __html: tripData.abovePhotos.childMarkdownRemark.html }}></section>
         <section className={styles.cardWrapper}>
           <div className={styles.card}>
-            <Img fluid={tripData.column1Photo.fluid} alt="" />
-            <div className={styles.content} dangerouslySetInnerHTML={{ __html: tripData.column1.childMarkdownRemark.html}}/>
+            <BackgroundImage Tag={'div'} fluid={tripData.column1Photo.fluid} alt="" />
+            <div className={styles.content} dangerouslySetInnerHTML={{ __html: tripData.column1.childMarkdownRemark.html }} />
           </div>
           <div className={styles.card}>
-            <Img fluid={tripData.column2Photo.fluid} alt="" />
-            <div className={styles.content} dangerouslySetInnerHTML={{ __html: tripData.column2.childMarkdownRemark.html}}/>
+            <BackgroundImage Tag={'div'} fluid={tripData.column2Photo.fluid} alt="" />
+            <div className={styles.content} dangerouslySetInnerHTML={{ __html: tripData.column2.childMarkdownRemark.html }} />
           </div>
           <div className={styles.card}>
-            <Img fluid={tripData.column3Photo.fluid} alt="" />
-            <div className={styles.content} dangerouslySetInnerHTML={{ __html: tripData.column3.childMarkdownRemark.html}}/>
+            <BackgroundImage Tag={'div'} fluid={tripData.column3Photo.fluid} alt="" />
+            <div className={styles.content} dangerouslySetInnerHTML={{ __html: tripData.column3.childMarkdownRemark.html }} />
           </div>
         </section>
       </article>
