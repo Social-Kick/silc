@@ -1,5 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Desktop } from "../utils/breakpoint"
 import biv from '../images/logo-biv-1.png'
 import pp from '../../static/privacy_policy.pdf'
 import cp from '../../static/cookie_policy.pdf'
@@ -44,13 +45,14 @@ const Footer = () => {
       </div>
       <div className={footerStyles.legalRow}>
         <p>&copy;Copyright Elimmo BV {new Date().getFullYear()}</p>
-        <p>●</p>
+        <Desktop><p>●</p></Desktop>
         <p>Proudly made by <a href="https://socialkick.be">Social Kick</a></p>
-        <p>●</p>
+        <Desktop><p>●</p></Desktop>
         <p><a href={pp} target="__blank">Privacy policy</a></p>
-        <p>●</p>
+        <Desktop><p>●</p></Desktop>
         <p><a href={cp} target="__blank">Cookie policy</a></p>
-        <p>●</p>
+        <Desktop><p>●</p></Desktop>
+
         <p>BIV 509931</p>
       </div>
       <div className={footerStyles.bottomRow}>
