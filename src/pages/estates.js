@@ -28,9 +28,14 @@ export const data = graphql`
           bathrooms
           bedrooms
           region
-          heroImage{
-            fluid(quality:100) {
-              ...GatsbyContentfulFluid
+          # heroImage{
+          #   fluid {
+          #     ...GatsbyContentfulFluid
+          #   }
+          # }
+          heroImage {
+            file {
+              url
             }
           }
         }

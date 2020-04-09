@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import { globalHistory as history } from '@reach/router';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Mobile, Desktop, Tablet } from "../utils/breakpoint";
@@ -76,6 +76,9 @@ const EstateDetail = props => {
         <SEO title={estate.title} />
         <div className="no-print">
           <Desktop>
+            <div style={{ margin: '1rem 2.5rem', textDecoration: 'underline' }} >
+              <Link to="/estates">Terug</Link>
+            </div>
             <Slider
               images={estate.estateImages.map((img) => { return (img.file.url) })}
               slidesPerPage={2.5}
@@ -92,6 +95,9 @@ const EstateDetail = props => {
             />
           </Tablet>
           <Mobile>
+            <div style={{ margin: '1rem 1rem', textDecoration: 'underline' }} >
+              <Link to="/estates">Terug</Link>
+            </div>
             <Slider
               images={estate.estateImages.map((img) => { return (img.file.url) })}
               slidesPerPage={1.25}
@@ -114,8 +120,8 @@ const EstateDetail = props => {
               <p>€ {converter.format(estate.minPrice)}</p>
             }
           </section>
-          
-          {estate.heroImage && <img className={eS.heroImage} src={estate.heroImage.file.url} alt=""/>}
+
+          {estate.heroImage && <img className={eS.heroImage} src={estate.heroImage.file.url} alt="" />}
 
           <section className={eS.estateData} >
             <div>
