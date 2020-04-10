@@ -77,7 +77,7 @@ const EstateDetail = props => {
         <div className="no-print">
           <Desktop>
             <div style={{ margin: '1rem 2.5rem', textDecoration: 'underline' }} >
-              <Link to="/estates">Terug</Link>
+              <Link to="/estates">Terug naar zoekresultaten</Link>
             </div>
             <Slider
               images={estate.estateImages.map((img) => { return (img.file.url) })}
@@ -96,7 +96,7 @@ const EstateDetail = props => {
           </Tablet>
           <Mobile>
             <div style={{ margin: '1rem 1rem', textDecoration: 'underline' }} >
-              <Link to="/estates">Terug</Link>
+              <Link to="/estates">Terug naar zoekresultaten</Link>
             </div>
             <Slider
               images={estate.estateImages.map((img) => { return (img.file.url) })}
