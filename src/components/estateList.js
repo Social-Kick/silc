@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import BackgroundImage from 'gatsby-background-image'
 
@@ -63,16 +63,15 @@ class EstateList extends Component {
             this.state.estates.map((edge, i) => {
               let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()
               return (
-                <div key={i}>
-                  <Link to={`/estate/${formattedReference}`} className={estatesStyles.estateItem}>
-                    {edge.node.heroImage && <BackgroundImage fluid={edge.node.heroImage.fluid} className={estatesStyles.heroImg}></BackgroundImage>}
-                    <div style={{backgroundImage: `url(${edge.node.heroImage.file.url})`, backgroundPosition: 'center', backgroundSize: 'cover'}}></div>
-                    <div className={estatesStyles.content}>
-                      <h2>{edge.node.title}</h2>
-                      <p className={estatesStyles.price}>Vanaf&nbsp;&nbsp;€ {converter.format(edge.node.minPrice)}</p>
-                      <span className={estatesStyles.detailsLink} to={`/estate/${formattedReference}`}>bekijk details</span>
-                    </div>
-                  </Link>
+                <div key={i} className={estatesStyles.estateItem}>
+                  {edge.node.heroImage && <BackgroundImage fluid={edge.node.heroImage.fluid} className={estatesStyles.heroImg}></BackgroundImage>}
+                  <div className={estatesStyles.heroImg} onClick={() => { navigate(`/estate/${formattedReference}`) }} style={{ backgroundImage: `url(${edge.node.heroImage.file.url})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
+                  <div className={estatesStyles.content}>
+                    <h2>{edge.node.title}</h2>
+                    <p className={estatesStyles.price}>Vanaf&nbsp;&nbsp;€ {converter.format(edge.node.minPrice)}</p>
+                    <Link to={`/estate/${formattedReference}`} className={estatesStyles.detailsLink}>bekijk details</Link>
+                    {edge.node.virtualURL && <a className={estatesStyles.virtualUrl} target="__blank" href={edge.node.virtualURL}>Bekijk deze woning virtueel</a>}
+                  </div>
                 </div>
               )
             })

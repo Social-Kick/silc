@@ -8,6 +8,9 @@
     grid-template: "img cont" / 1fr 1fr;
     .hero-img {
       grid-area: img;
+      &:hover {
+        cursor: pointer;
+      }
     }
     .content {
       grid-area: cont;
@@ -23,13 +26,20 @@
         text-transform: uppercase;
         border-bottom: 1px solid #000;
       }
+      .virtual-url {
+        background: $gradient;
+        color: #fff;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        margin-left: 2rem;
+      }
       @include phone {
         padding: 2rem;
         h2 {
           font-size: 1.2rem;
         }
         .detailsLink {
-          font-size: .8rem;
+          font-size: 0.8rem;
         }
       }
     }
@@ -38,7 +48,7 @@
         "img" auto
         "cont" min-content
         / 1fr;
-        margin-top: 3rem;
+      margin-top: 3rem;
     }
   }
   .wrapper {
@@ -60,13 +70,11 @@
   }
 }
 .estates div:nth-child(even) {
-  .estate-item {
-    grid-template: "cont img" / 1fr 1fr;
-    @media screen and (max-width: 600px) {
-      grid-template:
-        "img" auto
-        "cont" min-content
-        / 1fr;
-    }
+  grid-template: "cont img" / 1fr 1fr;
+  @media screen and (max-width: 600px) {
+    grid-template:
+      "img" auto
+      "cont" min-content
+      / 1fr;
   }
 }

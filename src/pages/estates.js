@@ -33,6 +33,7 @@ export const data = graphql`
           #     ...GatsbyContentfulFluid
           #   }
           # }
+          virtualURL
           heroImage {
             file {
               url
