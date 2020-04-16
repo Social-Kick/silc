@@ -30,8 +30,10 @@
       font-size: 1rem;
       border-radius: 4px;
       display: flex;
+      flex-direction: column;
       
-      p {      
+      p {    
+        text-align: center;  
         background: $gradient;
         color: #fff;
         padding: 0.5rem;
@@ -39,12 +41,12 @@
       }
 
       .virtual-url {
-        // background: $gradient;
         border: 2px solid $silc-purple-bright;
         color: $silc-purple;
+        text-align: center;
         padding: 0.5rem;
         border-radius: 0.25rem;
-        margin-right: 3rem;
+        margin-bottom: 1rem;
         &:hover {
           background-color: lighten($color: $silc-purple-bright, $amount: 50);
         }
@@ -176,6 +178,11 @@
 
       .price {
         justify-self: end;
+        flex-direction: row;
+        .virtual-url {
+          margin-bottom: 0;
+          margin-right: 3rem;
+        }
       }
       .map {
         align-self: end;
