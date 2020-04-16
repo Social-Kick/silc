@@ -26,13 +26,6 @@
         text-transform: uppercase;
         border-bottom: 1px solid #000;
       }
-      .virtual-url {
-        background: $gradient;
-        color: #fff;
-        padding: 0.5rem;
-        border-radius: 0.25rem;
-        margin-left: 2rem;
-      }
       @include phone {
         padding: 2rem;
         h2 {

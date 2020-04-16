@@ -25,13 +25,30 @@
     .price {
       grid-area: price;
       height: min-content;
-      max-width: 400px;
+      max-width: 800px;
       padding: 0.5rem;
       font-size: 1rem;
-      text-align: center;
-      color: #fff;
-      background: $gradient;
       border-radius: 4px;
+      display: flex;
+      
+      p {      
+        background: $gradient;
+        color: #fff;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+      }
+
+      .virtual-url {
+        // background: $gradient;
+        border: 2px solid $silc-purple-bright;
+        color: $silc-purple;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        margin-right: 3rem;
+        &:hover {
+          background-color: lighten($color: $silc-purple-bright, $amount: 50);
+        }
+      }
     }
 
     .description {

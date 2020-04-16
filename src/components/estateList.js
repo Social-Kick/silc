@@ -70,7 +70,6 @@ class EstateList extends Component {
                     <h2>{edge.node.title}</h2>
                     <p className={estatesStyles.price}>Vanaf&nbsp;&nbsp;€ {converter.format(edge.node.minPrice)}</p>
                     <Link to={`/estate/${formattedReference}`} className={estatesStyles.detailsLink}>bekijk details</Link>
-                    {edge.node.virtualURL && <a className={estatesStyles.virtualUrl} target="__blank" href={edge.node.virtualURL}>Bekijk deze woning virtueel</a>}
                   </div>
                 </div>
               )

@@ -33,6 +33,7 @@ export const query = graphql`
       estateType
       bedrooms
       bathrooms
+      virtualURL
       heroImage {
         file {
           url
@@ -115,6 +116,7 @@ const EstateDetail = props => {
           </section>
 
           <section className={eS.price}>
+            {estate.virtualURL && <a className={eS.virtualUrl} target="__blank" href={estate.virtualURL}>Bekijk deze woning virtueel</a>}
             {estate.minPrice !== estate.maxPrice ? <p>Van € {converter.format(estate.minPrice)} - € {converter.format(estate.maxPrice)}</p>
               :
               <p>€ {converter.format(estate.minPrice)}</p>
