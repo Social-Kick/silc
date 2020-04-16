@@ -18,13 +18,28 @@
       padding: 4rem;
       justify-self: start;
       align-self: center;
+      h2 {
+        margin-bottom: .5rem;
+      }
       .price {
-        font-size: 0.95rem;
-        color: lighten($color: #000, $amount: 75);
+        font-size: 1rem;
+        color: lighten($color: #000, $amount: 45);
       }
       .detailsLink {
         text-transform: uppercase;
         border-bottom: 1px solid #000;
+      }
+       .virtual-url {
+        border: 2px solid $silc-purple-bright;
+        color: $silc-purple;
+        text-align: center;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        margin-left: 2rem;
+        &:hover {
+          cursor: pointer;
+          background-color: lighten($color: $silc-purple-bright, $amount: 50);
+        }
       }
       @include phone {
         padding: 2rem;
