@@ -28,7 +28,6 @@ const BlogPost = props => {
     <Layout>
       <div className={blogStyles.post}>
         <h1>{blog.title}</h1>
-        <span>{blog.createdAt}</span>
         <RichText text={blog.body.json} />
       </div>
     </Layout>
