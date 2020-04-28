@@ -140,7 +140,10 @@ class EstateSearch extends Component {
       bathrooms: "",
       bedrooms: "",
       region: "",
-      type: ""
+      type: "",
+      minPrice: "",
+      maxPrice: "",
+      reference: ""
     });
   }
 
