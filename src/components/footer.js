@@ -15,14 +15,14 @@ const Footer = () => {
           <img src="https://silcestates.com/wp-content/uploads/2019/07/logo_contouren_wit-copia-1.png" alt="silc logo" />
         </div>
         <div className={footerStyles.adress}>
-          <p>Elimmo BV</p>
-          <p>Ridderstraat 25 bus 5</p>
-          <p>3500 Hasselt</p>
+          <p>Bruyninckx Vastgoed</p>
+          <p>Rubensstraat 141</p>
+          <p>2300 Turnhout</p>
         </div>
         <div className={footerStyles.contact}>
-          <p><FontAwesomeIcon icon={['fal', 'phone']} /> &nbsp;<a href="callto:0476 42 54 16">0476 42 54 16</a></p>
-          <p><FontAwesomeIcon icon={['fal', 'at']} /> &nbsp;<a href="mailto:em@silcestates.com">em@silcestates.com</a></p>
-          <p><FontAwesomeIcon icon={['fal', 'building']} /> &nbsp;BE0687 895 294</p>
+          <p><FontAwesomeIcon icon={['fal', 'phone']} /> &nbsp;<a href="callto:014394787">014 39 47 87</a></p>
+          <p><FontAwesomeIcon icon={['fal', 'at']} /> &nbsp;<a href="mailto:carl@silcestates.com">carl@silcestates.com</a></p>
+          <p><FontAwesomeIcon icon={['fal', 'building']} /> &nbsp;BE 0881 663 286</p>
         </div>
         <div className={footerStyles.links}>
           <div className={footerStyles.social}>
@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={footerStyles.legalRow}>
-        <p>&copy;Copyright Elimmo BV {new Date().getFullYear()}</p>
+        <p>&copy;Copyright Bruyninckx Vastgoed BV {new Date().getFullYear()}</p>
         <Desktop><p>●</p></Desktop>
         <p>Proudly made by <a href="https://socialkick.be">Social Kick</a></p>
         <Desktop><p>●</p></Desktop>
@@ -52,13 +52,14 @@ const Footer = () => {
         <Desktop><p>●</p></Desktop>
         <p><a href={cp} target="__blank">Cookie policy</a></p>
         <Desktop><p>●</p></Desktop>
-
-        <p>BIV 509931</p>
+        <p>BIV 800 007 Bruyninckx Vastgoed</p>
+        <Desktop><p>●</p></Desktop>
+        <p>BIV 203 854 Carl Bruyninckx</p>
       </div>
       <div className={footerStyles.bottomRow}>
-        <p>Polisnummer beroepsaansprakelijkheid ELIMMO: 730.390.160</p>
+        <p>Polisnummer beroepsaansprakelijkheid Bruyninckx Vastgoed BV: 730.390.160</p>
         <p className={footerStyles.spacer}>|</p>
-        <p>Waarborgorganisme ELIMMO: NV AXA Belgium</p>
+        <p>Waarborgorganisme Bruyninckx Vastgoed: NV AXA Belgium</p>
         <p className={footerStyles.spacer}>|</p>
         <p>Gewaarborgde activiteit: bemiddelaar, makelaarij</p>
       </div>
