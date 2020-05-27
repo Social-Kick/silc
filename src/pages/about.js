@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../styles/pages/about.module.scss'
 import Layout from '../components/layout'
@@ -19,6 +20,27 @@ const About = () => {
           }
         }
       }
+      carl:file(relativePath: { eq: "team/carl.jpg" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      ingrid:file(relativePath: { eq: "team/ingrid.jpg" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      em:file(relativePath: { eq: "team/em.jpg" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -29,30 +51,28 @@ const About = () => {
       <SEO title="Over ons" />
       <article>
         <section className={styles.team}>
-          <h1>Wie zijn wij?</h1>
+          <h1>Ons Team</h1>
           <div className={styles.teamRow}>
             <div className={styles.person}>
-              <img className={styles.personImg} src="https://silcestates.be/wp-content/uploads/2019/10/FOTO_STEFAN.jpg" alt="Stefan Noben" />
+              <Img className={styles.personImg} fluid={data.carl.childImageSharp.fluid} alt="Carl Bruyninckx" />
               <div className={styles.personTitle}>
-                <h2>Stefan Noben</h2>
-                <span>Commercieel directeur</span>
+                <h2>Carl Bruyninckx</h2>
+                <span>Bestuurder</span>
               </div>
-              <p className={styles.personAbout} >
-                Licentiaat in de Economie en Master in de Financiën met méér dan 20 jaar ervaring op de internationale vastgoedmarkt.
-                De voorbije jaren was hij verantwoordelijk voor verschillende markten op europees niveau bij de beste Spaanse bouwpromotors.
-              </p>
             </div>
             <div className={styles.person}>
-              <img className={styles.personImg} src="https://silcestates.be/wp-content/uploads/2019/10/FOTO_CHEMA.jpg" alt="Chema Álvarez" />
+              <Img className={styles.personImg} fluid={data.ingrid.childImageSharp.fluid} alt="Ingrid Eeckelaers" />
               <div className={styles.personTitle}>
-                <h2>Chema Álvarez</h2>
-                <span>Algemeen directeur</span>
+                <h2>Ingrid Eeckelaers</h2>
+                <span>Office Manager</span>
               </div>
-              <p className={styles.personAbout}>
-                Licentiaat in de Economie en een Bachelor Degree van de Jönköping International Business School.
-                Meer dan 20 jaar ervaring op de internationale vastgoedmarkt. De voorbije jaren was hij verantwoordelijk voor
-                verschillende markten op europees niveau bij de beste Spaanse bouwpromotors.
-              </p>
+            </div>
+            <div className={styles.person}>
+              <Img className={styles.personImg} fluid={data.em.childImageSharp.fluid} alt="Em Phan" />
+              <div className={styles.personTitle}>
+                <h2>Em Phan</h2>
+                <span>Erkend Vastgoedmakelaar</span>
+              </div>
             </div>
           </div>
 

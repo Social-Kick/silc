@@ -14,51 +14,25 @@
   }
   .team-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 75%;
     margin: auto;
+    justify-items: center;
     .person {
-      display: grid;
-      grid-template:
-        "img title"
-        "img role"
-        "img about";
-      gap: 0 1rem;
+      display: flex;
+      flex-direction: column;
       .person-img {
         margin: 0;
-        max-height: 250px;
+        min-width: 300px;
         grid-area: img;
         border-radius: 4px;
       }
       .person-title {
+        margin-top: 1rem;
         grid-area: title;
         span {
           font-weight: bold;
         }
-      }
-      .person-about {
-        margin: 0;
-        grid-area: about;
-        align-self: end;
-        text-align: start;
-      }
-      @include phone {
-        &:nth-child(1){
-          border-right: none !important;
-          border-bottom: 1px solid #fff;
-          padding: 0 0 1rem 0 !important;
-        }
-        &:nth-child(2){
-          margin: 0 0 1rem 0 !important;
-        }
-      }
-
-      &:nth-child(1){
-        border-right: 1px solid #fff;
-        padding-right: 3rem;
-      }
-      &:nth-child(2){
-        margin-left: 3rem;
       }
     }
 
