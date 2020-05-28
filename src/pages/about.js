@@ -61,17 +61,17 @@ const About = () => {
               </div>
             </div>
             <div className={styles.person}>
-              <Img className={styles.personImg} fluid={data.ingrid.childImageSharp.fluid} alt="Ingrid Eeckelaers" />
-              <div className={styles.personTitle}>
-                <h2>Ingrid Eeckelaers</h2>
-                <span>Office Manager</span>
-              </div>
-            </div>
-            <div className={styles.person}>
               <Img className={styles.personImg} fluid={data.em.childImageSharp.fluid} alt="Em Phan" />
               <div className={styles.personTitle}>
                 <h2>Em Phan</h2>
                 <span>Erkend Vastgoedmakelaar</span>
+              </div>
+            </div>
+            <div className={styles.person}>
+              <Img className={styles.personImg} fluid={data.ingrid.childImageSharp.fluid} alt="Ingrid Eeckelaers" />
+              <div className={styles.personTitle}>
+                <h2>Ingrid Eeckelaers</h2>
+                <span>Office Manager</span>
               </div>
             </div>
           </div>
