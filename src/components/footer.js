@@ -15,7 +15,7 @@ const Footer = () => {
           <img src="https://silcestates.com/wp-content/uploads/2019/07/logo_contouren_wit-copia-1.png" alt="silc logo" />
         </div>
         <div className={footerStyles.adress}>
-          <p>Bruyninckx Vastgoed</p>
+          <p>Bruyninckx Vastgoed BV</p>
           <p>Rubensstraat 141</p>
           <p>2300 Turnhout</p>
         </div>
@@ -59,7 +59,7 @@ const Footer = () => {
       <div className={footerStyles.bottomRow}>
         <p>Polisnummer beroepsaansprakelijkheid Bruyninckx Vastgoed BV: 730.390.160</p>
         <p className={footerStyles.spacer}>|</p>
-        <p>Waarborgorganisme Bruyninckx Vastgoed: NV AXA Belgium</p>
+        <p>Waarborgorganisme Bruyninckx Vastgoed BV: NV AXA Belgium</p>
         <p className={footerStyles.spacer}>|</p>
         <p>Gewaarborgde activiteit: bemiddelaar, makelaarij</p>
       </div>
