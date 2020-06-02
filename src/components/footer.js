@@ -52,7 +52,7 @@ const Footer = () => {
         <Desktop><p>●</p></Desktop>
         <p><a href={cp} target="__blank">Cookie policy</a></p>
         <Desktop><p>●</p></Desktop>
-        <p>BIV 800 007 Bruyninckx Vastgoed</p>
+        <p>BIV 800 007 Bruyninckx Vastgoed BV</p>
         <Desktop><p>●</p></Desktop>
         <p>BIV 203 854 Carl Bruyninckx</p>
       </div>
