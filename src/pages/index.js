@@ -76,7 +76,7 @@ const Index = () => {
           className={indexStyles.hero}
         >
           <Img className={indexStyles.logo} fixed={logoData} />
-          <h2>Wij maken uw dromen waar!</h2>
+          <h2>Jouw droom in Spanje!</h2>
           <Link to="/estates" className={indexStyles.cta}>Bekijk onze projecten</Link>
         </BackgroundImage>
         {homeContent.edges.map((edge, i) => {
