@@ -48,7 +48,7 @@ const Footer = () => {
         <Desktop><p>●</p></Desktop>
         <p>Proudly made by <a href="https://socialkick.be">Social Kick</a></p>
         <Desktop><p>●</p></Desktop>
-        <p><a href="/policy">Privacy policy</a></p>
+        <p><a href="/privacy">Privacy policy</a></p>
         <Desktop><p>●</p></Desktop>
         <p><a href={cp} target="__blank">Cookie policy</a></p>
         <Desktop><p>●</p></Desktop>

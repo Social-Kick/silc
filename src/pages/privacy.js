@@ -1,10 +1,7 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import Img from 'gatsby-image'
-import BackgroundImage from 'gatsby-background-image'
 
 import Layout from "../components/layout"
-import indexStyles from "../styles/pages/index.module.scss"
+import styles from "../styles/pages/privacy.module.scss"
 import SEO from "../utils/seo"
 
 const Privacy = () => {
@@ -13,7 +10,8 @@ const Privacy = () => {
         <Layout>
             <SEO title={"Privacy Policy"} />
             <article>
-                <div>
+                <h1>Privacy Policy</h1>
+                <div className={styles.intro}>
                     <p>Silc Estates hecht grote waarde aan de bescherming van uw privacy en
                     persoonsgegevens. Wij gebruiken uw persoonsgegevens uitsluitend in overeenstemming
                     met de Privacywet en andere relevante vigerende wettelijke voorschriften. Iedere
@@ -35,7 +33,7 @@ const Privacy = () => {
             op het platform van Silc Estates.</p>
                 </div>
                 <div>
-                    <h1>Wie verwerkt de persoonsgegevens?</h1>
+                    <h2>Wie verwerkt de persoonsgegevens?</h2>
                     <p>Silcestates.eu is een initiatief van: Silc Estates (Hierna: “Silc Estates”)</p>
                     <p>Btw-nummer:BE 0687 895 294<br />
             Polisnr: 730.390.160<br />
@@ -52,7 +50,7 @@ const Privacy = () => {
                     <p><a href="mailto:info@socialkick.be">info@socialkick.be</a></p>
                 </div>
                 <div>
-                    <h1>Welke persoonsgegevens worden verwerkt?</h1>
+                    <h2>Welke persoonsgegevens worden verwerkt?</h2>
                     <p>Silc Estates verbindt zich ertoe enkel de gegevens te verwerken die ter zake dienend
                     zijn en noodzakelijk zijn voor de doeleinden waarvoor zij verzameld werden. Volgende
             categorieën van persoonsgegevens kunnen verwerkt worden door Silc Estates:</p>
@@ -61,7 +59,7 @@ const Privacy = () => {
                     </ul>
                 </div>
                 <div>
-                    <h1>Voor welke doeleinden worden mijn persoonsgegevens gebruikt?</h1>
+                    <h2>Voor welke doeleinden worden mijn persoonsgegevens gebruikt?</h2>
                     <p>Silc Estates verzamelt persoonsgegevens om u een veilige, optimale en persoonlijke
                     gebruikerservaring te bieden. De verzameling van persoonsgegevens wordt uitgebreider
                     naarmate u intensiever gebruik maakt van het platform/de website/de applicatie en onze
@@ -97,7 +95,7 @@ const Privacy = () => {
             vermijden.</p>
                 </div>
                 <div>
-                    <h1>Combell</h1>
+                    <h2>Combell</h2>
                     <p>Combell is een hosting solution builder, waarmee we onze website optimaal laten werken.</p>
                     <p>Alle data die we hiervoor verzamelen, wordt op een eerlijke en wettige manier verwerkt
                     op de beveiligde servers van Combell. Combell beschikt over een ISO 27001-certificaat
@@ -111,7 +109,7 @@ const Privacy = () => {
                     </p>
                 </div>
                 <div>
-                    <h1>Campaign Monitor</h1>
+                    <h2>Campaign Monitor</h2>
                     <p>Wij kunnen uw gegevens uitwisselen met Campaign Monitor. Dit is software voor emailmarketing. Via
                     data-uitwisseling bewaken we de effectiviteit van onze emailcampagnes. Campaign Monitor kan statistische en
                     prestatie-informatie bewaren,
@@ -123,7 +121,7 @@ const Privacy = () => {
                     </p>
                 </div>
                 <div>
-                    <h1>Facebook</h1>
+                    <h2>Facebook</h2>
                     <p>Wij kunnen uw gegevens delen met Facebook om te adverteren. Hierbij kunnen we
                     lijsten van e-mailadressen uploaden zodat we bestaande contacten via het Facebook
             platform gepersonaliseerde advertenties kunnen tonen.</p>
@@ -148,7 +146,7 @@ const Privacy = () => {
                     </p>
                 </div>
                 <div>
-                    <h1>Wij gebruiken ook cookies!</h1>
+                    <h2>Wij gebruiken ook cookies!</h2>
                     <p>Tijdens een bezoek aan ons platform/onze website kunnen ‘cookies’ op uw harde schijf
                     geplaatst worden om het platform/de website beter af te stemmen op de behoeften van
                     de terugkerende bezoeker. Niet-functionele cookies helpen ons om uw bezoek aan het
@@ -161,7 +159,7 @@ const Privacy = () => {
             eveneens te lezen in onze Cookieverklaring.</p>
                 </div>
                 <div>
-                    <h1>Wat zijn mijn rechten?</h1>
+                    <h2>Wat zijn mijn rechten?</h2>
                     <p>Garantie van een rechtmatige en veilige verwerking van de persoonsgegevens</p>
                     <p>Silc Estates verwerkt uw persoonsgegevens steeds eerlijk en rechtmatig. Dit houdt volgende garanties in:</p>
                     <ul>
