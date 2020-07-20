@@ -68,12 +68,10 @@ class EstateSearch extends Component {
     if(evt) evt.preventDefault();
     let filteredEstates = this.props.items;
     let { bathrooms, bedrooms, region, type, minPrice, maxPrice, reference } = this.state;
-    console.log(this.state)
     let query = this._setQuery(bedrooms, bathrooms, region, type, minPrice, maxPrice, reference)
     this.setState({
       query: query
     })
-    console.log(query);
     if ('bedrooms' in query) {
       filteredEstates = filteredEstates.filter(item => { return item.node.bedrooms >= parseInt(query['bedrooms']) ? true : false })
     }
