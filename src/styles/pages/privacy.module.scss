@@ -1,36 +1,27 @@
 @import "../variables.scss";
 
-article {
-    margin: 2rem;
-    margin-top: 4rem;
+.wrapper {
+  margin: 2rem;
 
-    p{
-        margin-bottom: .5rem;
-    }
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
 
-    h1{
-        font-size: 2rem;
-        text-align: center;
-    }
+  h2 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
 
-    h2{
-        margin-top: 2rem;
-        font-size: 1.5rem;;
-    }
+  a {
+    color: $silc-purple-bright;
+  }
 
-    a{
-        color: $silc-purple-bright;
-    }
-
-    .intro{
-        text-align: center;
-        background-color: $silc-purple-bright;
-        color: white;
-        border-radius: .5rem;
-        padding: 1rem
-    }
-
-    div{
-        padding: 1rem
-    }
+  .intro {
+    text-align: center;
+    background-color: $silc-purple-bright;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
 }
