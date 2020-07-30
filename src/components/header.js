@@ -17,7 +17,7 @@ const Nav = () => {
             <Link activeClassName={headerStyles.active} to="/estates" className={headerStyles.navItem}>Aanbod</Link>
           </li>
           <li>
-            <Link style={{fontSize: '1.6rem'}} activeClassName={headerStyles.active} to="/trip" className={headerStyles.navItem}>Bezichtigingsreis</Link>
+            <Link style={{ fontSize: '1.6rem' }} activeClassName={headerStyles.active} to="/trip" className={headerStyles.navItem}>Bezichtigingsreis</Link>
           </li>
           <li>
             <Link activeClassName={headerStyles.active} to="/about" className={headerStyles.navItem}>Over ons</Link>
@@ -27,6 +27,9 @@ const Nav = () => {
           </li>
           <li>
             <Link activeClassName={headerStyles.active} to="/blog" className={headerStyles.navItem}>Nieuws</Link>
+          </li>
+          <li>
+            <Link activeClassName={headerStyles.active} to="/tips" className={headerStyles.navItem}>Tips & Tricks</Link>
           </li>
           <li>
             <Link activeClassName={headerStyles.active} to="/contact" className={headerStyles.navItem}>Contact</Link>
@@ -82,6 +85,9 @@ class Header extends Component {
                 </li>
                 <li>
                   <Link activeClassName={headerStyles.active} to="/blog" className={headerStyles.navItem}>Nieuws</Link>
+                </li>
+                <li>
+                  <Link activeClassName={headerStyles.active} to="/tips" className={headerStyles.navItem}>Tips & Tricks</Link>
                 </li>
                 <li>
                   <Link activeClassName={headerStyles.active} to="/contact" className={headerStyles.navItem}>Contact</Link>
