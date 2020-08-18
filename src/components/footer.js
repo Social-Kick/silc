@@ -2,7 +2,6 @@ import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Desktop } from "../utils/breakpoint"
 import biv from '../images/logo-biv-1.png'
-import pp from '../../static/privacy_policy.pdf'
 import cp from '../../static/cookie_policy.pdf'
 
 import footerStyles from "../styles/components/footer.module.scss"
@@ -20,7 +19,7 @@ const Footer = () => {
           <p>2300 Turnhout</p>
         </div>
         <div className={footerStyles.contact}>
-          <p><FontAwesomeIcon icon={['fal', 'phone']} /> &nbsp;<a href="callto:014394787">014 39 47 87</a></p>
+          <p><FontAwesomeIcon icon={['fal', 'phone']} /> &nbsp;<a href="callto:014394787">014 39 47 78</a></p>
           <p><FontAwesomeIcon icon={['fal', 'at']} /> &nbsp;<a href="mailto:carl@silcestates.com">carl@silcestates.com</a></p>
           <p><FontAwesomeIcon icon={['fal', 'building']} /> &nbsp;BE 0881 663 286</p>
         </div>

@@ -86,9 +86,9 @@ class Header extends Component {
                 <li>
                   <Link activeClassName={headerStyles.active} to="/blog" className={headerStyles.navItem}>Nieuws</Link>
                 </li>
-                {/* <li>
+                <li>
                   <Link activeClassName={headerStyles.active} to="/tips" className={headerStyles.navItem}>Tips & Tricks</Link>
-                </li> */}
+                </li>
                 <li>
                   <Link activeClassName={headerStyles.active} to="/contact" className={headerStyles.navItem}>Contact</Link>
                 </li>
