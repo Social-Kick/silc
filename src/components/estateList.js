@@ -68,9 +68,10 @@ class EstateList extends Component {
                   <div className={estatesStyles.heroImg} onClick={() => { navigate(`/estate/${formattedReference}`) }} style={{ backgroundImage: `url(${edge.node.heroImage.file.url})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
                   <div className={estatesStyles.content}>
                     <h2>{edge.node.title}</h2>
+                    <p className={estatesStyles.ref}>{formattedReference}</p>
+                    <br />
                     <p className={estatesStyles.price}>Vanaf&nbsp;&nbsp;€ {converter.format(edge.node.minPrice)}</p>
-                    <br/>
-                    <br/>
+                    <br />
                     <Link to={`/estate/${formattedReference}`} className={estatesStyles.detailsLink}>bekijk details</Link>
                     {edge.node.virtualURL && <a className={estatesStyles.virtualUrl} target="__blank" href={edge.node.virtualURL}>Bekijk deze aanbieding virtueel</a>}
                   </div>
