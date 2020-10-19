@@ -183,7 +183,6 @@ const EstateDetail = props => {
                   Heb jij graag een gesprek met Carl, onze zaakvoerder? Maak dan
                   hier een terugbelverzoek aan en Carl neemt contact met je op.
               </TerugbelVerzoek>
-              <CallRequest estateReference={location.href} />
             </div>
             <div className={eS.contactForm}>
               <h2>Interesse in deze aanbieding? Laat het ons weten!</h2>
