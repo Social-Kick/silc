@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 import { globalHistory as history } from '@reach/router';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +11,10 @@ import Layout from "../components/layout"
 import Map from "../components/map";
 import RichText from "../utils/richText"
 import SEO from '../utils/seo'
+import TerugbelVerzoek from '../components/terugbelVerzoek';
+import Modal from '../components/modal';
+import { CallRequest, ContactForm } from '../components/forms';
+import carl from '../images/terugbelverzoek/carl.jpg';
 
 import { Slider } from "../components/slider";
 
@@ -70,6 +74,8 @@ function capitalizeFirstLetter(string) {
 const EstateDetail = props => {
   const estate = props.data.contentfulSilcEstate
   const { location } = history;
+
+  const [callRequestModal, setCallRequestModal] = useState(false);
 
   return (
     <div>
@@ -171,25 +177,28 @@ const EstateDetail = props => {
             />
           </section>
 
-          <section className={`${eS.contactForm} no-print`}>
-            <h2>Interesse in deze aanbieding? Laat het ons weten!</h2>
-            <form name="estate-interest" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
-              <input type="hidden" name="bot-field" />
-              <input type="hidden" name="form-name" value="estate-interest" />
-              <div className={eS.row}>
-                <input type="text" name="firstname" placeholder="Voornaam" />
-                <input type="text" name="lastname" placeholder="Naam" />
-              </div>
-              <div className={eS.row}>
-                <input type="email" name="email" placeholder="E-mail" />
-                <input type="text" name="phone" placeholder="Telefoon of GSM" />
-              </div>
-              <input type="hidden" name="estate-reference" value={location.href} />
-              <textarea placeholder="Opmerkingen" name="message" rows="5"></textarea>
-              <button className={eS.btn} type="submit">Verzenden</button>
-            </form>
+          <section className={`${eS.forms} no-print`}>
+            <div className={eS.callRequest}>
+              <TerugbelVerzoek imageSrc={carl} toggleCallRequestModal={() => setCallRequestModal(true)}>
+                  Heb jij graag een gesprek met Carl, onze zaakvoerder? Maak dan
+                  hier een terugbelverzoek aan en Carl neemt contact met je op.
+              </TerugbelVerzoek>
+              <CallRequest estateReference={location.href} />
+            </div>
+            <div className={eS.contactForm}>
+              <h2>Interesse in deze aanbieding? Laat het ons weten!</h2>
+              <ContactForm estateReference={location.href} />
+            </div>
           </section>
         </article>
+        <Modal
+          isOpen={callRequestModal}
+          handleClose={() => setCallRequestModal(false)}
+          title="Maak een terugbelverzoek"
+          style={{ width: "600px" }}
+        >
+          <CallRequest estateReference={location.href} />
+        </Modal>
       </Layout>
     </div>
   )

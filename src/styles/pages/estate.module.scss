@@ -10,7 +10,7 @@
       "estate-data"
       "description"
       "map"
-      "form";
+      "forms";
     .title {
       grid-area: title;
       margin-bottom: 1rem;
@@ -119,50 +119,18 @@
       grid-area: map;
     }
 
-    .contact-form {
-      form {
-        grid-area: form;
-        margin-top: 2rem;
-        .row {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 0.5rem;
-        }
-        input,
-        textarea {
-          margin-top: 0.5rem;
-          width: 100%;
-          max-width: 100%;
-          resize: none;
-          border: none;
-          border-bottom: 2px solid $silc-purple;
-          &:focus {
-            outline: none;
-          }
-          &::placeholder {
-            color: black;
-            opacity: 0.8;
-          }
-        }
-        button {
-          padding: 0.3rem 0.7rem;
-          font-size: 1rem;
-          color: #000;
-          transition: ease-in 0.15s;
-          background-color: #fff;
-          border: solid 2px lighten($color: $silc-purple, $amount: 10);
-          &:focus {
-            outline: none;
-          }
-        }
-        .btn {
-          border-radius: 2px 0 0 2px;
-          &:hover {
-            cursor: pointer;
-            background-color: lighten($color: $silc-purple, $amount: 10);
-            color: #fff;
-          }
-        }
+    .forms {
+      grid-area: forms;
+      margin-bottom: 2.5rem;
+
+      .contactForm {
+        grid-area: contact;
+      }
+
+      .callRequest {
+        grid-area: callRequest;
+        border: 2px solid $silc-purple-bright;
+        margin-bottom: 2.5rem;
       }
     }
 
@@ -171,7 +139,7 @@
       grid-template:
         "title price"
         "estate-data map"
-        "description form"
+        "description forms"
         / 1fr 1fr;
 
       gap: 0 4rem;
@@ -191,6 +159,17 @@
       .estate-data {
         .vertical-border {
           height: 65%;
+        }
+      }
+
+      .forms {
+        display: grid;
+        gap: 2rem;
+        grid-template: 
+          "callRequest contact" / 50%;
+
+        .callRequest {
+          margin-bottom: 0;
         }
       }
     }
@@ -299,53 +278,6 @@
     .map {
       margin-bottom: 2rem;
       grid-area: map;
-    }
-
-    .contact-form {
-      form {
-        grid-area: form;
-        margin-top: 2rem;
-        .row {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 0.5rem;
-        }
-        input,
-        textarea {
-          margin-top: 0.5rem;
-          width: 100%;
-          max-width: 100%;
-          resize: none;
-          border: none;
-          border-bottom: 2px solid $silc-purple;
-          &:focus {
-            outline: none;
-          }
-          &::placeholder {
-            color: black;
-            opacity: 0.8;
-          }
-        }
-        button {
-          padding: 0.3rem 0.7rem;
-          font-size: 1rem;
-          color: #000;
-          transition: ease-in 0.15s;
-          background-color: #fff;
-          border: solid 2px lighten($color: $silc-purple, $amount: 10);
-          &:focus {
-            outline: none;
-          }
-        }
-        .btn {
-          border-radius: 2px 0 0 2px;
-          &:hover {
-            cursor: pointer;
-            background-color: lighten($color: $silc-purple, $amount: 10);
-            color: #fff;
-          }
-        }
-      }
     }
   }
 }

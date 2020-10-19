@@ -1,0 +1,24 @@
+@import "../variables.scss";
+
+.call-request {
+    // background-color: $silc-purple;
+    background-color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+
+    .avatar {
+      img {
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        margin-bottom: 1rem;
+      }
+    }
+    p {
+      margin: 1rem 0;
+    }
+    button {
+      background: $gradient !important;
+      color: #fff;
+    }
+  }
