@@ -11,6 +11,7 @@
       "description"
       "map"
       "forms";
+
     .title {
       grid-area: title;
       margin-bottom: 1rem;
@@ -125,6 +126,7 @@
 
       .contactForm {
         grid-area: contact;
+        background: white;
       }
 
       .callRequest {
@@ -134,12 +136,17 @@
       }
     }
 
+    .contactFormSticky {
+      display: none;
+    }
+
     @include desktop {
       margin-top: 1rem;
       grid-template:
         "title price"
         "estate-data map"
         "description forms"
+        "contactFormSticky contactFormSticky"
         / 1fr 1fr;
 
       gap: 0 4rem;
@@ -168,8 +175,28 @@
         grid-template: 
           "callRequest contact" / 50%;
 
+        .contactForm {
+          display: none;
+        }
+
         .callRequest {
           margin-bottom: 0;
+        }
+      }
+
+      .contactFormSticky {
+        grid-area: contactFormSticky;
+        display: flex;
+        justify-content: flex-end;
+        position: sticky;
+        bottom: 0;
+        right: 0;
+        margin-top: -420px;
+  
+        .contactFormWrapper {
+          background: white;
+          padding: 1rem;
+          width: 21%;
         }
       }
     }
