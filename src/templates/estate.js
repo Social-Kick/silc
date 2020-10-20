@@ -189,14 +189,6 @@ const EstateDetail = props => {
               <ContactForm estateReference={location.href} />
             </div>
           </section>
-          <section className={eS.contactFormSticky}>
-            <div className={eS.contactFormWrapper}>
-              <div className={eS.contactForm}>
-                <h2>Interesse in deze aanbieding? Laat het ons weten!</h2>
-                <ContactForm estateReference={location.href} />
-              </div>
-            </div>
-        </section>
         </article>
         <Modal
           isOpen={callRequestModal}
