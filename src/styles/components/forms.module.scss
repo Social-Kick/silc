@@ -1,0 +1,50 @@
+@import "../variables.scss";
+
+form {
+  // grid-area: form;
+  margin-top: 2rem;
+  input,
+  textarea {
+    margin-top: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    resize: none;
+    border: none;
+    border-bottom: 2px solid $silc-purple;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: black;
+      opacity: 0.8;
+    }
+  }
+  button {
+    padding: 0.3rem 0.7rem;
+    font-size: 1rem;
+    color: #000;
+    transition: ease-in 0.15s;
+    background-color: #fff;
+    border: solid 2px lighten($color: $silc-purple, $amount: 10);
+    margin-top: 0.5rem;
+    &:focus {
+      outline: none;
+    }
+  }
+  .btn {
+    border-radius: 2px 0 0 2px;
+    &:hover {
+      cursor: pointer;
+      background-color: lighten($color: $silc-purple, $amount: 10);
+      color: #fff;
+    }
+  }
+
+  @include tablet {
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+  }
+}

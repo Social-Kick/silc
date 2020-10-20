@@ -25,6 +25,9 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     {
+      resolve: `gatsby-plugin-emotion`,
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
