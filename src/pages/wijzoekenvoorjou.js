@@ -19,7 +19,7 @@ const WijZoekenVoorJou = () => {
             zoek naar een verblijf met specifieke eisen?
           </h2>
           <p>
-            Geen probleem, bij Bruyninckx Vastgoed gaan we met plezier naar jouw
+            Geen probleem, bij SILC Estates gaan we met plezier naar jouw
             droomwoning op zoek. <br />
             Van rustig gelegen villa's op wandelafstand van de zee tot
             vastgoedinvesteringen aan een bruisende kust.

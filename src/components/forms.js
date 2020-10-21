@@ -78,7 +78,9 @@ export const WijZoekenVoorJouForm = () => (
       <select name="region">
         <option value="">regio</option>
         <option value="Costa Almeria">Costa Almeria</option>
-        <option value="Costa Blanca">Costa Blanca</option>
+        <option value="Costa Blanca Noord">Costa Blanca Noord</option>
+        <option value="Costa Blanca Zuid">Costa Blanca Zuid</option>
+        <option value="Costa Calida">Costa Calida</option>
         <option value="Costa del Sol">Costa del Sol</option>
       </select>
     </div>
@@ -87,9 +89,9 @@ export const WijZoekenVoorJouForm = () => (
       <label for="type">Wat zoek je?</label>
       <select name="type">
         <option value="">type</option>
-        <option value="Appartement">Appartement</option>
-        <option value="Huis">Huis</option>
         <option value="Villa">Villa</option>
+        <option value="Appartement">Appartement</option>
+        <option value="Woning">Woning</option>
       </select>
     </div>
 
