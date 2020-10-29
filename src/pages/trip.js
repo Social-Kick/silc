@@ -6,7 +6,7 @@ import BackgroundImage from 'gatsby-background-image'
 import Layout from '../components/layout';
 import SEO from '../utils/seo';
 
-import styles from '../styles/pages/trip.module.scss'
+import styles from '../styles/pages/columnPage.module.scss'
 
 const Trip = () => {
   const data = useStaticQuery(graphql`
@@ -60,7 +60,7 @@ const Trip = () => {
   return (
     <Layout>
       <SEO title="Bezichtigingsreis" />
-      <article className={styles.trip}>
+      <article className={styles.columnPage}>
         <section className={styles.hero} dangerouslySetInnerHTML={{ __html: tripData.abovePhotos.childMarkdownRemark.html }}></section>
         <section className={styles.cardWrapper}>
           <div className={styles.card}>

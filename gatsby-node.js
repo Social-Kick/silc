@@ -54,4 +54,30 @@ module.exports.createPages = async ({ graphql, actions }) => {
       }
     })
   })
+
+  const costaTemplate = path.resolve('./src/templates/costaLandingPage.js');
+  const resCosta = await graphql(`
+    query{
+      allContentfulLandingPaginaCosta {
+        edges {
+          node {
+            titel
+            regio
+          }
+        }
+      }
+    }
+  `);
+
+  resCosta.data.allContentfulLandingPaginaCosta.edges.forEach((edge) => {
+    const formattedCostaReference = edge.node.titel.replace(/\s+/g, '-').toLowerCase().replace('?', '').replace('#', '');
+    createPage({
+      component: costaTemplate,
+      path: `/costa/${formattedCostaReference}`,
+      context: {
+        title: edge.node.titel,
+        regio: edge.node.regio
+      }
+    })
+  });
 }
