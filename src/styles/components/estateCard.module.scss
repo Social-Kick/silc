@@ -1,0 +1,43 @@
+@import "../variables.scss";
+
+.estate-card-wrapper {
+    display: block;
+    background-color: white;
+
+    .estate-card-content-wrapper {
+        padding: 2rem;
+        border-left: 2px solid $silc-purple-bright;
+        border-right: 2px solid $silc-purple-bright;
+        border-bottom: 2px solid $silc-purple-bright;
+    }
+
+    .image {
+        width: 100%;
+        height: 25vh;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    p {
+        margin-bottom: 0.5rem;
+    }
+
+    .title {
+        font-weight: 500;
+    }
+
+    .ref {
+        font-size: 0.75rem;
+        color: lighten($color: #000, $amount: 60);
+        text-transform: uppercase;
+    }
+    .price {
+        font-size: 1rem;
+        color: lighten($color: #000, $amount: 45);
+    }
+    .details-link {
+        text-transform: uppercase;
+        border-bottom: 1px solid #000;
+      }
+}
