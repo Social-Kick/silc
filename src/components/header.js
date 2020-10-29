@@ -81,6 +81,9 @@ class Header extends Component {
                   <Link activeClassName={headerStyles.active} to="/trip" className={headerStyles.navItem}>Bezichtigingsreis</Link>
                 </li>
                 <li>
+                  <Link activeClassName={headerStyles.active} to="/costa/costa-blanca-zuid" className={headerStyles.navItem}>Costa Blanca Zuid</Link>
+                </li>
+                <li>
                   <Link activeClassName={headerStyles.active} to="/about" className={headerStyles.navItem}>Over ons</Link>
                 </li>
                 <li>
