@@ -32,7 +32,7 @@ const Nav = () => {
             <Link activeClassName={headerStyles.active} to="/tips" className={headerStyles.navItem}>Tips & Tricks</Link>
           </li> */}
           <li>
-            <Link activeClassName={headerStyles.active} to="/wijzoekenvoorjou" className={headerStyles.navItem}>Wij zoeken voor jou</Link>
+            <Link style={{ fontSize: '1.3rem' }} activeClassName={headerStyles.active} to="/wijzoekenvoorjou" className={headerStyles.navItem}>Wij zoeken voor jou</Link>
           </li>
           <li>
             <Link activeClassName={headerStyles.active} to="/contact" className={headerStyles.navItem}>Contact</Link>

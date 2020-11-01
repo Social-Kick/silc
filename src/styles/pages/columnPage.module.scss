@@ -27,10 +27,11 @@
     }
 
     .card-footer {
-      margin-bottom: 2rem;
+      margin: 4rem 0 2rem 0;
 
       h2 {
         margin-bottom: 2rem;
+        text-align: center;
       }
 
       .card-footer-content {
@@ -50,8 +51,8 @@
     }
     .card-wrapper {
       .card {
-        margin-top: 0;
-        grid-template: "img cont" 45vh / 1fr 1fr;
+        margin: 0;
+        grid-template: "img cont" 55vh / 1fr 1fr;
         .img {
           grid-area: img;
         }
@@ -63,7 +64,7 @@
           margin: auto;
         }
         &:nth-child(even) {
-        grid-template: "cont img" 45vh / 1fr 1fr;
+        grid-template: "cont img" 55vh / 1fr 1fr;
         }
       }
       .card-footer {
