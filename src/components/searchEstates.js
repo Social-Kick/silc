@@ -22,7 +22,7 @@ class EstateSearch extends Component {
   }
 
   async componentWillMount() {
-    let query = localStorage.getItem('query') ? JSON.parse(localStorage.getItem('query')) : null
+    let query = this.props.query ? this.props.query : localStorage.getItem('query') ? JSON.parse(localStorage.getItem('query')) : null;
     this.setState({
       estates: this.props.items,
       query: query,

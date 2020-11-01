@@ -125,8 +125,8 @@ const CostaLandingPage = props => {
           <div className={styles.cardFooter}>
             <div className={styles.content}>
               <h2>Benieuwd naar het aanbod van SILC Estates aan de {costaPageData.titel}?</h2>
-              <div class="text-center mb-2">
-                <button class="btn-primary btn-cta" onClick={() => { navigate(`/estates`) }}>Klik hier</button>
+              <div className={[styles.textCenter, styles.mb2].join(' ')}>
+                <button className={[styles.btnPrimary, styles.btnCta].join(' ')} onClick={() => { navigate(`/estates`, { state: { query: { region: costaPageData.regio }}}) }}>Klik hier</button>
               </div>
               <div className={styles.cardFooterContent}>{estatesData.map((estate, index) => <EstateCard key={index} className={styles.estateCard} estate={estate.node}/>)}</div>
             </div>
