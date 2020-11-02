@@ -3,7 +3,7 @@ import { graphql, navigate } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image'
 
 import Layout from '../components/layout';
-import EstateCard from '../components/estateCard';
+import EstateGallery from '../components/estateGallery/estateGallery';
 import SEO from '../utils/seo';
 
 import styles from '../styles/pages/columnPage.module.scss';
@@ -70,15 +70,12 @@ export const pageQuery = graphql`
           }
         }
       }
-      allContentfulSilcEstate(limit: 3, filter: {region: {eq: $regio}}) {
+      allContentfulSilcEstate(limit: 4, filter: {region: {eq: $regio}}) {
         edges {
           node {
             heroImage {
               fluid(quality: 100) {
                 ...GatsbyContentfulFluid
-              }
-              file {
-                url
               }
             }
             title
@@ -128,7 +125,9 @@ const CostaLandingPage = props => {
               <div className={[styles.textCenter, styles.mb2].join(' ')}>
                 <button className={[styles.btnPrimary, styles.btnCta].join(' ')} onClick={() => { navigate(`/estates`, { state: { query: { region: costaPageData.regio }}}) }}>Klik hier</button>
               </div>
-              <div className={styles.cardFooterContent}>{estatesData.map((estate, index) => <EstateCard key={index} className={styles.estateCard} estate={estate.node}/>)}</div>
+              <div className={styles.cardFooterContent}>
+                <EstateGallery estates={estatesData} />
+              </div>
             </div>
           </div>
         </section>
