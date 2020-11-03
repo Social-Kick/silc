@@ -92,6 +92,11 @@ const CostaLandingPage = props => {
   const costaPageData = props.data.contentfulLandingPaginaCosta;
   const estatesData = props.data.allContentfulSilcEstate.edges;
 
+  const handleNavigate = () => {
+    localStorage.setItem('query', JSON.stringify({ region: costaPageData.regio }));
+    navigate(`/estates`);
+  }
+
   return (
     <Layout>
       <SEO title={costaPageData.titel} />
@@ -123,7 +128,7 @@ const CostaLandingPage = props => {
             <div className={styles.content}>
               <h2>Benieuwd naar het aanbod van SILC Estates aan de {costaPageData.titel}?</h2>
               <div className={[styles.textCenter, styles.mb2].join(' ')}>
-                <button className={[styles.btnPrimary, styles.btnCta].join(' ')} onClick={() => { navigate(`/estates`, { state: { query: { region: costaPageData.regio }}}) }}>Klik hier</button>
+                <button className={[styles.btnPrimary, styles.btnCta].join(' ')} onClick={handleNavigate}>Klik hier</button>
               </div>
               <div className={styles.cardFooterContent}>
                 <EstateGallery estates={estatesData} />

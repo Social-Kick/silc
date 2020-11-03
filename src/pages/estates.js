@@ -5,11 +5,11 @@ import Layout from '../components/layout'
 import EstateList from '../components/estateList'
 import SEO from '../utils/seo'
 
-const Estates = ({ location, data: { allContentfulSilcEstate } }) => {
+const Estates = ({ data: { allContentfulSilcEstate } }) => {
   return (
     <Layout>
       <SEO title={"Aanbod"}/>
-      <EstateList query={location.state.query} edges={allContentfulSilcEstate.edges} />
+      <EstateList edges={allContentfulSilcEstate.edges} />
     </Layout >
   )
 }

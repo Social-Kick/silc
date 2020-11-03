@@ -9,18 +9,18 @@ import SearchEstates from "./searchEstates"
 import Sticky from 'react-sticky-el';
 
 class EstateList extends Component {
-  constructor(props, context, location) {
-    super(props, context, location)
+  constructor(props, context) {
+    super(props, context)
     this.state = {
       estates: [],
-      searchIsFixed: false,
+      searchIsFixed: false
     };
   }
 
   componentDidMount = () => {
     this.setState({
-      estates: this.props.edges,
-    })
+      estates: this.props.edges
+    });
   }
 
   setEstates = filteredEstates => {
@@ -50,7 +50,6 @@ class EstateList extends Component {
             className={this.state.searchIsFixed ? '' : searchStyles.searchIsFixed}
             filteredEstates={this.props.edges}
             items={this.props.edges}
-            query={this.props.query}
             handleFilter={this.setEstates}
             handleReset={this.resetFilter}
           />
