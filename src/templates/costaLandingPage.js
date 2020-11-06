@@ -9,7 +9,7 @@ import SEO from '../utils/seo';
 import styles from '../styles/pages/columnPage.module.scss';
 
 export const pageQuery = graphql`
-    query($title: String!, $regio: String!) {
+    query($title: String!) {
       contentfulLandingPaginaCosta(titel: {eq: $title}) {
         id
         titel
@@ -69,19 +69,15 @@ export const pageQuery = graphql`
             html
           }
         }
-      }
-      allContentfulSilcEstate(limit: 4, filter: {region: {eq: $regio}}) {
-        edges {
-          node {
-            heroImage {
-              fluid(quality: 100) {
-                ...GatsbyContentfulFluid
-              }
+        estates {
+          heroImage {
+            fluid(quality: 100) {
+              ...GatsbyContentfulFluid
             }
-            title
-            reference
-            minPrice
           }
+          minPrice
+          reference
+          title
         }
       }
     }
@@ -90,7 +86,7 @@ export const pageQuery = graphql`
 const CostaLandingPage = props => {
 
   const costaPageData = props.data.contentfulLandingPaginaCosta;
-  const estatesData = props.data.allContentfulSilcEstate.edges;
+  const estatesData = costaPageData.estates;
 
   const handleNavigate = () => {
     localStorage.setItem('query', JSON.stringify({ region: costaPageData.regio }));

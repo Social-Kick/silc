@@ -62,7 +62,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             titel
-            regio
           }
         }
       }
@@ -75,8 +74,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
       component: costaTemplate,
       path: `/costa/${formattedCostaReference}`,
       context: {
-        title: edge.node.titel,
-        regio: edge.node.regio
+        title: edge.node.titel
       }
     })
   });
