@@ -13,14 +13,14 @@ class EstateList extends Component {
     super(props, context)
     this.state = {
       estates: [],
-      searchIsFixed: false,
+      searchIsFixed: false
     };
   }
 
   componentDidMount = () => {
     this.setState({
-      estates: this.props.edges,
-    })
+      estates: this.props.edges
+    });
   }
 
   setEstates = filteredEstates => {

@@ -1,0 +1,17 @@
+@import '../variables.scss';
+
+.gallery {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0 0.2rem;
+}
+
+@include phone {
+    .gallery {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        overflow-y: scroll;
+        gap: 0.1rem;
+    }
+}

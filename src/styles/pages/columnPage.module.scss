@@ -1,6 +1,7 @@
 @import "../variables.scss";
+@import '../index.scss';
 
-.trip {
+.column-page {
   .hero {
     background: $gradient;
     color: #fff;
@@ -10,18 +11,34 @@
     }
   }
   .card-wrapper {
+    h2 {
+      font-size: 1.3rem;
+      margin: 1.5rem 0 0.5rem 0;
+    }
+    .content {
+      padding: 0 1rem;
+    }
+
     .card {
       display: grid;
       grid-template: 
       "img" 25vh
       "cont";
       margin: 1rem 0 2rem 0;
-      .content {
-        padding: 0 1rem;
-      }
+    }
+
+    .card-footer {
+      margin: 4rem 0 2rem 0;
+
       h2 {
-        font-size: 1.3rem;
-        margin: 1.5rem 0 0.5rem 0;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .card-footer-content {
+        > * {
+          margin: 1rem 0;
+        }
       }
     }
   }
@@ -35,8 +52,8 @@
     }
     .card-wrapper {
       .card {
-        margin-top: 0;
-        grid-template: "img cont" 45vh / 1fr 1fr;
+        margin: 0;
+        grid-template: "img cont" 55vh / 1fr 1fr;
         .img {
           grid-area: img;
         }
@@ -48,7 +65,18 @@
           margin: auto;
         }
         &:nth-child(even) {
-        grid-template: "cont img" 45vh / 1fr 1fr;
+        grid-template: "cont img" 55vh / 1fr 1fr;
+        }
+      }
+      .card-footer {
+        h2 {
+          text-align: center;
+        }
+  
+        .card-footer-content {
+          > * {
+            margin: 0 1rem;
+          }
         }
       }
     }
