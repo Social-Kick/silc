@@ -59,16 +59,6 @@ export const pageQuery = graphql`
             html
           }
         }
-        column5Photo {
-          fluid(quality: 100) {
-            ...GatsbyContentfulFluid
-          }
-        }
-        column5 {
-          childMarkdownRemark {
-            html
-          }
-        }
         estates {
           heroImage {
             fluid(quality: 100) {
