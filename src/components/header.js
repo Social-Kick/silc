@@ -110,10 +110,10 @@ const Header = ({ costaMenuItems }) => {
                   <img src={chevron} alt="chevron" className={headerStyles.chevron}/>
                 </div>
                 {costaExpanded && <ul className={headerStyles.subNavMenu}>
-                  {costaMenuItems.map(({ titel }) => {
+                  {costaMenuItems.map(({ titel }, index) => {
                     const formattedCostaReference = titel.replace(/\s+/g, '-').toLowerCase().replace('?', '').replace('#', '');
                     return (
-                      <li>
+                      <li key={index}>
                         <Link activeClassName={headerStyles.active} to={`/costa/${formattedCostaReference}`} className={headerStyles.navItem}>{titel}</Link>
                       </li>
                     );  
