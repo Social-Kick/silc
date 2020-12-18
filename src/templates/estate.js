@@ -170,7 +170,7 @@ const EstateDetail = props => {
           <section className={`${eS.map} no-print`}>
             <Map
               location={estate.location}
-              googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDgMROM_H8cvr9WZ-0gU1D53yC-C74D4wM&v=3.exp&libraries=geometry,drawing,places`}
+              googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyD1mwgTRr5QHIbuwZAmq-FVUm8EdyTXy5A&v=3.exp&libraries=geometry,drawing,places`}
               loadingElement={<div style={{ height: `100%` }} />}
               containerElement={<div style={{ height: `400px` }} />}
               mapElement={<div style={{ height: `100%` }} />}
