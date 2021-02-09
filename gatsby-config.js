@@ -68,5 +68,85 @@ module.exports = {
         gfm: true,
       },
     },
+    {
+      resolve: `gatsby-kyero-feed`,
+      options: {
+        setup(ref) {
+          const ret = ref.query.site.siteMetadata.rssMetadata;
+          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
+          ret.generator = "GatsbyJS Advanced Starter";
+          return ret;
+        },
+        query: `
+        {
+          site {
+            siteMetadata {
+              title
+              siteUrl
+              description
+            }
+          }
+        }
+      `,
+      setup: options => ({
+        ...options, // https://www.npmjs.com/package/rss#feedoptions to override any specs
+        disable_cdata: true,
+        title: options.query.site.title,
+        description: options.query.site.description,
+        site_url: options.query.site.siteUrl
+      }),
+        feeds: [
+          {
+            serialize: ({ query: { site, allContentfulSilcEstate } }) => {
+              return allContentfulSilcEstate.edges.map(edge => ({
+                id: edge.node.id,
+                date: edge.node.updatedAt,
+                ref: edge.node.reference,
+                price: edge.node.minPrice,
+                type: edge.node.estateType,
+                latitude: edge.node.location.lat,
+                longitude: edge.node.location.lon,
+                beds: edge.node.bedrooms,
+                baths: edge.node.bathrooms,
+                pool: edge.node.amentities.includes('zwembad') ? '1' : '0',
+                url: site.siteMetadata.siteUrl + '/estate/' + edge.node.reference.replace(/\s+/g, '-').toLowerCase(),
+                virtual_tour_url: edge.node.virtualURL,
+                images: edge.node.estateImages
+              }));
+            },
+            query: `
+              {
+                allContentfulSilcEstate {
+                  edges {
+                    node {
+                      id
+                      updatedAt(formatString: "YYYY-MM-DD HH:MM:SS")
+                      reference
+                      minPrice
+                      estateType
+                      location {
+                        lat
+                        lon
+                      }
+                      bedrooms
+                      bathrooms
+                      amentities
+                      virtualURL
+                      estateImages {
+                        file {
+                          url
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/estates/rss.xml",
+            title: "Silc Estate RSS feed",
+          },
+        ],
+      },
+    },
   ],
 }
