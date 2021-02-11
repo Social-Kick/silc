@@ -71,30 +71,12 @@ module.exports = {
     {
       resolve: `gatsby-kyero-feed`,
       options: {
-        setup(ref) {
-          const ret = ref.query.site.siteMetadata.rssMetadata;
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = "GatsbyJS Advanced Starter";
-          return ret;
-        },
-        query: `
-        {
-          site {
-            siteMetadata {
-              title
-              siteUrl
-              description
-            }
-          }
-        }
-      `,
-      setup: options => ({
-        ...options, // https://www.npmjs.com/package/rss#feedoptions to override any specs
-        disable_cdata: true,
-        title: options.query.site.title,
-        description: options.query.site.description,
-        site_url: options.query.site.siteUrl
-      }),
+        setup: options => ({
+          ...options, // https://www.npmjs.com/package/rss#feedoptions to override any specs
+          title: options.query.site.title,
+          description: options.query.site.description,
+          site_url: options.query.site.siteUrl
+        }),
         feeds: [
           {
             serialize: ({ query: { site, allContentfulSilcEstate } }) => {
