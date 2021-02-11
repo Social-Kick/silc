@@ -6310,9 +6310,9 @@ gatsby-image@^2.2.41:
     object-fit-images "^3.2.4"
     prop-types "^15.7.2"
 
-"gatsby-kyero-feed@git+ssh://git@github.com:Social-Kick/gatsby-kyero-feed.git":
+"gatsby-kyero-feed@https://github.com/Social-Kick/gatsby-kyero-feed.git":
   version "1.0.0"
-  resolved "git+ssh://git@github.com:Social-Kick/gatsby-kyero-feed.git#c047b2fe755b4c349b116be4287be385d3b09b41"
+  resolved "https://github.com/Social-Kick/gatsby-kyero-feed.git#c047b2fe755b4c349b116be4287be385d3b09b41"
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@hapi/joi" "^15.1.1"
