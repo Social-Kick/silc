@@ -6312,7 +6312,7 @@ gatsby-image@^2.2.41:
 
 "gatsby-kyero-feed@https://github.com/Social-Kick/gatsby-kyero-feed.git":
   version "1.0.0"
-  resolved "https://github.com/Social-Kick/gatsby-kyero-feed.git#9b7736ea17d73956fbd295a7451e5e50e82dc4a7"
+  resolved "https://github.com/Social-Kick/gatsby-kyero-feed.git#d6370f2924112827b7c326ac368bc12e06199cea"
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@hapi/joi" "^15.1.1"

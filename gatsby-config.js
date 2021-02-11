@@ -92,7 +92,6 @@ module.exports = {
                 baths: edge.node.bathrooms,
                 pool: edge.node.amentities.includes('zwembad') ? '1' : '0',
                 url: site.siteMetadata.siteUrl + '/estate/' + edge.node.reference.replace(/\s+/g, '-').toLowerCase(),
-                virtual_tour_url: edge.node.virtualURL,
                 images: edge.node.estateImages
               }));
             },
@@ -102,7 +101,7 @@ module.exports = {
                   edges {
                     node {
                       id
-                      updatedAt(formatString: "YYYY-MM-DD HH:MM:SS")
+                      updatedAt(formatString: "YYYY-MM-DD HH:MM:ss")
                       reference
                       minPrice
                       estateType
@@ -113,7 +112,6 @@ module.exports = {
                       bedrooms
                       bathrooms
                       amentities
-                      virtualURL
                       estateImages {
                         file {
                           url
