@@ -3,13 +3,17 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import RichText from '../utils/richText'
+import SEO from '../utils/seo';
 
 import styles from '../styles/pages/tips.module.scss'
 
 const Tips = ({ data: { allContentfulTips } }) => {
-  const tips = allContentfulTips.edges
+  const tips = allContentfulTips.edges;
+  const metaDescription = 'Benieuwd welke tips onze “Spanje” experten meegeven? Hier ontdek je alles waar je op moet letten bij de aankoop van je appartement, woning of villa in Spanje.';
+  
   return (
     <Layout>
+      <SEO title={'Tips en Tricks'} description={metaDescription} />
       <article className={styles.wrapper}>
         <div className={styles.hero}>
           <h1>Onze Tips en Tricks</h1>

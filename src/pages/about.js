@@ -45,10 +45,11 @@ const About = () => {
   `)
 
   const [selectedItem, setSelectedItem] = useState(0);
+  const metaDescription = 'SILC Estates is een toonaangevende specialist in Spaans vastgoed op de Belgische markt. Wij specialiseren ons in (luxe) appartementen, woningen en villa’s. Zowel aan de Costa Blanca als de Costa del Sol.';
 
   return (
     <Layout>
-      <SEO title="Over ons" />
+      <SEO title="Over ons" description={metaDescription} />
       <article>
         <section className={styles.team}>
           <h1>Ons Team</h1>

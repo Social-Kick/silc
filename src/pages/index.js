@@ -66,9 +66,10 @@ const Index = () => {
   const imageData = data.hero.childImageSharp.fluid
   const logoData = data.logo.childImageSharp.fixed
   const homeContent = data.allContentfulHomeContent
+  const metaDescription = 'Welkom op de website van SILC Estates België. Als vastgoedspecialist in Spanje beschikken wij over een enorm uitgebreid aanbod woningen, appartementen en villa’s in Spanje. Zowel voor het luxe segment als de middenklasse.';
   return (
     <Layout>
-      <SEO title={"Home"} />
+      <SEO title={"Home"} description={metaDescription} />
       <article>
         <BackgroundImage
           Tag="section"

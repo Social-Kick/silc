@@ -20,9 +20,10 @@ const Contact = () => {
       }
     }
   `)
+  const metaDescription = 'Ben je benieuwd wat SILC Estates allemaal voor jou kan betekenen bij de aankoop van je appartement, woning of villa in Spanje? Neem dan snel contact op met ons.';
   return (
     <Layout>
-      <SEO title={"Contact"} />
+      <SEO title={"Contact"} description={metaDescription} />
       <Default>
       <BackgroundImage fluid={data.file.childImageSharp.fluid} className={cS.wrapper}>
         <div className={cS.content}>

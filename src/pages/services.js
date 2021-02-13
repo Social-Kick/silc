@@ -29,9 +29,10 @@ const Services = () => {
     }
   }
 `)
+  const metaDescription = 'Benieuwd hoe onze Spanje experten jou op alle vlakken kunnen helpen? Lees het hier op onze website. Zowel bij de aankoop van een appartement, woning of villa in Spanje staat SILC Estates voor je klaar.';
   return (
     <Layout>
-      <SEO title={"Diensten"}/>
+      <SEO title={"Diensten"} description={metaDescription} />
       <article>
         {data.allContentfulServices.edges.map((edge, i) => {
           const service = edge.node;

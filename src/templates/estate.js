@@ -76,11 +76,12 @@ const EstateDetail = props => {
   const { location } = history;
 
   const [callRequestModal, setCallRequestModal] = useState(false);
+  const metaDescription = `${estate.title} - ${estate.reference} - ${estate.minPrice}`;
 
   return (
     <div>
       <Layout>
-        <SEO title={estate.title} />
+        <SEO title={estate.title} description={metaDescription} />
         <div className="no-print">
           <Desktop>
             <div style={{ margin: '1rem 2.5rem', textDecoration: 'underline' }} >

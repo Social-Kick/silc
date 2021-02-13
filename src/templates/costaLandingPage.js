@@ -82,10 +82,11 @@ const CostaLandingPage = props => {
     localStorage.setItem('query', JSON.stringify({ region: costaPageData.regio }));
     navigate(`/estates`);
   }
+  const metaDescription = `Ontdek ons aanbod appartementen, woningen en villa’s aan de ${costaPageData.titel} in Spanje. `
 
   return (
     <Layout>
-      <SEO title={costaPageData.titel} />
+      <SEO title={costaPageData.titel} description={metaDescription} />
       <article className={styles.columnPage}>
         <section className={styles.hero} dangerouslySetInnerHTML={{ __html: costaPageData.abovePhotos.childMarkdownRemark.html }}></section>
         <section className={styles.cardWrapper}>

@@ -55,11 +55,12 @@ const Trip = () => {
     }
   `)
 
-  const tripData = data.allContentfulTrip.edges[0].node
+  const tripData = data.allContentfulTrip.edges[0].node;
+  const metaDescription = 'Onze bezichtigings-kennismakingsreizen zijn een begrip in onze sector. Samen op zoek naar het vastgoed van uw dromen. We kijken er al naar uit.';
 
   return (
     <Layout>
-      <SEO title="Bezichtigingsreis" />
+      <SEO title="Bezichtigingsreis" description={metaDescription} />
       <article className={styles.columnPage}>
         <section className={styles.hero} dangerouslySetInnerHTML={{ __html: tripData.abovePhotos.childMarkdownRemark.html }}></section>
         <section className={styles.cardWrapper}>

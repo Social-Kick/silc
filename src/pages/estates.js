@@ -6,9 +6,10 @@ import EstateList from '../components/estateList'
 import SEO from '../utils/seo'
 
 const Estates = ({ data: { allContentfulSilcEstate } }) => {
+  const metaDescription = 'Ontdek ons uitgebreide aanbod aan appartementen, woningen en villa’s in Spanje.';
   return (
     <Layout>
-      <SEO title={"Aanbod"}/>
+      <SEO title={"Aanbod"} description={metaDescription} />
       <EstateList edges={allContentfulSilcEstate.edges} />
     </Layout >
   )

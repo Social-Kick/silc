@@ -6,9 +6,10 @@ import { WijZoekenVoorJouForm } from '../components/forms';
 import styles from '../styles/pages/wijzoekenvoorjou.module.scss'
 
 const WijZoekenVoorJou = () => {
+  const metaDescription = 'Wij gaan voor jou op zoek naar je droomwoning in Spanje. Of het nu gaat om een appartement, woning of villa, SILC Estates is de partner voor de aankoop van Spaans vastgoed.';
   return (
     <Layout>
-      <SEO title="Zoekvraag" />
+      <SEO title='Wij zoeken voor jou' description={metaDescription} />
       <article className={styles.wrapper}>
         <div className={styles.hero}>
           <h1>Wij zoeken voor jou</h1>

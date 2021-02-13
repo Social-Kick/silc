@@ -28,10 +28,11 @@ const Blog = () => {
       }
     }
   `)
+  const metaDescription = 'Ontdek hier het laatste nieuws. Zorgvuldig geselecteerd door onze Spanje kenners.';
 
   return (
     <Layout>
-      <SEO title={"Nieuws"}/>
+      <SEO title={"Nieuws"} description={metaDescription} />
       <article className={blogStyles.blogPosts}>
         {data.allContentfulBlog.edges.map((edge, i) => {
           let formattedTitle = edge.node.title.replace(/\s+/g, '-').toLowerCase()
