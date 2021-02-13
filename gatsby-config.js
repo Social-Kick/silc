@@ -68,5 +68,69 @@ module.exports = {
         gfm: true,
       },
     },
+    {
+      resolve: `gatsby-kyero-feed`,
+      options: {
+        setup: options => ({
+          ...options, // https://www.npmjs.com/package/rss#feedoptions to override any specs
+          title: options.query.site.title,
+          description: options.query.site.description,
+          site_url: options.query.site.siteUrl
+        }),
+        feeds: [
+          {
+            serialize: ({ query: { site, allContentfulSilcEstate } }) => {
+              return allContentfulSilcEstate.edges.map(edge => ({
+                id: edge.node.id,
+                date: edge.node.updatedAt,
+                ref: edge.node.reference,
+                price: edge.node.minPrice,
+                type: edge.node.estateType,
+                town: edge.node.stad,
+                province: edge.node.provincie,
+                latitude: edge.node.location.lat,
+                longitude: edge.node.location.lon,
+                beds: edge.node.bedrooms,
+                baths: edge.node.bathrooms,
+                pool: edge.node.amentities.includes('zwembad') ? '1' : '0',
+                url: site.siteMetadata.siteUrl + '/estate/' + edge.node.reference.replace(/\s+/g, '-').toLowerCase(),
+                images: edge.node.estateImages
+              }));
+            },
+            query: `
+              {
+                allContentfulSilcEstate {
+                  edges {
+                    node {
+                      id
+                      updatedAt(formatString: "YYYY-MM-DD HH:MM:ss")
+                      reference
+                      minPrice
+                      estateType
+                      stad
+                      provincie
+                      location {
+                        lat
+                        lon
+                      }
+                      bedrooms
+                      bathrooms
+                      amentities
+                      estateImages {
+                        file {
+                          url
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/estates/rss.xml",
+            title: "Silc Estate RSS feed",
+          },
+        ],
+      },
+    },
   ],
 }
