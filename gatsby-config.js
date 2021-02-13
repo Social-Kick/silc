@@ -86,6 +86,8 @@ module.exports = {
                 ref: edge.node.reference,
                 price: edge.node.minPrice,
                 type: edge.node.estateType,
+                town: edge.node.stad,
+                province: edge.node.provincie,
                 latitude: edge.node.location.lat,
                 longitude: edge.node.location.lon,
                 beds: edge.node.bedrooms,
@@ -105,6 +107,8 @@ module.exports = {
                       reference
                       minPrice
                       estateType
+                      stad
+                      provincie
                       location {
                         lat
                         lon
