@@ -94,7 +94,8 @@ module.exports = {
                 baths: edge.node.bathrooms,
                 pool: edge.node.amentities.includes('zwembad') ? '1' : '0',
                 url: site.siteMetadata.siteUrl + '/estate/' + edge.node.reference.replace(/\s+/g, '-').toLowerCase(),
-                images: edge.node.estateImages
+                images: edge.node.estateImages,
+                desc: edge.node.description
               }));
             },
             query: `
@@ -119,6 +120,13 @@ module.exports = {
                       estateImages {
                         file {
                           url
+                        }
+                      }
+                      description {
+                        content {
+                          content {
+                            value
+                          }
                         }
                       }
                     }
