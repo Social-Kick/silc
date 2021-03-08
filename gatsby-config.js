@@ -8,13 +8,20 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: "UA-159937922-1",
-        head: false,
-        anonymize: true,
-        reszpectDNT: true,
-        pageTransitionDelay: 0,
+        trackingIds: ["G-SNLCMJMGZQ",],
+        gtagConfig: {
+          optimize_id: "OPT_CONTAINER_ID",
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          head: false,
+          respectDNT: true,
+          exclude: ["/preview/**", "/do-not-track/me/too/"],
+        },
       },
     },
     "gatsby-plugin-sass",
