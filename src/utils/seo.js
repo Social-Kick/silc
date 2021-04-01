@@ -60,6 +60,10 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `facebook-domain-verification`,
+          content: `zns0retzg4h6m4rumjcy5jk4ehmbsq`
+        }
       ].concat(meta)}
     >
     </Helmet>
