@@ -37,7 +37,12 @@ const Footer = () => {
           </div>
         </div>
         <div className={footerStyles.biv}>
-          <a href="https://biv.be" target="__blank"> <img src={biv} height="40" alt="" /></a>
+          <a href="https://www.biv.be/de-vastgoedmakelaar/deontologie-van-de-vastgoedmakelaar" target="__blank"> <img src={biv} height="40" alt="" /></a>
+          <p>
+            Beroepsinstituut van Vastgoedmakelaars (BIV) <br />
+            Luxemburgstraat 16b <br />
+            1000 Brussel <br />
+          </p>
         </div>
         <div className={footerStyles.legal}>
         </div>
@@ -60,7 +65,7 @@ const Footer = () => {
         <p className={footerStyles.spacer}>|</p>
         <p>Waarborgorganisme Bruyninckx Vastgoed BV: NV AXA Belgium</p>
         <p className={footerStyles.spacer}>|</p>
-        <p>Gewaarborgde activiteit: bemiddelaar, makelaarij</p>
+        <p>Gewaarborgde activiteit: bemiddelaar, makelaarij (België)</p>
       </div>
     </footer>
   )

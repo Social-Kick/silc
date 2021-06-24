@@ -67,11 +67,12 @@ footer {
 
   .biv {
     grid-area: biv;
-    display: grid;
-    place-content: center;
+    display: flex;
+    align-items: center;
     p {
       font-size: 0.6rem;
-      margin-bottom: 0.5rem;
+      margin-left: 0.5rem;
+      text-align: left;
     }
     a {
       text-decoration: underline;
