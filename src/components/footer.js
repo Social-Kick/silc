@@ -28,11 +28,8 @@ const Footer = () => {
             <a href="https://www.facebook.com/silcestates/" target="__blank">
               <FontAwesomeIcon icon={['fab', 'facebook']} color="white" size="lg" />
             </a>
-            <a href="" target="__blank">
+            <a href="https://www.instagram.com/silc_estates/" target="__blank">
               <FontAwesomeIcon icon={['fab', 'instagram']} color="white" size="lg" />
-            </a>
-            <a href="" target="__blank">
-              <FontAwesomeIcon icon={['fab', 'linkedin']} color="white" size="lg" />
             </a>
           </div>
         </div>
