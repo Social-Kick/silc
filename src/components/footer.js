@@ -25,7 +25,7 @@ const Footer = () => {
         </div>
         <div className={footerStyles.links}>
           <div className={footerStyles.social}>
-            <a href="https://www.facebook.com/silcestates/" target="__blank">
+            <a href="https://www.facebook.com/silcestatesbelgium/" target="__blank">
               <FontAwesomeIcon icon={['fab', 'facebook']} color="white" size="lg" />
             </a>
             <a href="https://www.instagram.com/silc_estates/" target="__blank">
