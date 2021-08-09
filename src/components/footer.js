@@ -125,7 +125,16 @@ const Footer = () => {
       </div>
       <chat-widget
         location-id="DY92pnjIicYrLc8pVDzc"
-        prompt-avatar="https://widgets.leadconnectorhq.com/chat-widget/assets/defaultAvatar.png"
+        heading="Heb je een vraag?"
+        sub-heading="Stel hieronder je vraag en we trachten je zo snel mogelijk te beantwoorden."
+        prompt-msg="Hey! Heb je een vraag? Stuur ons hier een berichtje."
+        legal-msg="Door te verzenden ga je akkoord met het ontvangen van sms of e-mails voor het opgegeven kanaal. Er kunnen tarieven worden gehanteerd."
+        use-email-field="true"
+        revisit-prompt-msg="Welkom terug {{name}}, Waarmee kunnen we je vandaag van dienst zijn?"
+        support-contact="Silc Estates België"
+        success-msg="Een van onze vertegenwoordigers neemt zo snel mogelijk contact met je op."
+        thank-you-msg="Bedankt!"
+        prompt-avatar="https://firebasestorage.googleapis.com/v0/b/highlevel-backend.appspot.com/o/locationPhotos%2FDY92pnjIicYrLc8pVDzc%2Fchat-widget-person?alt=media&token=a34f2c93-d738-45c7-a066-2c96a880246b"
       ></chat-widget>
       <script
         src="https://widgets.leadconnectorhq.com/loader.js"
