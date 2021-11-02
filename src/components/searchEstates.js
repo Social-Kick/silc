@@ -113,25 +113,20 @@ class EstateSearch extends Component {
       })
     }
     if ("minPrice" in query && query.maxPrice === undefined) {
-      console.log("enkel min")
       filteredEstates = filteredEstates.filter(item => {
         return item.node.minPrice >= parseInt(query["minPrice"])
       })
     }
     if ("maxPrice" in query && query.minPrice === undefined) {
-      console.log("enkel max")
       filteredEstates = filteredEstates.filter(item => {
-        return item.node.maxPrice <= parseInt(query["maxPrice"])
+        return item.node.minPrice <= parseInt(query["maxPrice"])
       })
     }
     if ("minPrice" in query && "maxPrice" in query) {
-      console.log("min en max")
       filteredEstates = filteredEstates.filter(item => {
         return (
-          (item.node.minPrice >= parseInt(query["minPrice"]) ||
-          (item.node.maxPrice <= parseInt(query["maxPrice"]) &&
-            item.node.minPrice >= parseInt(query["minPrice"]))) &&
-            item.node.minPrice < parseInt(query["maxPrice"])
+            item.node.minPrice >= parseInt(query["minPrice"]) &&
+            item.node.minPrice <= parseInt(query["maxPrice"])
         )
       })
     }
