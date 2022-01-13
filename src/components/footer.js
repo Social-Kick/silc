@@ -77,7 +77,7 @@ const Footer = () => {
           <p>●</p>
         </Desktop>
         <p>
-          Proudly made by <a href="https://socialkick.be">Social Kick</a>
+          Proudly made by Social Kick
         </p>
         <Desktop>
           <p>●</p>
