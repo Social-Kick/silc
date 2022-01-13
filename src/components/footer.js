@@ -5,6 +5,7 @@ import biv from "../images/logo-biv-1.png"
 import cp from "../../static/cookie_policy.pdf"
 
 import footerStyles from "../styles/components/footer.module.scss"
+import { Link } from "gatsby"
 
 const Footer = () => {
   return (
@@ -83,7 +84,7 @@ const Footer = () => {
           <p>●</p>
         </Desktop>
         <p>
-          <a href="/privacy">Privacy policy</a>
+          <Link to="/privacy">Privacy Policy</Link>
         </p>
         <Desktop>
           <p>●</p>
