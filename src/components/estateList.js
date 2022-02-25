@@ -61,11 +61,14 @@ class EstateList extends Component {
         <div className={estatesStyles.estates}>
           {this.state.estates.length > 0 ?
             this.state.estates.map((edge, i) => {
+              if (!edge.node.heroImage) {
+                console.log(edge);
+              }
               let formattedReference = edge.node.reference.replace(/\s+/g, '-').toLowerCase()
               return (
                 <div key={i} className={estatesStyles.estateItem}>
                   {edge.node.heroImage && <BackgroundImage fluid={edge.node.heroImage.fluid} className={estatesStyles.heroImg}></BackgroundImage>}
-                  <div className={estatesStyles.heroImg} onClick={() => { navigate(`/estate/${formattedReference}`) }} style={{ backgroundImage: `url(${edge.node.heroImage.file.url})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
+                  <div className={estatesStyles.heroImg} onClick={() => { navigate(`/estate/${formattedReference}`) }} style={{ backgroundImage: `url(${edge.node.heroImage?.file?.url})`, backgroundPosition: 'center', backgroundSize: 'cover' }}></div>
                   <div className={estatesStyles.content}>
                     <h2>{edge.node.title}</h2>
                     <p className={estatesStyles.ref}>{formattedReference}</p>
