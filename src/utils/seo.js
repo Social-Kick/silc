@@ -62,7 +62,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `facebook-domain-verification`,
-          content: `zns0retzg4h6m4rumjcy5jk4ehmbsq`
+          content: `uh7qqcw682l2w7ncq8a6pnlt53n1ua`
         }
       ].concat(meta)}
     >
