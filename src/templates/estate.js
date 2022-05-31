@@ -168,16 +168,6 @@ const EstateDetail = props => {
             <button className={eS.print} onClick={() => typeof window !== `undefined` ? window.print() : null}>Print brochure</button>
           </section>
 
-          <section className={`${eS.map} no-print`}>
-            <Map
-              location={estate.location}
-              googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyD1mwgTRr5QHIbuwZAmq-FVUm8EdyTXy5A&v=3.exp&libraries=geometry,drawing,places`}
-              loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div style={{ height: `400px` }} />}
-              mapElement={<div style={{ height: `100%` }} />}
-            />
-          </section>
-
           <section className={`${eS.forms} no-print`}>
             <div className={eS.callRequest}>
               <TerugbelVerzoek imageSrc={carl} toggleCallRequestModal={() => setCallRequestModal(true)}>
